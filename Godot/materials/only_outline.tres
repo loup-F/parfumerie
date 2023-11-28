@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://n2smqs6xad18"]
+
+[ext_resource type="Shader" path="res://src/outline.gdshader" id="1_kb0sv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bw8ks"]
+render_priority = 0
+shader = ExtResource("1_kb0sv")
+
+[resource]
+next_pass = SubResource("ShaderMaterial_bw8ks")
+albedo_color = Color(0.219608, 0.12549, 0.0431373, 1)

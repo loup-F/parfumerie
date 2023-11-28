@@ -1,0 +1,90 @@
+[gd_scene load_steps=9 format=3 uid="uid://r7ymb8hx28kq"]
+
+[ext_resource type="PackedScene" uid="uid://c1go6gp66l484" path="res://assets/chaudrong/Chaudron.fbx" id="1_xa1lo"]
+[ext_resource type="Material" uid="uid://c0ih5jtcypm4o" path="res://materials/metallic.tres" id="2_ad43s"]
+
+[sub_resource type="Shader" id="Shader_cp838"]
+code = "shader_type spatial;
+
+render_mode cull_front, unshaded, depth_draw_never;
+
+global uniform vec4 outline_color;
+global uniform float outline_width;
+
+void vertex() {
+	vec4 clip_position = 
+			PROJECTION_MATRIX *
+			(MODELVIEW_MATRIX * vec4(VERTEX, 1.0));
+	vec3 clip_normal =
+			mat3(PROJECTION_MATRIX) *
+			(mat3(MODELVIEW_MATRIX) * NORMAL);
+	clip_position.xy +=
+			normalize(clip_normal.xy) /
+			VIEWPORT_SIZE *
+			clip_position.w *
+			outline_width;
+	POSITION = clip_position;
+}
+
+void fragment() {
+	ALBEDO = outline_color.rgb;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4htlj"]
+render_priority = 0
+shader = SubResource("Shader_cp838")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5wld1"]
+next_pass = SubResource("ShaderMaterial_4htlj")
+albedo_color = Color(0.278431, 0.172549, 0.105882, 1)
+
+[sub_resource type="Shader" id="Shader_e52gt"]
+code = "shader_type spatial;
+
+render_mode cull_front, unshaded, depth_draw_never;
+
+global uniform vec4 outline_color;
+global uniform float outline_width;
+
+void vertex() {
+	vec4 clip_position = 
+			PROJECTION_MATRIX *
+			(MODELVIEW_MATRIX * vec4(VERTEX, 1.0));
+	vec3 clip_normal =
+			mat3(PROJECTION_MATRIX) *
+			(mat3(MODELVIEW_MATRIX) * NORMAL);
+	clip_position.xy +=
+			normalize(clip_normal.xy) /
+			VIEWPORT_SIZE *
+			clip_position.w *
+			outline_width;
+	POSITION = clip_position;
+}
+
+void fragment() {
+	ALBEDO = outline_color.rgb;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vp4he"]
+render_priority = 0
+shader = SubResource("Shader_e52gt")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y5wkl"]
+next_pass = SubResource("ShaderMaterial_vp4he")
+albedo_color = Color(0.164706, 0.0666667, 0, 1)
+
+[node name="Chaudron" instance=ExtResource("1_xa1lo")]
+
+[node name="hanse" parent="RootNode" index="0"]
+surface_material_override/0 = ExtResource("2_ad43s")
+
+[node name="hanse2" parent="RootNode" index="1"]
+surface_material_override/0 = ExtResource("2_ad43s")
+
+[node name="Chaudron" parent="RootNode" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_5wld1")
+
+[node name="socle" parent="RootNode" index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_y5wkl")

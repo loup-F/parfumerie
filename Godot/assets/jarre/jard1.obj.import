@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bjhoid8xb20u4"
+path="res://.godot/imported/jard1.obj-fab476ce480567c515937c785bdc8e7f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/jard1.obj-fab476ce480567c515937c785bdc8e7f.mesh"]
+
+source_file="res://assets/jarre/jard1.obj"
+dest_files=["res://.godot/imported/jard1.obj-fab476ce480567c515937c785bdc8e7f.mesh", "res://.godot/imported/jard1.obj-fab476ce480567c515937c785bdc8e7f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

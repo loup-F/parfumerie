@@ -1,0 +1,68 @@
+[gd_scene load_steps=10 format=3 uid="uid://d0ra7v7nw0jc2"]
+
+[ext_resource type="Script" path="res://scenes/OpenXR.gd" id="1_w3jjt"]
+[ext_resource type="PackedScene" uid="uid://3u8wwx4jy8q2" path="res://assets/amphora.tscn" id="2_4qrd2"]
+[ext_resource type="PackedScene" uid="uid://r7ymb8hx28kq" path="res://assets/chaudrong/chaudron.tscn" id="3_8miqi"]
+[ext_resource type="PackedScene" uid="uid://1cpnlrrby5ic" path="res://assets/jarre/jard_1.tscn" id="4_okddx"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b0vhr"]
+sky_top_color = Color(0.356863, 0.729412, 0.827451, 1)
+sky_horizon_color = Color(0.655882, 0.748039, 0.773529, 1)
+ground_bottom_color = Color(0.266667, 0.262745, 0.266667, 1)
+ground_horizon_color = Color(0.655882, 0.748039, 0.773529, 1)
+
+[sub_resource type="Sky" id="Sky_67vh2"]
+sky_material = SubResource("ProceduralSkyMaterial_b0vhr")
+
+[sub_resource type="Environment" id="Environment_vi0ji"]
+background_mode = 2
+sky = SubResource("Sky_67vh2")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_nu3qs"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vonrr"]
+albedo_color = Color(0.0117647, 0.0156863, 0.00392157, 1)
+
+[node name="main" type="Node3D"]
+script = ExtResource("1_w3jjt")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_vi0ji")
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 18.2945, 0)
+light_color = Color(0.94902, 0.941176, 0.823529, 1)
+light_energy = 5.0
+shadow_enabled = true
+directional_shadow_blend_splits = true
+
+[node name="XROrigin3D" type="XROrigin3D" parent="."]
+transform = Transform3D(-0.0625902, 0, -8.01376, 0, 4.49442, 0, 0.99763, 0, -0.50278, 6.99314, 13.085, -11.4834)
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
+transform = Transform3D(1, 0, 1.49012e-08, 0, 1, 0, -1.49012e-08, 0, 1, 0, 0, 0)
+keep_aspect = 0
+doppler_tracking = 1
+
+[node name="LeftHand" type="XRController3D" parent="XROrigin3D"]
+tracker = &"left_hand"
+
+[node name="RightHand" type="XRController3D" parent="XROrigin3D"]
+transform = Transform3D(1, 0, -1.19209e-07, 0, 1, 0, 0, 0, 1, -0.00164986, 0.00712991, 1.58846e-05)
+tracker = &"right_hand"
+
+[node name="amphora" parent="." instance=ExtResource("2_4qrd2")]
+transform = Transform3D(0.005, 0, 0, 0, 0.005, 0, 0, 0, 0.005, 15.3778, 13.3823, 2.02654)
+
+[node name="sol" type="MeshInstance3D" parent="."]
+transform = Transform3D(68.4387, 0, 0, 0, 1.71805, 0, 0, 0, 46.0228, -4.45073, 11.8576, -2.50633)
+mesh = SubResource("PlaneMesh_nu3qs")
+surface_material_override/0 = SubResource("StandardMaterial3D_vonrr")
+
+[node name="Chaudron" parent="." instance=ExtResource("3_8miqi")]
+transform = Transform3D(2.11349, 0, 0, 0, 2.11349, 0, 0, 0, 2.11349, 11.782, 11.8935, 0.417217)
+
+[node name="jard2" parent="." instance=ExtResource("4_okddx")]
+transform = Transform3D(1.8795, 0, 0.966597, 0, 2.11349, 0, -0.966597, 0, 1.8795, 14.0437, 11.8284, 1.04268)
