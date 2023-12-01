@@ -1,0 +1,18 @@
+[gd_scene load_steps=6 format=3 uid="uid://djd1nhbqy7q1p"]
+
+[ext_resource type="PackedScene" uid="uid://p6hfpalap8dg" path="res://assets/Models/DEMO/demo_baton/baton.fbx" id="1_cisab"]
+[ext_resource type="Texture2D" uid="uid://hwrrdpeyjpwe" path="res://assets/Textures/dark_wood.jpg" id="2_xqwl1"]
+[ext_resource type="Texture2D" uid="uid://lq1uxgsho0ok" path="res://assets/Textures/dark_wood_s.png" id="3_ncfa3"]
+[ext_resource type="Texture2D" uid="uid://2dynd6i0305b" path="res://assets/Textures/dark_wood_b.png" id="4_kurlh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mpf5k"]
+albedo_texture = ExtResource("2_xqwl1")
+metallic = 1.0
+metallic_texture = ExtResource("3_ncfa3")
+normal_enabled = true
+normal_texture = ExtResource("4_kurlh")
+
+[node name="baton" instance=ExtResource("1_cisab")]
+
+[node name="Baton" parent="RootNode" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_mpf5k")

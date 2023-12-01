@@ -1,0 +1,18 @@
+[gd_scene load_steps=6 format=3 uid="uid://uh4ejdbjrtql"]
+
+[ext_resource type="PackedScene" uid="uid://chuwybod0gv0w" path="res://assets/Models/DEMO/demo_sol/sol.fbx" id="1_5yg67"]
+[ext_resource type="Texture2D" uid="uid://pv0jq02iyybc" path="res://assets/Textures/TCom_Pavement_TerracottaAntique_2K_albedo.png" id="2_y02ao"]
+[ext_resource type="Texture2D" uid="uid://bin8wwogvjh7p" path="res://assets/Textures/terre_s.png" id="3_wls65"]
+[ext_resource type="Texture2D" uid="uid://dmbmnwknp60cl" path="res://assets/Textures/TCom_Pavement_TerracottaAntique_2K_normal.png" id="4_06d7m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ni2u"]
+albedo_texture = ExtResource("2_y02ao")
+metallic = 1.0
+metallic_texture = ExtResource("3_wls65")
+normal_enabled = true
+normal_texture = ExtResource("4_06d7m")
+
+[node name="sol" instance=ExtResource("1_5yg67")]
+
+[node name="Sol" parent="RootNode" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_8ni2u")

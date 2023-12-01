@@ -1,0 +1,31 @@
+[gd_scene load_steps=8 format=3 uid="uid://b4h8kqfvxjpy0"]
+
+[ext_resource type="PackedScene" uid="uid://c7hlb37i6bvdj" path="res://assets/Models/DEMO/demo_pillier/pilier.fbx" id="1_elkpi"]
+[ext_resource type="Texture2D" uid="uid://bfdm3jjcknu0g" path="res://assets/Textures/terre.png" id="2_pgm42"]
+[ext_resource type="Texture2D" uid="uid://bin8wwogvjh7p" path="res://assets/Textures/terre_s.png" id="3_hxl7k"]
+[ext_resource type="Shader" path="res://src/outline.gdshader" id="4_7yf0r"]
+[ext_resource type="Texture2D" uid="uid://ocogequ8rurj" path="res://assets/Textures/terre_b.png" id="5_y5hr2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t6s2l"]
+render_priority = 0
+shader = ExtResource("4_7yf0r")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_12mbd"]
+next_pass = SubResource("ShaderMaterial_t6s2l")
+diffuse_mode = 3
+albedo_texture = ExtResource("2_pgm42")
+metallic = 1.0
+metallic_texture = ExtResource("3_hxl7k")
+emission = Color(0.341176, 0.235294, 0.352941, 1)
+emission_energy_multiplier = 4.67
+normal_enabled = true
+normal_texture = ExtResource("5_y5hr2")
+rim = 0.31
+heightmap_enabled = true
+backlight = Color(0.890196, 0.737255, 0.72549, 1)
+refraction_scale = 0.42
+
+[node name="pilier" instance=ExtResource("1_elkpi")]
+
+[node name="Pillier" parent="RootNode" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_12mbd")

@@ -1,0 +1,18 @@
+[gd_scene load_steps=6 format=3 uid="uid://coxskjsk1n11n"]
+
+[ext_resource type="PackedScene" uid="uid://7onm0gu4u4dc" path="res://assets/Models/DEMO/demo_jarre_2/jar2.fbx" id="1_fpyio"]
+[ext_resource type="Texture2D" uid="uid://cx4vfow007ef" path="res://assets/Textures/Jard_2.png" id="2_4xenj"]
+[ext_resource type="Texture2D" uid="uid://bin8wwogvjh7p" path="res://assets/Textures/terre_s.png" id="3_4d85t"]
+[ext_resource type="Texture2D" uid="uid://ma23ligayxy2" path="res://assets/Textures/Jard_2_b.png" id="4_d14ep"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j7atc"]
+albedo_texture = ExtResource("2_4xenj")
+metallic = 1.0
+metallic_texture = ExtResource("3_4d85t")
+normal_enabled = true
+normal_texture = ExtResource("4_d14ep")
+
+[node name="jar2" instance=ExtResource("1_fpyio")]
+
+[node name="Jard_2" parent="RootNode" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_j7atc")

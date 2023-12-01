@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cskosl3a0fxae"]
+
+[ext_resource type="PackedScene" uid="uid://cjlmnlmvxhy8s" path="res://assets/Models/Amphore/amphora_texture_2.tscn" id="1_3qesx"]
+
+[node name="amphora" instance=ExtResource("1_3qesx")]

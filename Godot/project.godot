@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="stage parfumerie VR"
-run/main_scene="res://scenes/main_scene.tscn"
+run/main_scene="res://assets/Models/DEMO/demo_jarre_1/jar1.fbx"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
+
+[filesystem]
+
+import/blender/enabled=false
 
 [rendering]
 
@@ -25,15 +29,15 @@ anti_aliasing/quality/msaa_3d=1
 
 specular_smoothness={
 "type": "float",
-"value": 0.03
+"value": -0.14
 }
 fresnel_smoothness={
 "type": "float",
-"value": 0.297
+"value": 0.631
 }
 outline_width={
 "type": "float",
-"value": 4.507
+"value": 5.0
 }
 outline_color={
 "type": "color",

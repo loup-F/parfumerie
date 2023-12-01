@@ -1,0 +1,18 @@
+[gd_scene load_steps=6 format=3 uid="uid://dbvang1mu2kd5"]
+
+[ext_resource type="PackedScene" uid="uid://c6auiukthcxm" path="res://assets/Models/DEMO/demo_mur_2/mur2.fbx" id="1_lmco7"]
+[ext_resource type="Texture2D" uid="uid://dh5gjg8vbyk1q" path="res://assets/Textures/mur.png" id="2_0botf"]
+[ext_resource type="Texture2D" uid="uid://bj0u4xokrskq6" path="res://assets/Textures/mur_s.png" id="3_arg24"]
+[ext_resource type="Texture2D" uid="uid://dc45fgyxshlo1" path="res://assets/Textures/mur_b.png" id="4_ovtas"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_efm3p"]
+albedo_texture = ExtResource("2_0botf")
+metallic = 1.0
+metallic_texture = ExtResource("3_arg24")
+normal_enabled = true
+normal_texture = ExtResource("4_ovtas")
+
+[node name="mur2" instance=ExtResource("1_lmco7")]
+
+[node name="Mur_coter" parent="RootNode" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_efm3p")

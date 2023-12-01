@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://bndtfvlwoqy1d"]
+
+[ext_resource type="PackedScene" uid="uid://1qv13ao75jqy" path="res://assets/Models/DEMO/demo_mur_1/mur1.fbx" id="1_0vljo"]
+[ext_resource type="Texture2D" uid="uid://dh5gjg8vbyk1q" path="res://assets/Textures/mur.png" id="2_urbn3"]
+[ext_resource type="Texture2D" uid="uid://bj0u4xokrskq6" path="res://assets/Textures/mur_s.png" id="3_lpyvu"]
+[ext_resource type="Texture2D" uid="uid://dc45fgyxshlo1" path="res://assets/Textures/mur_b.png" id="4_a4p2u"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4rw4f"]
+albedo_texture = ExtResource("2_urbn3")
+metallic = 1.0
+metallic_texture = ExtResource("3_lpyvu")
+normal_enabled = true
+normal_texture = ExtResource("4_a4p2u")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h7p50"]
+albedo_texture = ExtResource("2_urbn3")
+metallic = 1.0
+metallic_texture = ExtResource("3_lpyvu")
+normal_enabled = true
+normal_texture = ExtResource("4_a4p2u")
+
+[node name="mur1" instance=ExtResource("1_0vljo")]
+
+[node name="Mur_de_face" parent="RootNode" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_4rw4f")
+
+[node name="Brique" parent="RootNode" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_h7p50")

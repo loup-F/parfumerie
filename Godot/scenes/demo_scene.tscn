@@ -1,0 +1,174 @@
+[gd_scene load_steps=32 format=3 uid="uid://bdghl2ihl5rx3"]
+
+[ext_resource type="PackedScene" uid="uid://p6hfpalap8dg" path="res://assets/Models/DEMO/demo_baton/baton.fbx" id="1_usjeb"]
+[ext_resource type="PackedScene" uid="uid://dxwev1kjycron" path="res://assets/Models/DEMO/demo_chaudron/chaudron.fbx" id="2_l5vwl"]
+[ext_resource type="PackedScene" uid="uid://c1c0s5d3qgq3m" path="res://assets/Models/DEMO/demo_etagere/etagere.fbx" id="3_ioiuo"]
+[ext_resource type="PackedScene" uid="uid://chuwybod0gv0w" path="res://assets/Models/DEMO/demo_sol/sol.fbx" id="4_tvjos"]
+[ext_resource type="PackedScene" uid="uid://c7hlb37i6bvdj" path="res://assets/Models/DEMO/demo_pillier/pilier.fbx" id="5_kra4d"]
+[ext_resource type="PackedScene" uid="uid://c6auiukthcxm" path="res://assets/Models/DEMO/demo_mur_2/mur2.fbx" id="6_58xc4"]
+[ext_resource type="PackedScene" uid="uid://1qv13ao75jqy" path="res://assets/Models/DEMO/demo_mur_1/mur1.fbx" id="7_fvw0h"]
+[ext_resource type="PackedScene" uid="uid://7onm0gu4u4dc" path="res://assets/Models/DEMO/demo_jarre_2/jar2.fbx" id="8_s3y53"]
+[ext_resource type="PackedScene" uid="uid://beqsuuyh54nvm" path="res://assets/Models/DEMO/demo_jarre_1/jar1.fbx" id="9_dc0ia"]
+[ext_resource type="PackedScene" uid="uid://csvy6yqr73pal" path="res://assets/Models/DEMO/demo_jarre_1/jar_1.tscn" id="10_pkmkv"]
+[ext_resource type="PackedScene" uid="uid://c3fpv07c1ja7q" path="res://assets/Models/DEMO/demo_jarre_2/jar_2.tscn" id="11_cwrg6"]
+[ext_resource type="PackedScene" uid="uid://cj4t5qx4tit7e" path="res://assets/Models/DEMO/demo_mur_1/mur_1.tscn" id="12_8wbxi"]
+[ext_resource type="PackedScene" uid="uid://oinglua4h6e3" path="res://assets/Models/DEMO/demo_mur_2/mur_2.tscn" id="13_0envt"]
+[ext_resource type="PackedScene" uid="uid://b4h8kqfvxjpy0" path="res://assets/Models/DEMO/demo_pillier/pilier.tscn" id="14_uthxp"]
+[ext_resource type="PackedScene" uid="uid://cclepxq1ck22u" path="res://assets/Models/DEMO/demo_sol/sol.tscn" id="15_4yd0a"]
+[ext_resource type="PackedScene" uid="uid://bq26ogciuk8cj" path="res://assets/Models/DEMO/demo_etagere/etagere.tscn" id="16_5vrdm"]
+[ext_resource type="PackedScene" uid="uid://cmb1xww1llovi" path="res://assets/Models/DEMO/demo_chaudron/chaudron.tscn" id="17_thlha"]
+[ext_resource type="PackedScene" uid="uid://ykamqi6uh6y3" path="res://assets/Models/DEMO/demo_baton/baton.tscn" id="18_wvdpn"]
+[ext_resource type="PackedScene" uid="uid://bxmnj4hbadvpb" path="res://assets/Models/DEMO/demo_chaudron/chaudron_real.tscn" id="19_w7k0k"]
+[ext_resource type="PackedScene" uid="uid://djd1nhbqy7q1p" path="res://assets/Models/DEMO/demo_baton/baton_real.tscn" id="20_1ttqe"]
+[ext_resource type="PackedScene" uid="uid://df0s2dgsg7jqv" path="res://assets/Models/DEMO/demo_etagere/etagere_real.tscn" id="21_30aje"]
+[ext_resource type="PackedScene" uid="uid://w1p5ne73i6d" path="res://assets/Models/DEMO/demo_jarre_1/jar_1_real.tscn" id="22_1ro8t"]
+[ext_resource type="PackedScene" uid="uid://coxskjsk1n11n" path="res://assets/Models/DEMO/demo_jarre_2/jar_2_real.tscn" id="23_gkd12"]
+[ext_resource type="PackedScene" uid="uid://bndtfvlwoqy1d" path="res://assets/Models/DEMO/demo_mur_1/mur_1_real.tscn" id="24_57gvq"]
+[ext_resource type="PackedScene" uid="uid://dbvang1mu2kd5" path="res://assets/Models/DEMO/demo_mur_2/mur_2_real.tscn" id="25_8nd0x"]
+[ext_resource type="PackedScene" uid="uid://biyjd4e5nbr1s" path="res://assets/Models/DEMO/demo_pillier/pilier_real.tscn" id="26_uxffb"]
+[ext_resource type="PackedScene" uid="uid://uh4ejdbjrtql" path="res://assets/Models/DEMO/demo_sol/sol_real.tscn" id="27_1iyes"]
+[ext_resource type="PackedScene" uid="uid://dixvvvavb4c11" path="res://assets/Models/DEMO/demo_etagere/etagere_test.tscn" id="28_442fh"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wrv5m"]
+sky_top_color = Color(0.356863, 0.729412, 0.827451, 1)
+sky_horizon_color = Color(0.655882, 0.748039, 0.773529, 1)
+ground_bottom_color = Color(0.266667, 0.262745, 0.266667, 1)
+ground_horizon_color = Color(0.655882, 0.748039, 0.773529, 1)
+
+[sub_resource type="Sky" id="Sky_67vh2"]
+sky_material = SubResource("ProceduralSkyMaterial_wrv5m")
+
+[sub_resource type="Environment" id="Environment_xlfic"]
+background_mode = 2
+sky = SubResource("Sky_67vh2")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="demo_scene" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_xlfic")
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 0, 18.2945, 0)
+light_color = Color(0.94902, 0.941176, 0.823529, 1)
+light_energy = 3.0
+shadow_enabled = true
+directional_shadow_blend_splits = true
+
+[node name="XROrigin3D" type="XROrigin3D" parent="."]
+transform = Transform3D(-0.0625902, 0, -8.01376, 0, 4.49442, 0, 0.99763, 0, -0.50278, 6.99314, 13.085, -11.4834)
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
+transform = Transform3D(1, 0, 1.49012e-08, 0, 1, 0, -1.49012e-08, 0, 1, 0, 0, 0)
+keep_aspect = 0
+doppler_tracking = 1
+
+[node name="original imports" type="Node3D" parent="."]
+
+[node name="baton" parent="original imports" instance=ExtResource("1_usjeb")]
+
+[node name="chaudron" parent="original imports" instance=ExtResource("2_l5vwl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.910563)
+
+[node name="etagere" parent="original imports" instance=ExtResource("3_ioiuo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18198, 0, 3.21622)
+
+[node name="sol" parent="original imports" instance=ExtResource("4_tvjos")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.52025, 0, 2.01041)
+
+[node name="pilier" parent="original imports" instance=ExtResource("5_kra4d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.775648, 0, -0.571075)
+
+[node name="mur2" parent="original imports" instance=ExtResource("6_58xc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.409085, 0, 2.25889)
+
+[node name="mur1" parent="original imports" instance=ExtResource("7_fvw0h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.849446, 0, 2.27008)
+
+[node name="jar2" parent="original imports" instance=ExtResource("8_s3y53")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 3.72529e-09, 0, 1, -0.386971, -9.53674e-07, 2.14353)
+
+[node name="jar1" parent="original imports" instance=ExtResource("9_dc0ia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.346704, 0, 4.16169)
+
+[node name="Toon" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.99247)
+
+[node name="jar1" parent="Toon" instance=ExtResource("10_pkmkv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.56017, 0.213811, 0.912409)
+
+[node name="jar2" parent="Toon" instance=ExtResource("11_cwrg6")]
+transform = Transform3D(0.99915, -0.0412304, 0, 0.0412304, 0.99915, 0, 0, 0, 1, -1.53049, 0.213757, 0.543054)
+
+[node name="mur1" parent="Toon" instance=ExtResource("12_8wbxi")]
+
+[node name="mur2" parent="Toon" instance=ExtResource("13_0envt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00799906, 0)
+
+[node name="mur2" parent="Toon/mur2" instance=ExtResource("13_0envt")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.967404, -0.0296266, 0.487341)
+
+[node name="pilier" parent="Toon" instance=ExtResource("14_uthxp")]
+transform = Transform3D(-0.723678, 0, 0.690138, 0, 1, 0, -0.690138, 0, -0.723678, 0.377137, 0.239433, 1.37286)
+
+[node name="pilier" parent="Toon/pilier" instance=ExtResource("14_uthxp")]
+transform = Transform3D(-0.995067, 0.00323029, 0.0991751, 0.00365867, 0.999985, 0.00413781, -0.0991601, 0.00448024, -0.995063, 1.60357, -0.00361401, 2.08903)
+
+[node name="sol" parent="Toon" instance=ExtResource("15_4yd0a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.584615, 0.26424, -0.145507)
+
+[node name="sol" parent="Toon/sol" instance=ExtResource("15_4yd0a")]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.584615, 2.44234, 0.224437)
+
+[node name="etagere" parent="Toon" instance=ExtResource("16_5vrdm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.99714, 0.258375, 0.736032)
+
+[node name="chaudron" parent="Toon" instance=ExtResource("17_thlha")]
+transform = Transform3D(0.999998, 0, 0.00221657, 0, 1, 0, -0.00221657, 0, 0.999998, -1.18807, 0.215042, -0.84319)
+
+[node name="baton" parent="Toon" instance=ExtResource("18_wvdpn")]
+transform = Transform3D(1, 0, -0.000925024, 0, 1, 0, 0.000925024, 0, 1, -1.93355, 0.230623, 0.177039)
+
+[node name="Realistic" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.138595, 0, -15.2009)
+
+[node name="chaudron" parent="Realistic" instance=ExtResource("19_w7k0k")]
+transform = Transform3D(0.999595, 0, 0.0284625, 0, 1, 0, -0.0284625, 0, 0.999595, -1.02771, -0.0413149, -0.891461)
+
+[node name="baton" parent="Realistic" instance=ExtResource("20_1ttqe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.65281, 0, 0.249998)
+
+[node name="etagere" parent="Realistic" instance=ExtResource("21_30aje")]
+transform = Transform3D(0.999995, 0.00314159, 0, -0.00314159, 0.999995, 0, 0, 0, 1, -1.82834, -0.0100809, 0.804632)
+
+[node name="jar1" parent="Realistic" instance=ExtResource("22_1ro8t")]
+transform = Transform3D(0.999875, 0, -0.015812, 0, 1, 0, 0.015812, 0, 0.999875, -1.32654, -0.0465241, 0.965608)
+
+[node name="jar2" parent="Realistic" instance=ExtResource("23_gkd12")]
+transform = Transform3D(1, 0, 0, 0, 0.999944, -0.0106114, 0, 0.0106114, 0.999944, -1.3221, 0, 0.57535)
+
+[node name="mur1" parent="Realistic" instance=ExtResource("24_57gvq")]
+
+[node name="mur2" parent="Realistic" instance=ExtResource("25_8nd0x")]
+
+[node name="mur2" parent="Realistic/mur2" instance=ExtResource("25_8nd0x")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.825909, 0, 0.401996)
+
+[node name="pilier" parent="Realistic" instance=ExtResource("26_uxffb")]
+transform = Transform3D(-0.617709, 0, -0.786407, 0, 1, 0, 0.786407, 0, -0.617709, 0.56413, 0, -1.53162)
+
+[node name="pilier" parent="Realistic/pilier" instance=ExtResource("26_uxffb")]
+transform = Transform3D(0.0473333, 0.000840432, -0.998879, 0.000170305, 1, 0.000849444, 0.998879, -0.000210315, 0.0473331, 2.14279, 0.0045532, -1.8408)
+
+[node name="sol" parent="Realistic" instance=ExtResource("27_1iyes")]
+
+[node name="sol" parent="Realistic/sol" instance=ExtResource("27_1iyes")]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 2.69078, 0)
+
+[node name="funky" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20.3901)
+
+[node name="etagere" parent="funky" instance=ExtResource("28_442fh")]
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
