@@ -39,10 +39,10 @@ surface_material_override/0 = SubResource("StandardMaterial3D_vfbyi")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 
 [node name="placeholder_stl" parent="." instance=ExtResource("3_8sjfy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.82979, -0.308619, -0.662941)
+transform = Transform3D(0.0155677, 0, 0.999879, 0, 1, 0, -0.999879, 0, 0.0155677, -6.7155, -0.308619, -0.662941)
 
 [node name="rendu_first_scene" parent="." instance=ExtResource("4_f1xtl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.36102, 0, 6.04986)
+transform = Transform3D(-0.999966, 0, -0.0082727, 0, 1, 0, 0.0082727, 0, -0.999966, 7.36102, 0, -0.439295)
 
 [node name="placeholder_stl_1" parent="." instance=ExtResource("5_xgw0n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.31041, 0, 10.1294)
+transform = Transform3D(-0.0746654, 0, 0.997209, 0, 1, 0, -0.997209, 0, -0.0746654, -0.955569, -2.38419e-07, 10.1732)
