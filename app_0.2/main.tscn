@@ -1,48 +1,75 @@
-[gd_scene load_steps=9 format=3 uid="uid://b2eh3l1tileed"]
+[gd_scene load_steps=14 format=3 uid="uid://b2eh3l1tileed"]
 
 [ext_resource type="Script" path="res://VR bits/VR.gd" id="1_4r32o"]
+[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="2_2jgqs"]
 [ext_resource type="PackedScene" uid="uid://byek35q5qua82" path="res://assets/jard_1.tscn" id="2_5b3yq"]
+[ext_resource type="PackedScene" uid="uid://bnx4hithcij6y" path="res://addons/godot-xr-tools/hands/model/Hand_Glove_low_L.gltf" id="2_sqcrk"]
 [ext_resource type="PackedScene" uid="uid://dvkrtbqgth3ww" path="res://assets/placeholder_stl.blend" id="3_8sjfy"]
+[ext_resource type="PackedScene" uid="uid://csgsp0wuw8ucy" path="res://addons/godot-xr-tools/hands/model/Hand_Glove_low_R.gltf" id="3_c13k1"]
+[ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="4_5xh84"]
 [ext_resource type="PackedScene" uid="uid://wtedo34v0xc6" path="res://assets/rendu_first_scene.blend" id="4_f1xtl"]
+[ext_resource type="PackedScene" uid="uid://fiul51tsyoop" path="res://addons/godot-xr-tools/functions/function_teleport.tscn" id="4_stojs"]
 [ext_resource type="PackedScene" uid="uid://c7hs8rvradogk" path="res://assets/placeholder_stl_1.blend" id="5_xgw0n"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ve7jj"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_6kl0x"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_hq4d6"]
+size = Vector3(1.09109, 1, 4.02959)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vfbyi"]
-albedo_color = Color(0.603922, 0.12549, 0.172549, 1)
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3v60f"]
 
-[node name="Node3D" type="Node3D"]
+[node name="root" type="Node3D"]
 script = ExtResource("1_4r32o")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(3.38704, 0, 0, 0, 1, 0, 0, 0, 4.99514, 0, 0, 0)
+[node name="ground" type="MeshInstance3D" parent="."]
+transform = Transform3D(3.38704, 0, 0, 0, 1, 0, 0, 0, 4.99514, 0.18434, 0, 0)
 mesh = SubResource("PlaneMesh_ve7jj")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ground"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground/StaticBody3D"]
+transform = Transform3D(5, 0, 0, 0, 1.741, 0, 0, 0, 1.741, 0, -0.491779, 0)
+shape = SubResource("BoxShape3D_hq4d6")
 
 [node name="XROrigin3D" type="XROrigin3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.145661, 1.76232, 3.86172)
 
+[node name="PlayerBody" parent="XROrigin3D" instance=ExtResource("2_2jgqs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.34925, 1.16373, 3.94236)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/PlayerBody"]
+shape = SubResource("CapsuleShape3D_3v60f")
+
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
+
+[node name="LeftHand" type="XRController3D" parent="XROrigin3D"]
+tracker = &"left_hand"
+
+[node name="Hand_Glove_low_L" parent="XROrigin3D/LeftHand" instance=ExtResource("2_sqcrk")]
+
+[node name="FunctionTeleport" parent="XROrigin3D/LeftHand" instance=ExtResource("4_stojs")]
+
+[node name="MovementTurn" parent="XROrigin3D/LeftHand" instance=ExtResource("4_5xh84")]
+turn_mode = 1
+
+[node name="RightHand" type="XRController3D" parent="XROrigin3D"]
+tracker = &"right_hand"
+
+[node name="Hand_Glove_low_R" parent="XROrigin3D/RightHand" instance=ExtResource("3_c13k1")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.816138, 0.577858, 0, -0.577858, 0.816138, 0, 4.18459, 0)
 shadow_transmittance_bias = -6.738
 shadow_blur = 2.714
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0101678, 1.01615, 0.00423288)
-mesh = SubResource("CapsuleMesh_6kl0x")
-surface_material_override/0 = SubResource("StandardMaterial3D_vfbyi")
-
 [node name="jard1" parent="." instance=ExtResource("2_5b3yq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 
 [node name="placeholder_stl" parent="." instance=ExtResource("3_8sjfy")]
-transform = Transform3D(0.0155677, 0, 0.999879, 0, 1, 0, -0.999879, 0, 0.0155677, -6.7155, -0.308619, -0.662941)
+transform = Transform3D(0.892963, 0, 0.45013, 0, 1, 0, -0.45013, 0, 0.892963, -1.89609, -0.308619, 0.0640779)
 
 [node name="rendu_first_scene" parent="." instance=ExtResource("4_f1xtl")]
-transform = Transform3D(-0.999966, 0, -0.0082727, 0, 1, 0, 0.0082727, 0, -0.999966, 7.36102, 0, -0.439295)
+transform = Transform3D(-0.999966, 0, -0.0082727, 0, 1, 0, 0.0082727, 0, -0.999966, 5.86179, 0, 1.76264)
 
 [node name="placeholder_stl_1" parent="." instance=ExtResource("5_xgw0n")]
-transform = Transform3D(-0.0746654, 0, 0.997209, 0, 1, 0, -0.997209, 0, -0.0746654, -0.955569, -2.38419e-07, 10.1732)
+transform = Transform3D(-0.137808, 0, -0.990459, 0, 1, 0, 0.990459, 0, -0.137808, -0.955569, 0.105074, 8.58961)

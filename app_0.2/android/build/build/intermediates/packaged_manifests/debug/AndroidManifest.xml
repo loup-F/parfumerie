@@ -7,7 +7,7 @@
 
     <uses-sdk
         android:minSdkVersion="24"
-        android:targetSdkVersion="32" />
+        android:targetSdkVersion="33" />
 
     <supports-screens
         android:largeScreens="true"
@@ -26,8 +26,12 @@
         android:required="false" />
     <uses-feature
         android:name="android.hardware.vulkan.level"
-        android:required="true"
+        android:required="false"
         android:version="1" />
+    <uses-feature
+        android:name="android.hardware.vulkan.version"
+        android:required="true"
+        android:version="0x400003" />
 
     <application
         android:allowBackup="false"
@@ -53,7 +57,7 @@
             android:excludeFromRecents="false"
             android:exported="true"
             android:label="@string/godot_project_name_string"
-            android:launchMode="singleTask"
+            android:launchMode="singleInstance"
             android:resizeableActivity="true"
             android:screenOrientation="landscape"
             android:theme="@style/GodotAppSplashTheme" >
@@ -81,10 +85,10 @@
         <!-- Records the version of the Godot editor used for building -->
         <meta-data
             android:name="org.godotengine.editor.version"
-            android:value="4.0.stable" /> <!-- Records the version of the Godot library -->
+            android:value="4.1.stable" /> <!-- Records the version of the Godot library -->
         <meta-data
             android:name="org.godotengine.library.version"
-            android:value="4.0.0.stable" />
+            android:value="4.1.0.stable" />
 
         <service android:name="org.godotengine.godot.GodotDownloaderService" />
 
