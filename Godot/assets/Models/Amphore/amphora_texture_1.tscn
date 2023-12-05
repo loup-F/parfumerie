@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://j1hy66ntmv01"]
-
-[ext_resource type="PackedScene" uid="uid://cev1sumxfxix4" path="res://assets/Models/Amphore/amphora.tscn" id="1_n8hnu"]
-[ext_resource type="Material" uid="uid://n2smqs6xad18" path="res://materials/only_outline.tres" id="2_mb0tw"]
-
-[node name="amphora" instance=ExtResource("1_n8hnu")]
-
-[node name="Lathe" parent="." index="0"]
-surface_material_override/0 = ExtResource("2_mb0tw")

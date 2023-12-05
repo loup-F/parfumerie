@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://drq7lm2jpa7o0"]
-
-[ext_resource type="PackedScene" uid="uid://bm41n3xi24whq" path="res://assets/Models/jarre/jard1.fbx" id="1_ma8ro"]
-[ext_resource type="Material" uid="uid://diuq47ts5v3ce" path="res://materials/semitoon.tres" id="2_k65m3"]
-
-[node name="jard1" instance=ExtResource("1_ma8ro")]
-
-[node name="Jard_1" parent="RootNode" index="0"]
-surface_material_override/0 = ExtResource("2_k65m3")
