@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://capnp38k64lvo"]
+
+[ext_resource type="PackedScene" uid="uid://dvkrtbqgth3ww" path="res://assets/placeholder_stl.blend" id="1_l0fy2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ni1p6"]
+
+[node name="placeholder_stl" instance=ExtResource("1_l0fy2")]
+
+[node name="Maie de presse" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ni1p6")

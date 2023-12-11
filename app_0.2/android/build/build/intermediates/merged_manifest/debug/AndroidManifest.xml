@@ -18,12 +18,6 @@
     <uses-feature
         android:glEsVersion="0x00030000"
         android:required="true" />
-
-    <uses-permission android:name="com.oculus.permission.HAND_TRACKING" />
-
-    <uses-feature
-        android:name="oculus.software.handtracking"
-        android:required="false" />
     <uses-feature
         android:name="android.hardware.vulkan.level"
         android:required="false"
@@ -32,6 +26,10 @@
         android:name="android.hardware.vulkan.version"
         android:required="true"
         android:version="0x400003" />
+    <uses-feature
+        android:name="android.hardware.vr.headtracking"
+        android:required="true"
+        android:version="1" />
 
     <application
         android:allowBackup="false"
@@ -44,13 +42,6 @@
         android:isGame="true"
         android:label="@string/godot_project_name_string"
         android:requestLegacyExternalStorage="false" >
-        <meta-data
-            android:name="com.oculus.handtracking.frequency"
-            android:value="LOW" />
-        <meta-data
-            android:name="com.oculus.handtracking.version"
-            android:value="V2.0" />
-
         <activity
             android:name="com.godot.game.GodotApp"
             android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize|density|keyboard|navigation|screenLayout|uiMode"
@@ -106,13 +97,17 @@
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/godot_provider_paths" />
-        </provider> <!-- Godot plugin registration -->
+        </provider>
+
         <meta-data
-            android:name="org.godotengine.plugin.v1.GodotOpenXRPico"
-            android:value="org.godotengine.openxrloaders.pico.GodotOpenXRPico" /> <!-- Enable VR mode on Pico headsets -->
+            android:name="org.godotengine.plugin.v1.GodotOpenXRMeta"
+            android:value="org.godotengine.openxrloaders.meta.GodotOpenXRMeta" />
         <meta-data
-            android:name="pvr.app.type"
-            android:value="vr" />
+            android:name="com.oculus.supportedDevices"
+            android:value="quest|quest2|questpro" />
+        <meta-data
+            android:name="com.oculus.vr.focusaware"
+            android:value="true" />
     </application>
 
 </manifest>

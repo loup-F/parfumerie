@@ -25,7 +25,6 @@ const _DefaultMaterial := preload("res://addons/godot-xr-tools/materials/capsule
 
 ## Teleport button action
 @export var teleport_button_action : String = "trigger_click"
-
 ## Teleport rotation action
 @export var rotation_action : String = "primary"
 
