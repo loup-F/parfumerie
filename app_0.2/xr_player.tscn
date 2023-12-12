@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=3 uid="uid://cylsy0cyrtguj"]
+
+[ext_resource type="Script" path="res://debug.gd" id="1_kjxy5"]
+[ext_resource type="PackedScene" uid="uid://bnx4hithcij6y" path="res://addons/godot-xr-tools/hands/model/Hand_Glove_low_L.gltf" id="2_qtfoe"]
+[ext_resource type="PackedScene" uid="uid://fiul51tsyoop" path="res://addons/godot-xr-tools/functions/function_teleport.tscn" id="3_awelg"]
+[ext_resource type="PackedScene" uid="uid://csgsp0wuw8ucy" path="res://addons/godot-xr-tools/hands/model/Hand_Glove_low_R.gltf" id="4_dumpn"]
+[ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="5_ofi1t"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/player/player_body.gd" id="6_ddmd8"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oeuka"]
+radius = 0.2
+height = 1.4
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_j5q7b"]
+radius = 0.2
+
+[node name="XROrigin" type="XROrigin3D"]
+transform = Transform3D(-0.999007, 0, -0.0445608, 0, 1, 0, 0.0445608, 0, -0.999007, -0.145661, 1.90344, -3.02968)
+script = ExtResource("1_kjxy5")
+
+[node name="XRCamera3D" type="XRCamera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
+
+[node name="LeftHand" type="XRController3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.51683, -0.636572, 0)
+tracker = &"left_hand"
+
+[node name="Hand_Glove_low_L" parent="LeftHand" instance=ExtResource("2_qtfoe")]
+
+[node name="FunctionTeleport" parent="LeftHand" instance=ExtResource("3_awelg")]
+player_material = null
+
+[node name="RightHand" type="XRController3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.524064, -0.555925, 0)
+tracker = &"right_hand"
+
+[node name="Hand_Glove_low_R" parent="RightHand" instance=ExtResource("4_dumpn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0624049, 0)
+
+[node name="MovementTurn" parent="RightHand" instance=ExtResource("5_ofi1t")]
+step_turn_angle = 45.0
+
+[node name="XRToolsPlayerBody" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.145661, 2.95564, -8.42968)
+top_level = true
+collision_layer = 524288
+collision_mask = 255
+script = ExtResource("6_ddmd8")
+player_calibrate_height = false
+
+[node name="_CollisionShape3D_21329" type="CollisionShape3D" parent="XRToolsPlayerBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("CapsuleShape3D_oeuka")
+
+[node name="_ShapeCast3D_21330" type="ShapeCast3D" parent="XRToolsPlayerBody"]
+enabled = false
+shape = SubResource("SphereShape3D_j5q7b")
+margin = 0.01
+max_results = 1
+collision_mask = 255

@@ -1,17 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://b2eh3l1tileed"]
+[gd_scene load_steps=12 format=3 uid="uid://b2eh3l1tileed"]
 
 [ext_resource type="Script" path="res://VR bits/VR.gd" id="1_4r32o"]
 [ext_resource type="PackedScene" uid="uid://byek35q5qua82" path="res://assets/jard_1.tscn" id="2_5b3yq"]
-[ext_resource type="PackedScene" uid="uid://bnx4hithcij6y" path="res://addons/godot-xr-tools/hands/model/Hand_Glove_low_L.gltf" id="2_sqcrk"]
+[ext_resource type="PackedScene" uid="uid://cylsy0cyrtguj" path="res://xr_player.tscn" id="2_tweww"]
 [ext_resource type="Texture2D" uid="uid://cgmc0ykuixgd3" path="res://assets/textures/default.png" id="2_ud7st"]
-[ext_resource type="PackedScene" uid="uid://csgsp0wuw8ucy" path="res://addons/godot-xr-tools/hands/model/Hand_Glove_low_R.gltf" id="3_c13k1"]
-[ext_resource type="Script" path="res://debug.gd" id="3_lbdsq"]
-[ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="4_5xh84"]
 [ext_resource type="PackedScene" uid="uid://wtedo34v0xc6" path="res://assets/rendu_first_scene.blend" id="4_f1xtl"]
-[ext_resource type="PackedScene" uid="uid://fiul51tsyoop" path="res://addons/godot-xr-tools/functions/function_teleport.tscn" id="4_stojs"]
-[ext_resource type="Script" path="res://addons/godot-xr-tools/player/player_body.gd" id="8_qf1s8"]
-[ext_resource type="PackedScene" uid="uid://dvkrtbqgth3ww" path="res://assets/placeholder_stl.blend" id="11_ucmkm"]
-[ext_resource type="PackedScene" uid="uid://c7hs8rvradogk" path="res://assets/placeholder_stl_1.blend" id="12_smx1f"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_oph55"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -44,42 +37,11 @@ script = ExtResource("1_4r32o")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_xpt2o")
 
-[node name="XROrigin" type="XROrigin3D" parent="."]
-transform = Transform3D(-0.999007, 0, -0.0445608, 0, 1, 0, 0.0445608, 0, -0.999007, -0.145661, 1.90344, -3.02968)
-script = ExtResource("3_lbdsq")
-
-[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
-
-[node name="LeftHand" type="XRController3D" parent="XROrigin"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.51683, -0.636572, 0)
-tracker = &"left_hand"
-
-[node name="Hand_Glove_low_L" parent="XROrigin/LeftHand" instance=ExtResource("2_sqcrk")]
-
-[node name="FunctionTeleport" parent="XROrigin/LeftHand" instance=ExtResource("4_stojs")]
-player_material = null
-
-[node name="RightHand" type="XRController3D" parent="XROrigin"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.524064, -0.555925, 0)
-tracker = &"right_hand"
-
-[node name="Hand_Glove_low_R" parent="XROrigin/RightHand" instance=ExtResource("3_c13k1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0624049, 0)
-
-[node name="MovementTurn" parent="XROrigin/RightHand" instance=ExtResource("4_5xh84")]
-step_turn_angle = 45.0
-
-[node name="XRToolsPlayerBody" type="CharacterBody3D" parent="XROrigin"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.145661, 2.95564, -8.42968)
-top_level = true
-collision_layer = 524288
-collision_mask = 255
-script = ExtResource("8_qf1s8")
-player_calibrate_height = false
+[node name="XROrigin" parent="." instance=ExtResource("2_tweww")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.816138, 0.577858, 0, -0.577858, 0.816138, 29.4, 4.18459, 17.6)
+shadow_enabled = true
 
 [node name="jard1" parent="." instance=ExtResource("2_5b3yq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
@@ -98,9 +60,3 @@ shape = SubResource("BoxShape3D_isb6o")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.98623, 0, 5.30591)
 mesh = SubResource("PlaneMesh_551me")
 surface_material_override/0 = SubResource("StandardMaterial3D_7biok")
-
-[node name="placeholder_stl" parent="." instance=ExtResource("11_ucmkm")]
-transform = Transform3D(0.272945, 0, 0.927567, 0, 0.966891, 0, -0.927567, 0, 0.272945, -0.336431, -0.0073832, 6.12994)
-
-[node name="placeholder_stl_1" parent="." instance=ExtResource("12_smx1f")]
-transform = Transform3D(0.310302, 0, -0.644758, 0, 0.665924, 0, 0.690519, 0, 0.289739, 0, 0.1, -7.92653)
