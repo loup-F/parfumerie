@@ -60,3 +60,13 @@ shape = SubResource("BoxShape3D_isb6o")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.98623, 0, 5.30591)
 mesh = SubResource("PlaneMesh_551me")
 surface_material_override/0 = SubResource("StandardMaterial3D_7biok")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(0.315831, 0, -0.948815, 0, 1, 0, 0.948815, 0, 0.315831, 1.87684, 2.39182, -1.18917)
+text = "Feur
+"
+
+[node name="Label3D2" type="Label3D" parent="."]
+transform = Transform3D(-0.562473, 0, -0.826816, 0, 1, 0, 0.826816, 0, -0.562473, 1.87684, 2.39182, 3.9314)
+text = "Feur
+"

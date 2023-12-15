@@ -1,8 +1,9 @@
-[gd_scene load_steps=178 format=3 uid="uid://sd6dfvn86iuo"]
+[gd_scene load_steps=179 format=3 uid="uid://sd6dfvn86iuo"]
 
 [ext_resource type="Script" path="res://addons/cyclops_level_builder/nodes/cyclops_blocks.gd" id="1_o5a8q"]
 [ext_resource type="Script" path="res://addons/cyclops_level_builder/nodes/cyclops_convex_block.gd" id="2_65uhu"]
 [ext_resource type="Script" path="res://addons/cyclops_level_builder/resources/convex_block_data.gd" id="3_8jmvs"]
+[ext_resource type="PackedScene" uid="uid://cylsy0cyrtguj" path="res://xr_player.tscn" id="4_2vsur"]
 
 [sub_resource type="Resource" id="Resource_l2k3s"]
 script = ExtResource("3_8jmvs")
@@ -4184,3 +4185,6 @@ block_data = SubResource("Resource_l2okn")
 [node name="Block_106" type="Node" parent="CyclopsBlocks"]
 script = ExtResource("2_65uhu")
 block_data = SubResource("Resource_04jl8")
+
+[node name="XROrigin" parent="." instance=ExtResource("4_2vsur")]
+transform = Transform3D(0.0158993, 0, -0.999874, 0, 1, 0, 0.999874, 0, 0.0158993, 56.8543, 1.90344, -3.02968)
