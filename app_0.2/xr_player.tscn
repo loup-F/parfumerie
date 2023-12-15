@@ -34,6 +34,7 @@ debug_shape_custom_color = Color(0.945098, 0.72549, 0, 1)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="XRCamera3D"]
 transform = Transform3D(0.629411, 0, 0, 0, -2.75124e-08, -0.629411, 0, 0.629411, -2.75124e-08, -0.00567156, -0.0153317, -5.029)
+visible = false
 mesh = SubResource("TorusMesh_6ypfe")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="XRCamera3D/MeshInstance3D"]
@@ -51,6 +52,8 @@ tracker = &"left_hand"
 [node name="Hand_Glove_low_L" parent="LeftHand" instance=ExtResource("2_qtfoe")]
 
 [node name="FunctionTeleport" parent="LeftHand" instance=ExtResource("3_awelg")]
+player_height = 0.5
+player_radius = 0.3
 player_material = null
 
 [node name="RightHand" type="XRController3D" parent="."]

@@ -16,4 +16,4 @@ func _on_button_2_pressed():
 
 
 func _on_button_pressed():
-	self.hide()
+	self.hide

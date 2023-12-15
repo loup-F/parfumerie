@@ -23,7 +23,7 @@
 
     <uses-feature
         android:name="oculus.software.handtracking"
-        android:required="true" />
+        android:required="false" />
     <uses-feature
         android:name="android.hardware.vulkan.level"
         android:required="false"
@@ -46,7 +46,7 @@
         android:requestLegacyExternalStorage="false" >
         <meta-data
             android:name="com.oculus.handtracking.frequency"
-            android:value="HIGH" />
+            android:value="LOW" />
         <meta-data
             android:name="com.oculus.handtracking.version"
             android:value="V2.0" />

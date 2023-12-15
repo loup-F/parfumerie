@@ -1,6 +1,7 @@
-[gd_scene load_steps=179 format=3 uid="uid://sd6dfvn86iuo"]
+[gd_scene load_steps=180 format=3 uid="uid://sd6dfvn86iuo"]
 
 [ext_resource type="Script" path="res://addons/cyclops_level_builder/nodes/cyclops_blocks.gd" id="1_o5a8q"]
+[ext_resource type="Environment" uid="uid://c1p41k4sb4jm" path="res://assets/vaporwenv.tres" id="1_tnydv"]
 [ext_resource type="Script" path="res://addons/cyclops_level_builder/nodes/cyclops_convex_block.gd" id="2_65uhu"]
 [ext_resource type="Script" path="res://addons/cyclops_level_builder/resources/convex_block_data.gd" id="3_8jmvs"]
 [ext_resource type="PackedScene" uid="uid://cylsy0cyrtguj" path="res://xr_player.tscn" id="4_2vsur"]
@@ -3486,6 +3487,13 @@ active_face = -1
 face_ids = PackedInt32Array(0, 1, 2, 3, 4, 5)
 
 [node name="Propositions LD" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("1_tnydv")
 
 [node name="CyclopsBlocks" type="Node3D" parent="."]
 script = ExtResource("1_o5a8q")

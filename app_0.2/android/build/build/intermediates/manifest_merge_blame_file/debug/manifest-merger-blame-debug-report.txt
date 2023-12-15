@@ -32,11 +32,11 @@
 22-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:11:22-72
 23
 24    <uses-feature
-24-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:12:5-110
+24-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:12:5-111
 25        android:name="oculus.software.handtracking"
 25-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:12:40-83
-26        android:required="true" />
-26-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:12:84-107
+26        android:required="false" />
+26-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:12:84-108
 27    <uses-feature
 27-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:13:5-132
 28        android:name="android.hardware.vulkan.level"
@@ -75,11 +75,11 @@
 46        android:requestLegacyExternalStorage="false" >
 46-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:26:9-53
 47        <meta-data
-47-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:25:9-113
+47-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:25:9-112
 48            android:name="com.oculus.handtracking.frequency"
 48-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:25:41-89
-49            android:value="HIGH" />
-49-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:25:90-110
+49            android:value="LOW" />
+49-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:25:90-109
 50        <meta-data
 50-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:26:9-111
 51            android:name="com.oculus.handtracking.version"
