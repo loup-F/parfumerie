@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://VR bits/VR.gd" id="1_4r32o"]
 [ext_resource type="PackedScene" uid="uid://byek35q5qua82" path="res://assets/jard_1.tscn" id="2_5b3yq"]
-[ext_resource type="LightmapGIData" path="res://main.lmbake" id="2_kydyf"]
+[ext_resource type="LightmapGIData" uid="uid://cq1rk21sf52pu" path="res://main.lmbake" id="2_kydyf"]
 [ext_resource type="Environment" uid="uid://c1p41k4sb4jm" path="res://assets/vaporwenv.tres" id="2_n2g0o"]
 [ext_resource type="PackedScene" uid="uid://cylsy0cyrtguj" path="res://xr_player.tscn" id="2_tweww"]
 [ext_resource type="Texture2D" uid="uid://cgmc0ykuixgd3" path="res://assets/textures/default.png" id="2_ud7st"]
@@ -23,12 +23,12 @@ size = Vector2(30, 30)
 albedo_texture = ExtResource("2_ud7st")
 uv1_triplanar = true
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_y3je3"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_bjcr1"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mpkkw"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_y3je3")
+albedo_texture = SubResource("ViewportTexture_bjcr1")
 
 [sub_resource type="QuadMesh" id="QuadMesh_5jwd3"]
 size = Vector2(1.4, 0.7)
@@ -88,13 +88,15 @@ transform = Transform3D(-0.562473, 0, -0.826816, 0, 1, 0, 0.826816, 0, -0.562473
 text = "Feur
 "
 
+[node name="SubViewport" type="SubViewport" parent="."]
+size = Vector2i(512, 206)
+render_target_clear_mode = 2
+render_target_update_mode = 1
+
+[node name="Control" parent="SubViewport" instance=ExtResource("10_stmrw")]
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.879516, 0, -0.47587, 0, 1, 0, 0.47587, 0, 0.879516, 1.96595, 1.38422, -0.856084)
 material_override = SubResource("StandardMaterial3D_mpkkw")
 mesh = SubResource("QuadMesh_5jwd3")
 skeleton = NodePath("../SubViewport")
-
-[node name="SubViewport" type="SubViewport" parent="."]
-size = Vector2i(512, 206)
-
-[node name="Control" parent="SubViewport" instance=ExtResource("10_stmrw")]

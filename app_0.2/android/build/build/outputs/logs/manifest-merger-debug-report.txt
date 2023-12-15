@@ -211,11 +211,11 @@ ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src
 	android:name
 		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:11:22-72
 uses-feature#oculus.software.handtracking
-ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:12:5-111
+ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:12:5-110
 	tools:node
 		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:12:19-39
 	android:required
-		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:12:84-108
+		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:12:84-107
 	android:name
 		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:12:40-83
 uses-feature#android.hardware.vulkan.level
@@ -239,11 +239,11 @@ ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src
 	android:name
 		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:14:40-86
 meta-data#com.oculus.handtracking.frequency
-ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:25:9-112
+ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:25:9-113
 	tools:node
 		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:25:20-40
 	android:value
-		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:25:90-109
+		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:25:90-110
 	android:name
 		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:25:41-89
 meta-data#com.oculus.handtracking.version
