@@ -141,3 +141,4 @@ func intersect_ray_closest_filtered(origin:Vector3, dir:Vector3, filter:Callable
 					best_result = result			
 		
 	return best_result
+

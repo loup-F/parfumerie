@@ -1,5 +1,6 @@
-[gd_scene load_steps=18 format=3 uid="uid://b2eh3l1tileed"]
+[gd_scene load_steps=19 format=3 uid="uid://b2eh3l1tileed"]
 
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_4sesh"]
 [ext_resource type="PackedScene" uid="uid://byek35q5qua82" path="res://assets/models/jarre/jard_1.tscn" id="2_5b3yq"]
 [ext_resource type="Environment" uid="uid://c1p41k4sb4jm" path="res://assets/ressources/vaporwenv.tres" id="2_n2g0o"]
 [ext_resource type="Texture2D" uid="uid://cgmc0ykuixgd3" path="res://assets/textures/default.png" id="2_ud7st"]
@@ -7,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://dvkrtbqgth3ww" path="res://assets/models/placeholder_stl.blend" id="6_n2gnc"]
 [ext_resource type="PackedScene" uid="uid://c7hs8rvradogk" path="res://assets/models/placeholder_stl_1.blend" id="7_iql1m"]
 [ext_resource type="Script" path="res://scripts/label3D.gd" id="7_urr66"]
-[ext_resource type="Script" path="res://scripts/floating_ui.gd" id="9_pdcn5"]
 [ext_resource type="PackedScene" uid="uid://dgb0slsva4qn6" path="res://scenes/test_ui.tscn" id="10_stmrw"]
+[ext_resource type="Script" path="res://scripts/Floating_ui.gd" id="10_wirhv"]
 [ext_resource type="PackedScene" uid="uid://wpk68xln3ml1" path="res://scenes/players/fps_player.tscn" id="11_drmci"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_isb6o"]
@@ -40,6 +41,7 @@ disable_receive_shadows = true
 size = Vector2(1.4, 0.7)
 
 [node name="root" type="Node3D"]
+script = ExtResource("1_4sesh")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.816138, 0.577858, 0, -0.577858, 0.816138, 29.4, 4.18459, -40.5858)
@@ -51,7 +53,7 @@ environment = ExtResource("2_n2g0o")
 [node name="Node3D" type="Node3D" parent="."]
 
 [node name="rendu_first_scene" parent="Node3D" instance=ExtResource("4_f1xtl")]
-transform = Transform3D(-0.999966, 0, -0.0082727, 0, 1, 0, 0.0082727, 0, -0.999966, 5.86179, 0.0237264, 1.76264)
+transform = Transform3D(-0.999966, 0, -0.0082727, 0, 1, 0, 0.0082727, 0, -0.999966, 5.86179, 0.311315, 1.76264)
 
 [node name="jard1" parent="Node3D" instance=ExtResource("2_5b3yq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
@@ -96,7 +98,7 @@ axis_lock_linear_y = true
 axis_lock_linear_z = true
 axis_lock_angular_x = true
 axis_lock_angular_z = true
-script = ExtResource("9_pdcn5")
+script = ExtResource("10_wirhv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="3D_UI"]
 transform = Transform3D(0.999999, 0, 2.68221e-07, 0, 1, 0, -2.68221e-07, 0, 0.999999, 0, 0.00544369, 0)

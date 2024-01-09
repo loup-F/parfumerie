@@ -27,7 +27,7 @@ func _input(event):
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _ready():
-	if get_node("/root/main/Xr_player"):
+	if has_node("/root/main/Xr_player"):
 		self.remove_from_group("player")
 		print(get_tree().get_node_from_group("player"))
 		self.queue_free()

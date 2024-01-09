@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://cy1oqnuchs6me"]
+
+[ext_resource type="Script" path="res://scripts/quidam.gd" id="1_47im1"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qa8pm"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_c346o"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xqh5r"]
+
+[node name="Quidam" type="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.7829, 2.06801, 0)
+script = ExtResource("1_47im1")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_qa8pm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_c346o")
+surface_material_override/0 = SubResource("StandardMaterial3D_xqh5r")

@@ -19,16 +19,19 @@ func _process(_delta):
 	
 	# always look in the direction of the player (rotating only on the y axis)
 	var target_pos = player.position*Vector3(1,0,1) + self.position*Vector3(0,1,0) 
-	look_at(target_pos, Vector3(0,1,0), true)
+	if target_pos != self.position:
+		look_at(target_pos, Vector3(0,1,0), true)
 	
-	print(distance_to( player.position))
 
 func set_looked_at(status : bool):
 	looked_at = status
 	if looked_at and control.filled == false : 
-		label.change_text( " :) ")
+		label.change_text( " Se téléporter ")
 	else :
-		label.change_text( " Look at me ! ")
+		label.change_text( " Téléportation... ")
 
 func _on_progress_filled():
 	label.change_text(filled_text)
+	var tp_target = self.position*Vector3(1,0,1) + player.position*Vector3.UP
+	var tween = get_tree().create_tween()
+	tween.tween_property(player, "position", tp_target, 0.5).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC)
