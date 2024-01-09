@@ -27,9 +27,9 @@ MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\Loup\.gradle\
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] C:\Users\Loup\.gradle\caches\transforms-3\2b996d28c48d5c1eb8d894bdf0acc1d7\transformed\lifecycle-livedata-core-2.3.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\Loup\.gradle\caches\transforms-3\64013006b098a13d4a16ea3f501af751\transformed\core-runtime-2.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\Loup\.gradle\caches\transforms-3\10f722f628eb19ba09dfc654025baab7\transformed\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:17:1-24:12
-INJECTED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:2:1-45:12
-INJECTED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:2:1-45:12
-INJECTED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:2:1-45:12
+INJECTED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:2:1-46:12
+INJECTED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:2:1-46:12
+INJECTED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:2:1-46:12
 	package
 		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:4:5-29
 		INJECTED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml
@@ -103,7 +103,7 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Lo
 		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:21:9-36
 		REJECTED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:21:9-36
 	tools:replace
-		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:22:9-143
+		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:23:9-143
 	android:isGame
 		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:24:9-30
 		REJECTED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:24:9-30
@@ -116,7 +116,7 @@ MERGED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\An
 MERGED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:34:9-50:20
 REJECTED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:46:13-49:29
 	tools:node
-		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:27:154-186
+		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:28:154-186
 	android:screenOrientation
 		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:41:13-50
 		REJECTED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:41:13-50
@@ -145,7 +145,7 @@ REJECTED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\
 		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:37:13-55
 		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:37:13-55
 	tools:replace
-		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:27:58-153
+		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:28:58-153
 	android:name
 		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:35:13-37
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
@@ -206,68 +206,72 @@ INJECTED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\
 	android:minSdkVersion
 		INJECTED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml
 		INJECTED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:11:5-67
+	android:name
+		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:11:22-64
 uses-permission#com.oculus.permission.HAND_TRACKING
-ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:11:5-75
+ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:12:5-75
 	android:name
-		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:11:22-72
+		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:12:22-72
 uses-feature#oculus.software.handtracking
-ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:12:5-110
-	tools:node
-		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:12:19-39
-	android:required
-		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:12:84-107
-	android:name
-		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:12:40-83
-uses-feature#android.hardware.vulkan.level
-ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:13:5-132
-	android:version
-		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:13:110-129
+ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:13:5-111
 	tools:node
 		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:13:19-39
 	android:required
-		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:13:85-109
+		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:13:84-108
 	android:name
-		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:13:40-84
-uses-feature#android.hardware.vulkan.version
-ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:14:5-140
+		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:13:40-83
+uses-feature#android.hardware.vulkan.level
+ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:14:5-132
 	android:version
-		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:14:111-137
+		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:14:110-129
 	tools:node
 		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:14:19-39
 	android:required
-		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:14:87-110
+		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:14:85-109
 	android:name
-		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:14:40-86
-meta-data#com.oculus.handtracking.frequency
-ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:25:9-113
+		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:14:40-84
+uses-feature#android.hardware.vulkan.version
+ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:15:5-140
+	android:version
+		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:15:111-137
 	tools:node
-		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:25:20-40
-	android:value
-		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:25:90-110
+		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:15:19-39
+	android:required
+		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:15:87-110
 	android:name
-		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:25:41-89
-meta-data#com.oculus.handtracking.version
-ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:26:9-111
+		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:15:40-86
+meta-data#com.oculus.handtracking.frequency
+ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:26:9-113
 	tools:node
 		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:26:20-40
 	android:value
-		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:26:88-108
+		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:26:90-110
 	android:name
-		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:26:41-87
+		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:26:41-89
+meta-data#com.oculus.handtracking.version
+ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:27:9-111
+	tools:node
+		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:27:20-40
+	android:value
+		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:27:88-108
+	android:name
+		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:27:41-87
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER+category:name:com.htc.intent.category.VRAPP+category:name:com.oculus.intent.category.VR+category:name:org.khronos.openxr.intent.category.IMMERSIVE_HMD
-ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:28:13-42:29
+ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:29:13-43:29
 category#com.oculus.intent.category.VR
-ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:34:17-74
+ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:35:17-74
 	android:name
-		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:34:27-71
+		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:35:27-71
 category#org.khronos.openxr.intent.category.IMMERSIVE_HMD
-ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:38:17-93
+ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:39:17-93
 	android:name
-		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:38:27-90
+		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:39:27-90
 category#com.htc.intent.category.VRAPP
-ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:41:17-74
+ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:42:17-74
 	android:name
-		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:41:27-71
+		ADDED from C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:42:27-71
 meta-data#org.godotengine.library.version
 ADDED from [godot-lib.template_debug.aar] C:\Users\Loup\.gradle\caches\transforms-3\9c4b9aee53deacd0a8523d91f0bff37e\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:14:9-16:44
 	android:value

@@ -1,4 +1,4 @@
-#Fri Dec 15 17:25:39 CET 2023
+#Mon Jan 08 16:14:05 CET 2024
 base.2=C\:\\Users\\Loup\\Documents\\Loup\\dev\\parfumerie\\app_0.2\\android\\build\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\6\\classes.dex
 path.2=6/classes.dex
 base.1=C\:\\Users\\Loup\\Documents\\Loup\\dev\\parfumerie\\app_0.2\\android\\build\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex

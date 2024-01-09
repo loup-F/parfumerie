@@ -1,5 +1,5 @@
 [gd_scene load_steps=2 format=3 uid="uid://sgcqbqt3b57t"]
 
-[ext_resource type="PackedScene" uid="uid://cylsy0cyrtguj" path="res://xr_player.tscn" id="1_2oias"]
+[ext_resource type="PackedScene" uid="uid://cylsy0cyrtguj" path="res://scenes/players/xr_player.tscn" id="1_2oias"]
 
 [node name="XROrigin" instance=ExtResource("1_2oias")]

@@ -27,173 +27,176 @@
 20        android:required="true" />
 20-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:17:9-32
 21
-22    <uses-permission android:name="com.oculus.permission.HAND_TRACKING" />
-22-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:11:5-75
-22-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:11:22-72
-23
-24    <uses-feature
-24-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:12:5-110
-25        android:name="oculus.software.handtracking"
-25-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:12:40-83
-26        android:required="true" />
-26-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:12:84-107
-27    <uses-feature
-27-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:13:5-132
-28        android:name="android.hardware.vulkan.level"
-28-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:13:40-84
-29        android:required="false"
-29-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:13:85-109
-30        android:version="1" />
-30-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:13:110-129
-31    <uses-feature
-31-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:14:5-140
-32        android:name="android.hardware.vulkan.version"
-32-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:14:40-86
-33        android:required="true"
-33-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:14:87-110
-34        android:version="0x400003" />
-34-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:14:111-137
-35
-36    <application
-36-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:19:5-52:19
-37        android:allowBackup="false"
-37-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:21:9-36
-38        android:appCategory="game"
-38-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:23:9-35
-39        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-39-->[androidx.core:core:1.2.0] C:\Users\Loup\.gradle\caches\transforms-3\9bcb1a65f5938aad264f4d73e9a06f28\transformed\core-1.2.0\AndroidManifest.xml:24:18-86
-40        android:debuggable="true"
-41        android:extractNativeLibs="false"
-42        android:hasFragileUserData="false"
-42-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:25:9-43
-43        android:icon="@mipmap/icon"
-43-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:22:9-36
-44        android:isGame="true"
-44-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:24:9-30
-45        android:label="@string/godot_project_name_string"
-45-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:20:9-58
-46        android:requestLegacyExternalStorage="false" >
-46-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:26:9-53
-47        <meta-data
-47-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:25:9-113
-48            android:name="com.oculus.handtracking.frequency"
-48-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:25:41-89
-49            android:value="HIGH" />
-49-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:25:90-110
-50        <meta-data
-50-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:26:9-111
-51            android:name="com.oculus.handtracking.version"
-51-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:26:41-87
-52            android:value="V2.0" />
-52-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:26:88-108
-53
-54        <activity
-54-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:34:9-50:20
-55            android:name="com.godot.game.GodotApp"
-55-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:35:13-37
-56            android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize|density|keyboard|navigation|screenLayout|uiMode"
-56-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:42:13-141
-57            android:excludeFromRecents="false"
-57-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:39:13-47
-58            android:exported="true"
-58-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:40:13-36
-59            android:label="@string/godot_project_name_string"
-59-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:36:13-62
-60            android:launchMode="singleInstance"
-60-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:38:13-48
-61            android:resizeableActivity="true"
-61-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:43:13-47
-62            android:screenOrientation="landscape"
-62-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:41:13-50
-63            android:theme="@style/GodotAppSplashTheme" >
-63-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:37:13-55
-64            <intent-filter>
-64-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:28:13-42:29
-65                <action android:name="android.intent.action.MAIN" />
-65-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:47:17-69
-65-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:47:25-66
-66
-67                <category android:name="android.intent.category.LAUNCHER" />
-67-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:48:17-77
-67-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:48:27-74
-68
-69                <!--
-70                Enable access to OpenXR on Oculus mobile devices, no-op on other Android
-71                platforms.
-72                -->
-73                <category android:name="com.oculus.intent.category.VR" />
-73-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:34:17-74
-73-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:34:27-71
-74
-75                <!--
-76                OpenXR category tag to indicate the activity starts in an immersive OpenXR mode. 
-77                See https://registry.khronos.org/OpenXR/specs/1.0/html/xrspec.html#android-runtime-category.
-78                -->
-79                <category android:name="org.khronos.openxr.intent.category.IMMERSIVE_HMD" />
-79-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:38:17-93
-79-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:38:27-90
-80
-81                <!-- Enable VR access on HTC Vive Focus devices. -->
-82                <category android:name="com.htc.intent.category.VRAPP" />
-82-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:41:17-74
-82-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:41:27-71
-83            </intent-filter>
-84        </activity>
-85        <!-- Records the version of the Godot editor used for building -->
-86        <meta-data
-87            android:name="org.godotengine.editor.version"
-88            android:value="4.1.stable" /> <!-- Records the version of the Godot library -->
-89        <meta-data
-89-->[godot-lib.template_debug.aar] C:\Users\Loup\.gradle\caches\transforms-3\9c4b9aee53deacd0a8523d91f0bff37e\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:14:9-16:44
-90            android:name="org.godotengine.library.version"
-90-->[godot-lib.template_debug.aar] C:\Users\Loup\.gradle\caches\transforms-3\9c4b9aee53deacd0a8523d91f0bff37e\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:15:13-59
-91            android:value="4.1.0.stable" />
-91-->[godot-lib.template_debug.aar] C:\Users\Loup\.gradle\caches\transforms-3\9c4b9aee53deacd0a8523d91f0bff37e\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:16:13-41
-92
-93        <service android:name="org.godotengine.godot.GodotDownloaderService" />
-93-->[godot-lib.template_debug.aar] C:\Users\Loup\.gradle\caches\transforms-3\9c4b9aee53deacd0a8523d91f0bff37e\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:18:9-80
-93-->[godot-lib.template_debug.aar] C:\Users\Loup\.gradle\caches\transforms-3\9c4b9aee53deacd0a8523d91f0bff37e\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:18:18-77
-94
-95        <activity
-95-->[godot-lib.template_debug.aar] C:\Users\Loup\.gradle\caches\transforms-3\9c4b9aee53deacd0a8523d91f0bff37e\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:20:9-24:75
-96            android:name="org.godotengine.godot.utils.ProcessPhoenix"
-96-->[godot-lib.template_debug.aar] C:\Users\Loup\.gradle\caches\transforms-3\9c4b9aee53deacd0a8523d91f0bff37e\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:21:13-70
-97            android:exported="false"
-97-->[godot-lib.template_debug.aar] C:\Users\Loup\.gradle\caches\transforms-3\9c4b9aee53deacd0a8523d91f0bff37e\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:22:13-37
-98            android:process=":phoenix"
-98-->[godot-lib.template_debug.aar] C:\Users\Loup\.gradle\caches\transforms-3\9c4b9aee53deacd0a8523d91f0bff37e\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:23:13-39
-99            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-99-->[godot-lib.template_debug.aar] C:\Users\Loup\.gradle\caches\transforms-3\9c4b9aee53deacd0a8523d91f0bff37e\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:24:13-72
-100
-101        <provider
-101-->[godot-lib.template_debug.aar] C:\Users\Loup\.gradle\caches\transforms-3\9c4b9aee53deacd0a8523d91f0bff37e\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:26:9-34:20
-102            android:name="androidx.core.content.FileProvider"
-102-->[godot-lib.template_debug.aar] C:\Users\Loup\.gradle\caches\transforms-3\9c4b9aee53deacd0a8523d91f0bff37e\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:27:13-62
-103            android:authorities="org.godotengine.parfumerie.fileprovider"
-103-->[godot-lib.template_debug.aar] C:\Users\Loup\.gradle\caches\transforms-3\9c4b9aee53deacd0a8523d91f0bff37e\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:28:13-64
-104            android:exported="false"
-104-->[godot-lib.template_debug.aar] C:\Users\Loup\.gradle\caches\transforms-3\9c4b9aee53deacd0a8523d91f0bff37e\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:29:13-37
-105            android:grantUriPermissions="true" >
-105-->[godot-lib.template_debug.aar] C:\Users\Loup\.gradle\caches\transforms-3\9c4b9aee53deacd0a8523d91f0bff37e\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:30:13-47
-106            <meta-data
-106-->[godot-lib.template_debug.aar] C:\Users\Loup\.gradle\caches\transforms-3\9c4b9aee53deacd0a8523d91f0bff37e\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:31:13-33:64
-107                android:name="android.support.FILE_PROVIDER_PATHS"
-107-->[godot-lib.template_debug.aar] C:\Users\Loup\.gradle\caches\transforms-3\9c4b9aee53deacd0a8523d91f0bff37e\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:32:17-67
-108                android:resource="@xml/godot_provider_paths" />
-108-->[godot-lib.template_debug.aar] C:\Users\Loup\.gradle\caches\transforms-3\9c4b9aee53deacd0a8523d91f0bff37e\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:33:17-61
-109        </provider> <!-- Godot plugin registration -->
-110        <meta-data
-110-->[godotopenxrpico-release.aar] C:\Users\Loup\.gradle\caches\transforms-3\446f4c77e728ad414f402cbe0e5fd98c\transformed\jetified-godotopenxrpico-release\AndroidManifest.xml:12:9-14:82
-111            android:name="org.godotengine.plugin.v1.GodotOpenXRPico"
-111-->[godotopenxrpico-release.aar] C:\Users\Loup\.gradle\caches\transforms-3\446f4c77e728ad414f402cbe0e5fd98c\transformed\jetified-godotopenxrpico-release\AndroidManifest.xml:13:13-69
-112            android:value="org.godotengine.openxrloaders.pico.GodotOpenXRPico" /> <!-- Enable VR mode on Pico headsets -->
-112-->[godotopenxrpico-release.aar] C:\Users\Loup\.gradle\caches\transforms-3\446f4c77e728ad414f402cbe0e5fd98c\transformed\jetified-godotopenxrpico-release\AndroidManifest.xml:14:13-79
-113        <meta-data
-113-->[godotopenxrpico-release.aar] C:\Users\Loup\.gradle\caches\transforms-3\446f4c77e728ad414f402cbe0e5fd98c\transformed\jetified-godotopenxrpico-release\AndroidManifest.xml:17:9-19:34
-114            android:name="pvr.app.type"
-114-->[godotopenxrpico-release.aar] C:\Users\Loup\.gradle\caches\transforms-3\446f4c77e728ad414f402cbe0e5fd98c\transformed\jetified-godotopenxrpico-release\AndroidManifest.xml:18:13-40
-115            android:value="vr" />
-115-->[godotopenxrpico-release.aar] C:\Users\Loup\.gradle\caches\transforms-3\446f4c77e728ad414f402cbe0e5fd98c\transformed\jetified-godotopenxrpico-release\AndroidManifest.xml:19:13-31
-116    </application>
-117
-118</manifest>
+22    <uses-permission android:name="android.permission.INTERNET" />
+22-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:11:5-67
+22-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:11:22-64
+23    <uses-permission android:name="com.oculus.permission.HAND_TRACKING" />
+23-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:12:5-75
+23-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:12:22-72
+24
+25    <uses-feature
+25-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:13:5-111
+26        android:name="oculus.software.handtracking"
+26-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:13:40-83
+27        android:required="false" />
+27-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:13:84-108
+28    <uses-feature
+28-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:14:5-132
+29        android:name="android.hardware.vulkan.level"
+29-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:14:40-84
+30        android:required="false"
+30-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:14:85-109
+31        android:version="1" />
+31-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:14:110-129
+32    <uses-feature
+32-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:15:5-140
+33        android:name="android.hardware.vulkan.version"
+33-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:15:40-86
+34        android:required="true"
+34-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:15:87-110
+35        android:version="0x400003" />
+35-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:15:111-137
+36
+37    <application
+37-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:19:5-52:19
+38        android:allowBackup="false"
+38-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:21:9-36
+39        android:appCategory="game"
+39-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:23:9-35
+40        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+40-->[androidx.core:core:1.2.0] C:\Users\Loup\.gradle\caches\transforms-3\9bcb1a65f5938aad264f4d73e9a06f28\transformed\core-1.2.0\AndroidManifest.xml:24:18-86
+41        android:debuggable="true"
+42        android:extractNativeLibs="false"
+43        android:hasFragileUserData="false"
+43-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:25:9-43
+44        android:icon="@mipmap/icon"
+44-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:22:9-36
+45        android:isGame="true"
+45-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:24:9-30
+46        android:label="@string/godot_project_name_string"
+46-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:20:9-58
+47        android:requestLegacyExternalStorage="false" >
+47-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:26:9-53
+48        <meta-data
+48-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:26:9-113
+49            android:name="com.oculus.handtracking.frequency"
+49-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:26:41-89
+50            android:value="HIGH" />
+50-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:26:90-110
+51        <meta-data
+51-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:27:9-111
+52            android:name="com.oculus.handtracking.version"
+52-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:27:41-87
+53            android:value="V2.0" />
+53-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:27:88-108
+54
+55        <activity
+55-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:34:9-50:20
+56            android:name="com.godot.game.GodotApp"
+56-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:35:13-37
+57            android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize|density|keyboard|navigation|screenLayout|uiMode"
+57-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:42:13-141
+58            android:excludeFromRecents="false"
+58-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:39:13-47
+59            android:exported="true"
+59-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:40:13-36
+60            android:label="@string/godot_project_name_string"
+60-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:36:13-62
+61            android:launchMode="singleInstance"
+61-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:38:13-48
+62            android:resizeableActivity="true"
+62-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:43:13-47
+63            android:screenOrientation="landscape"
+63-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:41:13-50
+64            android:theme="@style/GodotAppSplashTheme" >
+64-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:37:13-55
+65            <intent-filter>
+65-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:29:13-43:29
+66                <action android:name="android.intent.action.MAIN" />
+66-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:47:17-69
+66-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:47:25-66
+67
+68                <category android:name="android.intent.category.LAUNCHER" />
+68-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:48:17-77
+68-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\AndroidManifest.xml:48:27-74
+69
+70                <!--
+71                Enable access to OpenXR on Oculus mobile devices, no-op on other Android
+72                platforms.
+73                -->
+74                <category android:name="com.oculus.intent.category.VR" />
+74-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:35:17-74
+74-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:35:27-71
+75
+76                <!--
+77                OpenXR category tag to indicate the activity starts in an immersive OpenXR mode. 
+78                See https://registry.khronos.org/OpenXR/specs/1.0/html/xrspec.html#android-runtime-category.
+79                -->
+80                <category android:name="org.khronos.openxr.intent.category.IMMERSIVE_HMD" />
+80-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:39:17-93
+80-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:39:27-90
+81
+82                <!-- Enable VR access on HTC Vive Focus devices. -->
+83                <category android:name="com.htc.intent.category.VRAPP" />
+83-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:42:17-74
+83-->C:\Users\Loup\Documents\Loup\dev\parfumerie\app_0.2\android\build\src\debug\AndroidManifest.xml:42:27-71
+84            </intent-filter>
+85        </activity>
+86        <!-- Records the version of the Godot editor used for building -->
+87        <meta-data
+88            android:name="org.godotengine.editor.version"
+89            android:value="4.1.stable" /> <!-- Records the version of the Godot library -->
+90        <meta-data
+90-->[godot-lib.template_debug.aar] C:\Users\Loup\.gradle\caches\transforms-3\9c4b9aee53deacd0a8523d91f0bff37e\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:14:9-16:44
+91            android:name="org.godotengine.library.version"
+91-->[godot-lib.template_debug.aar] C:\Users\Loup\.gradle\caches\transforms-3\9c4b9aee53deacd0a8523d91f0bff37e\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:15:13-59
+92            android:value="4.1.0.stable" />
+92-->[godot-lib.template_debug.aar] C:\Users\Loup\.gradle\caches\transforms-3\9c4b9aee53deacd0a8523d91f0bff37e\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:16:13-41
+93
+94        <service android:name="org.godotengine.godot.GodotDownloaderService" />
+94-->[godot-lib.template_debug.aar] C:\Users\Loup\.gradle\caches\transforms-3\9c4b9aee53deacd0a8523d91f0bff37e\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:18:9-80
+94-->[godot-lib.template_debug.aar] C:\Users\Loup\.gradle\caches\transforms-3\9c4b9aee53deacd0a8523d91f0bff37e\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:18:18-77
+95
+96        <activity
+96-->[godot-lib.template_debug.aar] C:\Users\Loup\.gradle\caches\transforms-3\9c4b9aee53deacd0a8523d91f0bff37e\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:20:9-24:75
+97            android:name="org.godotengine.godot.utils.ProcessPhoenix"
+97-->[godot-lib.template_debug.aar] C:\Users\Loup\.gradle\caches\transforms-3\9c4b9aee53deacd0a8523d91f0bff37e\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:21:13-70
+98            android:exported="false"
+98-->[godot-lib.template_debug.aar] C:\Users\Loup\.gradle\caches\transforms-3\9c4b9aee53deacd0a8523d91f0bff37e\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:22:13-37
+99            android:process=":phoenix"
+99-->[godot-lib.template_debug.aar] C:\Users\Loup\.gradle\caches\transforms-3\9c4b9aee53deacd0a8523d91f0bff37e\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:23:13-39
+100            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+100-->[godot-lib.template_debug.aar] C:\Users\Loup\.gradle\caches\transforms-3\9c4b9aee53deacd0a8523d91f0bff37e\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:24:13-72
+101
+102        <provider
+102-->[godot-lib.template_debug.aar] C:\Users\Loup\.gradle\caches\transforms-3\9c4b9aee53deacd0a8523d91f0bff37e\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:26:9-34:20
+103            android:name="androidx.core.content.FileProvider"
+103-->[godot-lib.template_debug.aar] C:\Users\Loup\.gradle\caches\transforms-3\9c4b9aee53deacd0a8523d91f0bff37e\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:27:13-62
+104            android:authorities="org.godotengine.parfumerie.fileprovider"
+104-->[godot-lib.template_debug.aar] C:\Users\Loup\.gradle\caches\transforms-3\9c4b9aee53deacd0a8523d91f0bff37e\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:28:13-64
+105            android:exported="false"
+105-->[godot-lib.template_debug.aar] C:\Users\Loup\.gradle\caches\transforms-3\9c4b9aee53deacd0a8523d91f0bff37e\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:29:13-37
+106            android:grantUriPermissions="true" >
+106-->[godot-lib.template_debug.aar] C:\Users\Loup\.gradle\caches\transforms-3\9c4b9aee53deacd0a8523d91f0bff37e\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:30:13-47
+107            <meta-data
+107-->[godot-lib.template_debug.aar] C:\Users\Loup\.gradle\caches\transforms-3\9c4b9aee53deacd0a8523d91f0bff37e\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:31:13-33:64
+108                android:name="android.support.FILE_PROVIDER_PATHS"
+108-->[godot-lib.template_debug.aar] C:\Users\Loup\.gradle\caches\transforms-3\9c4b9aee53deacd0a8523d91f0bff37e\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:32:17-67
+109                android:resource="@xml/godot_provider_paths" />
+109-->[godot-lib.template_debug.aar] C:\Users\Loup\.gradle\caches\transforms-3\9c4b9aee53deacd0a8523d91f0bff37e\transformed\jetified-godot-lib.template_debug\AndroidManifest.xml:33:17-61
+110        </provider> <!-- Godot plugin registration -->
+111        <meta-data
+111-->[godotopenxrpico-release.aar] C:\Users\Loup\.gradle\caches\transforms-3\446f4c77e728ad414f402cbe0e5fd98c\transformed\jetified-godotopenxrpico-release\AndroidManifest.xml:12:9-14:82
+112            android:name="org.godotengine.plugin.v1.GodotOpenXRPico"
+112-->[godotopenxrpico-release.aar] C:\Users\Loup\.gradle\caches\transforms-3\446f4c77e728ad414f402cbe0e5fd98c\transformed\jetified-godotopenxrpico-release\AndroidManifest.xml:13:13-69
+113            android:value="org.godotengine.openxrloaders.pico.GodotOpenXRPico" /> <!-- Enable VR mode on Pico headsets -->
+113-->[godotopenxrpico-release.aar] C:\Users\Loup\.gradle\caches\transforms-3\446f4c77e728ad414f402cbe0e5fd98c\transformed\jetified-godotopenxrpico-release\AndroidManifest.xml:14:13-79
+114        <meta-data
+114-->[godotopenxrpico-release.aar] C:\Users\Loup\.gradle\caches\transforms-3\446f4c77e728ad414f402cbe0e5fd98c\transformed\jetified-godotopenxrpico-release\AndroidManifest.xml:17:9-19:34
+115            android:name="pvr.app.type"
+115-->[godotopenxrpico-release.aar] C:\Users\Loup\.gradle\caches\transforms-3\446f4c77e728ad414f402cbe0e5fd98c\transformed\jetified-godotopenxrpico-release\AndroidManifest.xml:18:13-40
+116            android:value="vr" />
+116-->[godotopenxrpico-release.aar] C:\Users\Loup\.gradle\caches\transforms-3\446f4c77e728ad414f402cbe0e5fd98c\transformed\jetified-godotopenxrpico-release\AndroidManifest.xml:19:13-31
+117    </application>
+118
+119</manifest>

@@ -1,0 +1,105 @@
+[gd_scene load_steps=18 format=3 uid="uid://b2eh3l1tileed"]
+
+[ext_resource type="PackedScene" uid="uid://byek35q5qua82" path="res://assets/models/jarre/jard_1.tscn" id="2_5b3yq"]
+[ext_resource type="Environment" uid="uid://c1p41k4sb4jm" path="res://assets/ressources/vaporwenv.tres" id="2_n2g0o"]
+[ext_resource type="Texture2D" uid="uid://cgmc0ykuixgd3" path="res://assets/textures/default.png" id="2_ud7st"]
+[ext_resource type="PackedScene" uid="uid://wtedo34v0xc6" path="res://assets/models/rendu_first_scene.blend" id="4_f1xtl"]
+[ext_resource type="PackedScene" uid="uid://dvkrtbqgth3ww" path="res://assets/models/placeholder_stl.blend" id="6_n2gnc"]
+[ext_resource type="PackedScene" uid="uid://c7hs8rvradogk" path="res://assets/models/placeholder_stl_1.blend" id="7_iql1m"]
+[ext_resource type="Script" path="res://scripts/label3D.gd" id="7_urr66"]
+[ext_resource type="PackedScene" uid="uid://wpk68xln3ml1" path="res://scenes/players/fps_player.tscn" id="10_qwhfx"]
+[ext_resource type="PackedScene" uid="uid://dgb0slsva4qn6" path="res://scenes/test_ui.tscn" id="10_stmrw"]
+[ext_resource type="Script" path="res://scripts/Floating_ui.gd" id="10_wirhv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_isb6o"]
+size = Vector3(30, 1, 30)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_551me"]
+lightmap_size_hint = Vector2i(152, 152)
+add_uv2 = true
+size = Vector2(30, 30)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7biok"]
+albedo_texture = ExtResource("2_ud7st")
+uv1_triplanar = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fbp5f"]
+size = Vector3(1.37485, 0.680452, 0.025)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_mukmt"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mpkkw"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_mukmt")
+
+[sub_resource type="QuadMesh" id="QuadMesh_5jwd3"]
+size = Vector2(1.4, 0.7)
+
+[node name="root" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.816138, 0.577858, 0, -0.577858, 0.816138, 29.4, 4.18459, -40.5858)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("2_n2g0o")
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="rendu_first_scene" parent="Node3D" instance=ExtResource("4_f1xtl")]
+transform = Transform3D(-0.999966, 0, -0.0082727, 0, 1, 0, 0.0082727, 0, -0.999966, 5.86179, 0.0245113, 1.76264)
+
+[node name="jard1" parent="Node3D" instance=ExtResource("2_5b3yq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="placeholder_stl" parent="Node3D" instance=ExtResource("6_n2gnc")]
+transform = Transform3D(0.886591, 0, -0.462553, 0, 1, 0, 0.462553, 0, 0.886591, -4.72501, -0.0168493, -2.86566)
+
+[node name="placeholder_stl_1" parent="Node3D" instance=ExtResource("7_iql1m")]
+transform = Transform3D(0.822164, 0, 0.569251, 0, 1, 0, -0.569251, 0, 0.822164, -2.90229, 0.142331, 8.76404)
+
+[node name="ground" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.4)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.986, -0.5, 5.306)
+shape = SubResource("BoxShape3D_isb6o")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.98623, 0, 5.30591)
+mesh = SubResource("PlaneMesh_551me")
+surface_material_override/0 = SubResource("StandardMaterial3D_7biok")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(0.315831, 0, -0.948815, 0, 1, 0, 0.948815, 0, 0.315831, 1.87684, 2.39182, -1.18917)
+text = " Look at me ! 
+"
+script = ExtResource("7_urr66")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+size = Vector2i(512, 256)
+
+[node name="Control" parent="SubViewport" instance=ExtResource("10_stmrw")]
+
+[node name="3D_UI" type="StaticBody3D" parent="."]
+transform = Transform3D(0.879516, 0, -0.47587, 0, 1, 0, 0.47587, 0, 0.879516, 1.96595, 1.38422, -0.856084)
+collision_layer = 4
+collision_mask = 0
+axis_lock_linear_x = true
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_z = true
+script = ExtResource("10_wirhv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="3D_UI"]
+transform = Transform3D(0.999999, 0, 2.68221e-07, 0, 1, 0, -2.68221e-07, 0, 0.999999, 0, 0.00544369, 0)
+shape = SubResource("BoxShape3D_fbp5f")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="3D_UI"]
+material_override = SubResource("StandardMaterial3D_mpkkw")
+mesh = SubResource("QuadMesh_5jwd3")
+skeleton = NodePath("../../SubViewport")
+
+[node name="IDontHaveAHeadSet" parent="." instance=ExtResource("10_qwhfx")]
