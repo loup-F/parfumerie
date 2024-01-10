@@ -1,4 +1,4 @@
-[gd_scene load_steps=191 format=3 uid="uid://sd6dfvn86iuo"]
+[gd_scene load_steps=192 format=3 uid="uid://sd6dfvn86iuo"]
 
 [ext_resource type="Script" path="res://addons/cyclops_level_builder/nodes/cyclops_blocks.gd" id="1_o5a8q"]
 [ext_resource type="Environment" uid="uid://c1p41k4sb4jm" path="res://assets/ressources/vaporwenv.tres" id="1_tnydv"]
@@ -3687,10 +3687,13 @@ face_selected = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
 active_face = -1
 face_ids = PackedInt32Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_j4ysj"]
+size = Vector3(6.52668, 0.11267, 0.15493)
+
 [node name="Propositions LD" type="Node3D"]
 
 [node name="Fps_player" parent="." instance=ExtResource("6_ylv30")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 68.6793, 1.82503, 0)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 50.9381, 1.82503, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
@@ -4441,16 +4444,24 @@ block_data = SubResource("Resource_fot4l")
 [node name="Random_quidams" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.6686, 1.9366, 0)
 script = ExtResource("6_mwax2")
+max_delay = null
+min_delay = null
 
 [node name="Timer" type="Timer" parent="Random_quidams"]
 autostart = true
 
 [node name="SpawnPoints" type="Node3D" parent="Random_quidams"]
 
-[node name="1" type="Node3D" parent="Random_quidams/SpawnPoints"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12.2461)
+[node name="1" type="Area3D" parent="Random_quidams/SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12.6297)
 
-[node name="2" type="Node3D" parent="Random_quidams/SpawnPoints"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.85323)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Random_quidams/SpawnPoints/1"]
+shape = SubResource("BoxShape3D_j4ysj")
+
+[node name="2" type="Area3D" parent="Random_quidams/SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.69059)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Random_quidams/SpawnPoints/2"]
+shape = SubResource("BoxShape3D_j4ysj")
 
 [connection signal="timeout" from="Random_quidams/Timer" to="Random_quidams" method="_on_timer_timeout"]
