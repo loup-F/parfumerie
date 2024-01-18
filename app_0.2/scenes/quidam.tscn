@@ -7,14 +7,17 @@
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_c346o"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xqh5r"]
+resource_local_to_scene = true
 
 [node name="Quidam" type="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.7829, 2.06801, 0)
+collision_layer = 0
 script = ExtResource("1_47im1")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_qa8pm")
+disabled = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_c346o")
