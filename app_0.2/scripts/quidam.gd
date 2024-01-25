@@ -1,14 +1,14 @@
 extends StaticBody3D
 
 var direction = Vector3(0,0,1)
-@export var speed = 3
+var speed
 @onready var mesh = $MeshInstance3D
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	rand_color()
-	speed = randf_range(2.5, 5)
+	speed = randf_range(1.2, 3)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

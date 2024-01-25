@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddmdpsxevv5am"]
+
+[ext_resource type="PackedScene" uid="uid://wtedo34v0xc6" path="res://assets/models/rendu_first_scene.blend" id="1_rh44c"]
+
+[node name="rendu_first_scene" instance=ExtResource("1_rh44c")]
+
+[node name="Jard_1" parent="." index="7"]
+transform = Transform3D(0.0210491, 0.00122327, -0.0257381, -0.00246046, -0.0051009, -0.0115603, 0.0267457, -0.00143198, 0.0191927, -2.08218, 0.0215408, 2.26197)
+
+[node name="Jard_2" parent="." index="8"]
+transform = Transform3D(0.0153931, 0.000950815, -0.0447683, -0.00225892, -0.00426182, -0.0119727, 0.0435777, -0.000556777, 0.015193, -2.13678, 0.0215408, 2.00778)

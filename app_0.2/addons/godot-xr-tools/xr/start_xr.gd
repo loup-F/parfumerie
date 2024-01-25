@@ -51,11 +51,19 @@ var xr_active : bool = false
 # Current refresh rate
 var _current_refresh_rate : float = 0
 
+signal focus_lost
+signal focus_gained
+signal pose_recentered
 
 # Handle auto-initialization when ready
 func _ready() -> void:
 	if !Engine.is_editor_hint() and auto_initialize:
 		initialize()
+	xr_interface.connect("session_begun", _on_openxr_session_begun)
+	xr_interface.connect("session_visible", _on_openxr_visible_state)
+	xr_interface.connect("session_focussed", _on_openxr_focused_state)
+	xr_interface.connect("session_stopping", _on_openxr_stopping)
+
 
 
 ## Initialize the XR interface
@@ -153,7 +161,10 @@ func _on_openxr_session_begun() -> void:
 	print("Setting physics rate to ", physics_rate)
 	Engine.physics_ticks_per_second = physics_rate
 
-
+func _on_openxr_stopping():
+	pass
+	
+	
 # Handle OpenXR visible state
 func _on_openxr_visible_state() -> void:
 	# Report the XR ending
