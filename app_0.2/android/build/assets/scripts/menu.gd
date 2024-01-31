@@ -13,13 +13,14 @@ func _ready():
 
 # gère le remplissage de la barre en et emet un signal si elle est pleine
 func _process(_delta):
-	if progress_bar.value == progress_bar.max_value:
+	if progress_bar.value == progress_bar.max_value and filled == false:
 		filled = true
 		emit_signal("filled_up")
 	elif fill == true :
 		progress_bar.value += 1
 	else :
 		progress_bar.value -=3
+		filled = false
 
 func _on_raycast_ui_found(ui):
 	ui.set_looked_at(true)

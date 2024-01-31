@@ -7,8 +7,8 @@
 [ext_resource type="Script" path="res://addons/cyclops_level_builder/resources/convex_block_data.gd" id="5_3t27x"]
 [ext_resource type="Script" path="res://scenes/player_pathing.gd" id="6_0y0ly"]
 [ext_resource type="Script" path="res://scripts/random_quidams.gd" id="6_cqn0f"]
-[ext_resource type="PackedScene" uid="uid://cylsy0cyrtguj" path="res://scenes/players/xr_player.tscn" id="6_lgmpw"]
 [ext_resource type="PackedScene" uid="uid://bokal8a62rfol" path="res://assets/models/blender3/maiedepresse.blend" id="7_6kpln"]
+[ext_resource type="PackedScene" uid="uid://wpk68xln3ml1" path="res://scenes/players/fps_player.tscn" id="7_gtgs0"]
 [ext_resource type="PackedScene" uid="uid://cmdyvnrvwfg8h" path="res://assets/models/blender3/scourtin.blend" id="8_bkr4g"]
 [ext_resource type="PackedScene" uid="uid://byek35q5qua82" path="res://assets/models/jarre/jard_1.tscn" id="10_iq4qc"]
 [ext_resource type="PackedScene" uid="uid://ddmdpsxevv5am" path="res://scenes/rendu_first_scene.tscn" id="11_0yunk"]
@@ -5210,14 +5210,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12.2461)
 [node name="2" type="Node3D" parent="Random_quidams/SpawnPoints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.85323)
 
-[node name="XROrigin" parent="Random_quidams" instance=ExtResource("6_lgmpw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72.8143, -0.03316, -3.02968)
-
-[node name="XROrigin" parent="." instance=ExtResource("6_lgmpw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.3116, 3.00839, 3.15469)
+[node name="Fps_player" parent="." instance=ExtResource("7_gtgs0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.5998, 1.99325, 0)
 
 [node name="dummy" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.592791, -1.45519e-11, 0, -1.45519e-11, 0.592791, -4.54747e-13, 0, 0, 0.592791, 57.1946, 1.70715, -1.93715)
+transform = Transform3D(0.592791, -1.45519e-11, 0, -1.45519e-11, 0.592791, -4.54747e-13, 0, 0, 0.592791, 55.1008, 1.70715, -0.672592)
 mesh = SubResource("CapsuleMesh_p5vhf")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="dummy"]
@@ -5227,7 +5224,7 @@ mesh = SubResource("BoxMesh_u43a1")
 [node name="assets" type="Node3D" parent="."]
 
 [node name="maiedepresse" parent="assets" instance=ExtResource("7_6kpln")]
-transform = Transform3D(-0.0291279, 5.94474e-05, 0.674281, 0.000444785, 0.67491, -4.02871e-05, -0.674281, 0.000442632, -0.029128, 62.9158, -0.713856, -3.55797)
+transform = Transform3D(-0.0291279, 5.94474e-05, 0.674281, 0.000444785, 0.67491, -4.02871e-05, -0.674281, 0.000442632, -0.029128, 62.9158, 0.934756, -3.55797)
 
 [node name="scourtin" parent="assets" instance=ExtResource("8_bkr4g")]
 transform = Transform3D(0.827273, 0, 0, 0, 0.827273, 0, 0, 0, 0.827273, 62.8835, 1.50849, -3.5361)
@@ -5262,7 +5259,7 @@ mesh = SubResource("SphereMesh_k4kdv")
 surface_material_override/0 = SubResource("StandardMaterial3D_2t18m")
 
 [node name="pathpoint3" type="MeshInstance3D" parent="playerPath"]
-transform = Transform3D(0.372517, 0, -4.65661e-09, 4.54747e-13, 0.372516, -7.10081e-11, 2.79397e-09, 1.1191e-12, 0.372517, 2.20534, 0.200195, -4.21914)
+transform = Transform3D(0.372517, -2.27374e-13, -5.58794e-09, 4.54747e-13, 0.372516, -7.83515e-11, 2.79397e-09, 1.13687e-12, 0.372517, 2.23827, 0.200312, -5.20041)
 mesh = SubResource("SphereMesh_k4kdv")
 surface_material_override/0 = SubResource("StandardMaterial3D_2t18m")
 

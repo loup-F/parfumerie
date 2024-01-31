@@ -1,10 +1,12 @@
-[gd_scene load_steps=60 format=3 uid="uid://crb1eileeof2t"]
+[gd_scene load_steps=63 format=3 uid="uid://crb1eileeof2t"]
 
+[ext_resource type="Script" path="res://scenes/init_VR.gd" id="1_cnysa"]
 [ext_resource type="Script" path="res://addons/cyclops_level_builder/nodes/cyclops_blocks.gd" id="1_i7wco"]
 [ext_resource type="Script" path="res://addons/cyclops_level_builder/nodes/cyclops_convex_block.gd" id="2_8rc5t"]
+[ext_resource type="Environment" uid="uid://c1p41k4sb4jm" path="res://assets/ressources/vaporwenv.tres" id="2_53hxs"]
 [ext_resource type="Script" path="res://addons/cyclops_level_builder/resources/convex_block_data.gd" id="3_tk6jp"]
 [ext_resource type="PackedScene" uid="uid://bokal8a62rfol" path="res://assets/models/blender3/maiedepresse.blend" id="4_g3lu4"]
-[ext_resource type="PackedScene" uid="uid://bdsmoe05xvlqx" path="res://assets/models/blender3/Armoire.blend" id="5_lhb50"]
+[ext_resource type="PackedScene" uid="uid://cawivx00md71i" path="res://assets/models/blender3/Armoire.blend" id="5_lhb50"]
 [ext_resource type="PackedScene" uid="uid://0wbpwesfcuf7" path="res://assets/models/blender3/Amphore.blend" id="6_6mtms"]
 [ext_resource type="PackedScene" uid="uid://cmpr45u0e0h1v" path="res://assets/models/blender3/mortier.blend" id="7_qw2iy"]
 [ext_resource type="PackedScene" uid="uid://cmdyvnrvwfg8h" path="res://assets/models/blender3/scourtin.blend" id="8_ass2v"]
@@ -17,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://b88gog38fxm2c" path="res://assets/models/blender3/Unguentarium3.blend" id="15_b70io"]
 [ext_resource type="PackedScene" uid="uid://cfkqxbq4c4eff" path="res://assets/models/blender3/grille.blend" id="16_unyks"]
 [ext_resource type="PackedScene" uid="uid://c1ywctakrwicr" path="res://assets/models/blender3/Marmite.blend" id="17_bk68g"]
+[ext_resource type="PackedScene" uid="uid://cylsy0cyrtguj" path="res://scenes/players/xr_player.tscn" id="18_m56us"]
 
 [sub_resource type="Resource" id="Resource_fxb7w"]
 script = ExtResource("3_tk6jp")
@@ -859,6 +862,14 @@ active_face = -1
 face_ids = PackedInt32Array(0, 1, 2, 3, 4, 5)
 
 [node name="LD finale" type="Node3D"]
+script = ExtResource("1_cnysa")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("2_53hxs")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
 
 [node name="CyclopsBlocks" type="Node3D" parent="."]
 script = ExtResource("1_i7wco")
@@ -1035,7 +1046,7 @@ block_data = SubResource("Resource_gkk1g")
 transform = Transform3D(0.755024, 0, 0, 0, 0.755024, 0, 0, 0, 0.755024, 3.89404, 1.07328, 0.0462154)
 
 [node name="Armoire" parent="." instance=ExtResource("5_lhb50")]
-transform = Transform3D(-4.02418e-08, 0, -0.920624, 0, 0.920624, 0, 0.920624, 0, -4.02418e-08, 1.53055, 1, -2.03098)
+transform = Transform3D(-4.02418e-08, 0, -0.920624, 0, 0.920624, 0, 0.920624, 0, -4.02418e-08, 1.53055, 1, -2.18014)
 
 [node name="Amphore" parent="." instance=ExtResource("6_6mtms")]
 transform = Transform3D(-3.09903e-09, 0.0708975, 0.0123596, -5.40254e-10, 0.0123596, -0.0708975, -0.0719668, -3.14577e-09, 1.37506e-16, -2.58274, 1.38641, 2.4442)
@@ -1123,3 +1134,6 @@ transform = Transform3D(0.0813504, 0, -0.070834, 0, 0.107867, 0, 0.070834, 0, 0.
 
 [node name="Flacons_metal3" parent="." instance=ExtResource("12_qa5eh")]
 transform = Transform3D(0.107438, 0, -0.00961503, 0, 0.107867, 0, 0.00961503, 0, 0.107438, 0.672666, 1.875, 2.40612)
+
+[node name="XROrigin" parent="." instance=ExtResource("18_m56us")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.145661, 2.05823, 0.975222)

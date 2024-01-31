@@ -11,7 +11,6 @@ func _ready():
 	for child in get_children():
 		points.append(child)
 		child.visible = false
-	print(points)
 	animate_player()
 
 
