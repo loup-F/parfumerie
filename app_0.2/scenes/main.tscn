@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b2eh3l1tileed"]
+[gd_scene load_steps=23 format=3 uid="uid://b2eh3l1tileed"]
 
 [ext_resource type="Script" path="res://scenes/init_VR.gd" id="1_amf5j"]
 [ext_resource type="PackedScene" uid="uid://byek35q5qua82" path="res://assets/models/jarre/jard_1.tscn" id="2_5b3yq"]
@@ -11,6 +11,8 @@
 [ext_resource type="Script" path="res://scripts/floating_ui.gd" id="9_pdcn5"]
 [ext_resource type="PackedScene" uid="uid://dgb0slsva4qn6" path="res://scenes/test_ui.tscn" id="10_stmrw"]
 [ext_resource type="PackedScene" uid="uid://cylsy0cyrtguj" path="res://scenes/players/xr_player.tscn" id="11_k1c0o"]
+[ext_resource type="Material" uid="uid://dqyp4ljdsmvwt" path="res://assets/ressources/braise_material.tres" id="12_fuwnp"]
+[ext_resource type="Material" uid="uid://b1dvbk8anjha0" path="res://assets/ressources/huile_material.tres" id="13_lu072"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_isb6o"]
 size = Vector3(30, 1, 30)
@@ -39,6 +41,10 @@ disable_receive_shadows = true
 
 [sub_resource type="QuadMesh" id="QuadMesh_5jwd3"]
 size = Vector2(1.4, 0.7)
+
+[sub_resource type="SphereMesh" id="SphereMesh_5c1bg"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_fsb6d"]
 
 [node name="root" type="Node3D"]
 script = ExtResource("1_amf5j")
@@ -111,3 +117,13 @@ mesh = SubResource("QuadMesh_5jwd3")
 skeleton = NodePath("../../SubViewport")
 
 [node name="XROrigin" parent="." instance=ExtResource("11_k1c0o")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08456, 1.2955, 1.37644)
+material_override = ExtResource("12_fuwnp")
+mesh = SubResource("SphereMesh_5c1bg")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.28141, 0, 0, 0, 0.110468, 0, 0, 0, 2.95786, 2.15824, 1.39051, 1.37419)
+material_override = ExtResource("13_lu072")
+mesh = SubResource("BoxMesh_fsb6d")

@@ -1,0 +1,29 @@
+[gd_resource type="ShaderMaterial" load_steps=6 format=3 uid="uid://dqyp4ljdsmvwt"]
+
+[ext_resource type="Shader" path="res://assets/ressources/braise.gdshader" id="1_haiym"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_sgtkb"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_3m2wd"]
+noise = SubResource("FastNoiseLite_sgtkb")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_0isin"]
+noise_type = 3
+frequency = 0.0214
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_cyq2g"]
+seamless = true
+noise = SubResource("FastNoiseLite_0isin")
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_haiym")
+shader_parameter/Glow_Power = 3.521
+shader_parameter/Lightness_Difference = 4.735
+shader_parameter/Sun_Color = Color(0.811765, 0, 0.188235, 1)
+shader_parameter/waveSpeed = 0.1
+shader_parameter/fresnel = 0.839
+shader_parameter/scale = 1.51
+shader_parameter/blendSharpness = 0.0
+shader_parameter/voronoi_noise = SubResource("NoiseTexture2D_cyq2g")
+shader_parameter/emission_noise = SubResource("NoiseTexture2D_3m2wd")
