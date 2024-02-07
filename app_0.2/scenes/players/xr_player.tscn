@@ -15,10 +15,12 @@ height = 1.4
 radius = 0.2
 
 [node name="XROrigin" type="XROrigin3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.145661, 1.90344, -3.02968)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.145661, 1.23052, -3.02968)
+current = true
 script = ExtResource("1_w2afr")
 
 [node name="XRCamera3D" type="XRCamera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0681503, 0)
 
 [node name="RayCast3D" type="RayCast3D" parent="XRCamera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00309297, -4.76837e-07, -0.069339)
@@ -48,13 +50,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0624049, 0)
 step_turn_angle = 45.0
 
 [node name="XRToolsPlayerBody" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.145661, 0.497959, -2.87845)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.145661, -0.0759545, -2.87845)
 top_level = true
 collision_layer = 524289
 collision_mask = 255
 script = ExtResource("6_ddmd8")
 player_calibrate_height = false
-player_height_rate = 1.0
+player_height_rate = 2.0
 
 [node name="_CollisionShape3D_21329" type="CollisionShape3D" parent="XRToolsPlayerBody"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)

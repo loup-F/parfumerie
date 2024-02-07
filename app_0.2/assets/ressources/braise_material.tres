@@ -18,9 +18,9 @@ noise = SubResource("FastNoiseLite_0isin")
 [resource]
 render_priority = 0
 shader = ExtResource("1_haiym")
-shader_parameter/Glow_Power = 3.521
-shader_parameter/Lightness_Difference = 4.735
-shader_parameter/Sun_Color = Color(0.811765, 0, 0.188235, 1)
+shader_parameter/Glow_Power = 4.173
+shader_parameter/Lightness_Difference = 3.105
+shader_parameter/Sun_Color = Color(0.827451, 0, 0.192157, 1)
 shader_parameter/waveSpeed = 0.1
 shader_parameter/fresnel = 0.839
 shader_parameter/scale = 1.51
