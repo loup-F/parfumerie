@@ -31,8 +31,8 @@ noise = SubResource("FastNoiseLite_wcv28")
 [resource]
 render_priority = 0
 shader = ExtResource("1_qggya")
-shader_parameter/albedo = Color(0.0941176, 0.54902, 0.827451, 1)
-shader_parameter/albedo2 = Color(0.686275, 0.6, 0.121569, 1)
+shader_parameter/albedo = Color(0.690196, 0.494118, 0.0980392, 1)
+shader_parameter/albedo2 = Color(0.619608, 0.627451, 0.0666667, 1)
 shader_parameter/metallic = 0.0
 shader_parameter/roughness = 0.053
 shader_parameter/wave_direction = Vector2(1, 0)

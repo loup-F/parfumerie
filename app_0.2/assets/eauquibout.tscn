@@ -1,0 +1,110 @@
+[gd_scene load_steps=15 format=3 uid="uid://bus4hh1gfxe1a"]
+
+[ext_resource type="Shader" path="res://assets/ressources/eau.gdshader" id="1_mtrno"]
+[ext_resource type="Material" uid="uid://vmwqv28yq8qs" path="res://assets/ressources/bulle.tres" id="2_40wo6"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ape0u"]
+noise_type = 3
+frequency = 0.0179
+fractal_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_27g82"]
+seamless = true
+as_normal_map = true
+bump_strength = 11.5
+noise = SubResource("FastNoiseLite_ape0u")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_rqmsv"]
+noise_type = 3
+frequency = 0.0383
+fractal_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_5be8q"]
+seamless = true
+as_normal_map = true
+bump_strength = 12.0
+noise = SubResource("FastNoiseLite_rqmsv")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_q7vat"]
+noise_type = 3
+frequency = 0.0815
+fractal_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_yc8om"]
+seamless = true
+as_normal_map = true
+bump_strength = 23.9
+noise = SubResource("FastNoiseLite_q7vat")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qoqke"]
+render_priority = -1
+shader = ExtResource("1_mtrno")
+shader_parameter/albedo = Color(0.117647, 0.239216, 0.305882, 1)
+shader_parameter/albedo2 = Color(0.054902, 0.345098, 0.588235, 1)
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 0.0
+shader_parameter/wave_direction = Vector2(-1.5, 0)
+shader_parameter/wave_direction2 = Vector2(0, 1.5)
+shader_parameter/wave_direction3 = Vector2(1.5, 0)
+shader_parameter/time_scale = 0.025
+shader_parameter/noise_scale = 10.0
+shader_parameter/height_scale = 0.685
+shader_parameter/color_deep = Color(0.14902, 0.239216, 0.592157, 1)
+shader_parameter/color_shallow = Color(0.0705882, 0.505882, 0.686275, 1)
+shader_parameter/beers_law = 12.0
+shader_parameter/depth_offset = -0.02
+shader_parameter/edge_scale = 0.1
+shader_parameter/near = 1.0
+shader_parameter/far = 100.0
+shader_parameter/edge_color = Color(1, 1, 1, 1)
+shader_parameter/wave = SubResource("NoiseTexture2D_yc8om")
+shader_parameter/texture_normal = SubResource("NoiseTexture2D_27g82")
+shader_parameter/texture_normal2 = SubResource("NoiseTexture2D_5be8q")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_o0gfw"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_y5ise"]
+material = ExtResource("2_40wo6")
+radius = 0.02
+height = 0.02
+is_hemisphere = true
+
+[sub_resource type="Curve" id="Curve_yula1"]
+max_value = 100.0
+_data = [Vector2(0, 76.8421), 0.0, -361.007, 0, 0, Vector2(0.503676, 2.10526), 0.0, 0.0, 0, 0, Vector2(0.742647, 0), 0.0, 0.0, 0, 0, Vector2(0.757363, 100), 0.0, 0.0, 0, 0, Vector2(1, 100), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="Curve" id="Curve_6dqhx"]
+_data = [Vector2(0, 0.526316), 0.0, 0.0, 0, 0, Vector2(0.738971, 0.484211), 0.0, 0.0, 0, 0, Vector2(0.996324, 1), 1.77243, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_0y3vg"]
+offsets = PackedFloat32Array(0.278008, 0.701245, 0.804979)
+colors = PackedColorArray(0.0718234, 0.432816, 0.67226, 1, 0.0715269, 0.696977, 0.937191, 1, 0.813378, 0.829028, 0.839379, 1)
+
+[node name="eauquibout" type="MeshInstance3D"]
+transform = Transform3D(0.780522, 0, 0, 0, 0.00825646, 0, 0, 0, 0.855637, 0, 0, 0)
+material_override = SubResource("ShaderMaterial_qoqke")
+cast_shadow = 0
+lod_bias = 0.001
+mesh = SubResource("CylinderMesh_o0gfw")
+
+[node name="bubbles" type="CPUParticles3D" parent="."]
+transform = Transform3D(2.92293, 0, 0, 0, 35.6478, 0, 0, 0, 1.93942, 0, -50.3694, 0)
+amount = 30
+lifetime = 1.59
+explosiveness = 0.02
+mesh = SubResource("SphereMesh_y5ise")
+emission_shape = 6
+emission_ring_axis = Vector3(0, 1, 0)
+emission_ring_height = 0.0
+emission_ring_radius = 0.16
+emission_ring_inner_radius = 0.0
+direction = Vector3(0, 0, 0)
+spread = 0.0
+gravity = Vector3(0, 4, 0)
+damping_min = 0.7
+damping_max = 0.7
+damping_curve = SubResource("Curve_yula1")
+scale_amount_curve = SubResource("Curve_6dqhx")
+color_ramp = SubResource("Gradient_0y3vg")

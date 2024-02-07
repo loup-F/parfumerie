@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://b2eh3l1tileed"]
+[gd_scene load_steps=25 format=3 uid="uid://b2eh3l1tileed"]
 
 [ext_resource type="Script" path="res://scenes/init_VR.gd" id="1_amf5j"]
 [ext_resource type="PackedScene" uid="uid://byek35q5qua82" path="res://assets/models/jarre/jard_1.tscn" id="2_5b3yq"]
@@ -9,10 +9,11 @@
 [ext_resource type="PackedScene" uid="uid://c7hs8rvradogk" path="res://assets/models/placeholder_stl_1.blend" id="7_iql1m"]
 [ext_resource type="Script" path="res://scripts/label3D.gd" id="7_urr66"]
 [ext_resource type="Script" path="res://scripts/floating_ui.gd" id="9_pdcn5"]
+[ext_resource type="PackedScene" uid="uid://wpk68xln3ml1" path="res://scenes/players/fps_player.tscn" id="10_0fjqp"]
 [ext_resource type="PackedScene" uid="uid://dgb0slsva4qn6" path="res://scenes/test_ui.tscn" id="10_stmrw"]
-[ext_resource type="PackedScene" uid="uid://cylsy0cyrtguj" path="res://scenes/players/xr_player.tscn" id="11_k1c0o"]
 [ext_resource type="Material" uid="uid://dqyp4ljdsmvwt" path="res://assets/ressources/braise_material.tres" id="12_fuwnp"]
 [ext_resource type="Material" uid="uid://b1dvbk8anjha0" path="res://assets/ressources/huile_material.tres" id="13_lu072"]
+[ext_resource type="PackedScene" uid="uid://bus4hh1gfxe1a" path="res://assets/eauquibout.tscn" id="14_lafej"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_isb6o"]
 size = Vector3(30, 1, 30)
@@ -47,37 +48,6 @@ next_pass = ExtResource("12_fuwnp")
 shading_mode = 0
 
 [sub_resource type="SphereMesh" id="SphereMesh_632ph"]
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_q1ja0"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jltfj"]
-transparency = 1
-vertex_color_use_as_albedo = true
-metallic = 0.85
-metallic_specular = 1.0
-metallic_texture = SubResource("NoiseTexture2D_q1ja0")
-roughness = 0.53
-rim_enabled = true
-rim_tint = 0.0
-
-[sub_resource type="SphereMesh" id="SphereMesh_368ai"]
-lightmap_size_hint = Vector2i(17, 9)
-material = SubResource("StandardMaterial3D_jltfj")
-radius = 0.1
-height = 0.1
-is_hemisphere = true
-
-[sub_resource type="Curve" id="Curve_0p8eo"]
-max_value = 100.0
-_data = [Vector2(0, 87.3684), 0.0, 0.0, 0, 0, Vector2(0.198529, 0), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="Curve" id="Curve_rpls7"]
-_data = [Vector2(0, 0.157895), 0.0, 0.0, 0, 0, Vector2(0.691176, 0.926316), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="Gradient" id="Gradient_8u4ae"]
-colors = PackedColorArray(0, 0.573526, 0.887686, 1, 0.364706, 0.792157, 0.984314, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_ehh3y"]
 
@@ -130,6 +100,8 @@ render_target_update_mode = 4
 
 [node name="Control" parent="SubViewport" instance=ExtResource("10_stmrw")]
 
+[node name="Fps_player" parent="." instance=ExtResource("10_0fjqp")]
+
 [node name="3D_UI" type="StaticBody3D" parent="." groups=["UI_target"]]
 transform = Transform3D(0.879516, 0, -0.47587, 0, 1, 0, 0.47587, 0, 0.879516, 1.96595, 1.38422, -0.856084)
 collision_layer = 4
@@ -151,41 +123,19 @@ cast_shadow = 0
 mesh = SubResource("QuadMesh_5jwd3")
 skeleton = NodePath("../../SubViewport")
 
-[node name="XROrigin" parent="." instance=ExtResource("11_k1c0o")]
-
 [node name="TestBraise" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08456, 2.02839, 1.37644)
 material_override = SubResource("StandardMaterial3D_mtgyq")
 mesh = SubResource("SphereMesh_632ph")
 
-[node name="waterBoiling" type="CPUParticles3D" parent="."]
-transform = Transform3D(2.28141, 0, 0, 0, 0.294325, 0, 0, 0, 1.65944, 6.95638, 0.914982, 2.76806)
-cast_shadow = 0
-amount = 20
-lifetime = 0.2
-speed_scale = 0.33
-randomness = 0.08
-mesh = SubResource("SphereMesh_368ai")
-emission_shape = 6
-emission_ring_axis = Vector3(0, 1, 0)
-emission_ring_height = 0.0
-emission_ring_radius = 0.13
-emission_ring_inner_radius = 0.0
-direction = Vector3(0, 0, 0)
-spread = 80.0
-flatness = 0.99
-gravity = Vector3(0, 0, 0)
-damping_max = 9.028
-damping_curve = SubResource("Curve_0p8eo")
-scale_amount_min = 0.2
-scale_amount_max = 0.4
-scale_amount_curve = SubResource("Curve_rpls7")
-color_ramp = SubResource("Gradient_8u4ae")
-hue_variation_min = -0.49
-hue_variation_max = 0.56
-
 [node name="TestHuile" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.780941, 0, 0, 0, 0.124747, 0, 0, 0, 0.730273, 6.99335, 0.759255, 2.78364)
+transform = Transform3D(0.780941, 0, 0, 0, 0.124747, 0, 0, 0, 0.730273, 3.73793, 1.2247, 2.76497)
 material_override = ExtResource("13_lu072")
 transparency = 1.0
 mesh = SubResource("CylinderMesh_ehh3y")
+
+[node name="testFumée" type="CPUParticles3D" parent="."]
+transform = Transform3D(0.780522, 0, 0, 0, 0.00825646, 0, 0, 0, 0.855637, 6.99074, 0.897923, 2.82131)
+
+[node name="eauquibout" parent="." instance=ExtResource("14_lafej")]
+transform = Transform3D(0.780522, 0, 0, 0, 0.00825646, 0, 0, 0, 0.855637, 6.98994, 0.890304, 2.82055)
