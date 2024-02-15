@@ -2,6 +2,7 @@ extends CharacterBody3D
 
 @onready var raycast = $Camera3D/RayCast3D
 var last_target
+@onready var animation_player = $AnimationPlayer
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
@@ -33,6 +34,7 @@ func _ready():
 		self.queue_free()
 	else:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	animation_player.play("test")
 	
 
 func _physics_process(delta):

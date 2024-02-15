@@ -20,7 +20,8 @@ func _process(delta):
 
 func animate_player():
 	var tween = get_tree().create_tween()
+	var y = target.position.y
 	tween.tween_property(target, "position", points[1].global_position, 2).set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_IN_OUT)
-	tween.tween_interval(2)
-	tween.tween_property(target, "position", points[2].global_position, 2).set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_interval(1)
+	tween.tween_property(target, "position", points[2].global_position*Vector3(1,y,1), 2).set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_IN_OUT)
 	tween.play()

@@ -3,6 +3,7 @@ extends Node3D
 signal focus_lost
 signal focus_gained
 signal pose_recentered
+@onready var subtitles = $XROrigin.animation_player
 
 @export var maximum_refresh_rate : int = 90
 
@@ -17,7 +18,7 @@ func _ready():
 
 		# Enable XR on our viewport
 		vp.use_xr = true
-
+#		$XROrigin.subtitles_trigger()
 		# Make sure v-sync is off, v-sync is handled by OpenXR
 		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
 

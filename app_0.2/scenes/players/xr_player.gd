@@ -2,14 +2,16 @@ extends XROrigin3D
 
 @onready var raycast = $XRCamera3D/RayCast3D
 var last_target
-@onready var label = $"../Label3D"
+@onready var animation_player = $AnimationPlayer
+@onready var label = $XRCamera3D/Label3D
+
 
 # Called when the node enters the scene tree for the first time.
 func _enter_tree():
 	self.add_to_group("player")
 	
 func _ready():
-	pass
+	subtitles_trigger()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -24,3 +26,6 @@ func _process(delta):
 	else:
 		if last_target !=null:
 			last_target.set_looked_at(false)
+
+func subtitles_trigger():
+	animation_player.play("sous-titres fr")

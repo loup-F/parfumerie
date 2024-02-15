@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://crb1eileeof2t"]
+[gd_scene load_steps=67 format=3 uid="uid://crb1eileeof2t"]
 
 [ext_resource type="Script" path="res://scenes/init_VR.gd" id="1_cnysa"]
 [ext_resource type="Script" path="res://addons/cyclops_level_builder/nodes/cyclops_blocks.gd" id="1_i7wco"]
@@ -19,7 +19,8 @@
 [ext_resource type="PackedScene" uid="uid://b88gog38fxm2c" path="res://assets/models/blender3/Unguentarium3.blend" id="15_b70io"]
 [ext_resource type="PackedScene" uid="uid://cfkqxbq4c4eff" path="res://assets/models/blender3/grille.blend" id="16_unyks"]
 [ext_resource type="PackedScene" uid="uid://c1ywctakrwicr" path="res://assets/models/blender3/Marmite.blend" id="17_bk68g"]
-[ext_resource type="PackedScene" uid="uid://cylsy0cyrtguj" path="res://scenes/players/xr_player.tscn" id="20_gwaq3"]
+[ext_resource type="PackedScene" uid="uid://cylsy0cyrtguj" path="res://scenes/players/xr_player.tscn" id="21_j3ru4"]
+[ext_resource type="Script" path="res://scenes/player_pathing.gd" id="21_la4lb"]
 
 [sub_resource type="Resource" id="Resource_fxb7w"]
 script = ExtResource("3_tk6jp")
@@ -861,6 +862,14 @@ face_selected = PackedByteArray(0, 0, 0, 0, 0, 0)
 active_face = -1
 face_ids = PackedInt32Array(0, 1, 2, 3, 4, 5)
 
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_qk255"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pa46b"]
+albedo_color = Color(1, 0, 1, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_qorbs"]
+material = SubResource("StandardMaterial3D_pa46b")
+
 [node name="LD finale" type="Node3D"]
 script = ExtResource("1_cnysa")
 
@@ -1042,98 +1051,121 @@ block_data = SubResource("Resource_7jq4b")
 script = ExtResource("2_8rc5t")
 block_data = SubResource("Resource_gkk1g")
 
-[node name="maiedepresse" parent="." instance=ExtResource("4_g3lu4")]
+[node name="assets" type="Node3D" parent="."]
+
+[node name="maiedepresse" parent="assets" instance=ExtResource("4_g3lu4")]
 transform = Transform3D(0.755024, 0, 0, 0, 0.755024, 0, 0, 0, 0.755024, 3.89404, 1.07328, 0.0462154)
 
-[node name="Armoire" parent="." instance=ExtResource("5_lhb50")]
+[node name="Armoire" parent="assets" instance=ExtResource("5_lhb50")]
 transform = Transform3D(-4.02418e-08, 0, -0.920624, 0, 0.920624, 0, 0.920624, 0, -4.02418e-08, 1.53055, 1, -2.18014)
 
-[node name="Amphore" parent="." instance=ExtResource("6_6mtms")]
+[node name="Amphore" parent="assets" instance=ExtResource("6_6mtms")]
 transform = Transform3D(-3.09903e-09, 0.0708975, 0.0123596, -5.40254e-10, 0.0123596, -0.0708975, -0.0719668, -3.14577e-09, 1.37506e-16, -2.58274, 1.38641, 2.4442)
 
-[node name="Amphore3" parent="." instance=ExtResource("6_6mtms")]
+[node name="Amphore3" parent="assets" instance=ExtResource("6_6mtms")]
 transform = Transform3D(-2.91994e-09, 0.0668005, 0.0267751, -1.17038e-09, 0.0267751, -0.0668005, -0.0719668, -3.14577e-09, 1.49072e-16, -2.54921, 1.36345, 2.07966)
 
-[node name="Amphore2" parent="." instance=ExtResource("6_6mtms")]
+[node name="Amphore2" parent="assets" instance=ExtResource("6_6mtms")]
 transform = Transform3D(-2.99789e-09, 0.0685836, 0.0218061, -9.53174e-10, 0.0218061, -0.0685836, -0.0719668, -3.14577e-09, 1.49072e-16, -2.2865, 1.38641, 2.54203)
 
-[node name="mortier" parent="." instance=ExtResource("7_qw2iy")]
+[node name="mortier" parent="assets" instance=ExtResource("7_qw2iy")]
 transform = Transform3D(0.113217, 0, 0, 0, -4.94886e-09, -0.113217, 0, 0.113217, -4.94886e-09, -0.714006, 1.39281, 2.2848)
 
-[node name="scourtin2" parent="." instance=ExtResource("8_ass2v")]
+[node name="scourtin2" parent="assets" instance=ExtResource("8_ass2v")]
 transform = Transform3D(0.483173, 0, 0, 0, 0.285552, 0, 0, 0, 0.483173, 4.26607, 1.63842, 0.0233577)
 
-[node name="scourtin3" parent="." instance=ExtResource("8_ass2v")]
+[node name="scourtin3" parent="assets" instance=ExtResource("8_ass2v")]
 transform = Transform3D(0.483173, 0, 0, 0, 0.285552, 0, 0, 0, 0.483173, 4.26607, 1.58378, 0.0233577)
 
-[node name="scourtin4" parent="." instance=ExtResource("8_ass2v")]
+[node name="scourtin4" parent="assets" instance=ExtResource("8_ass2v")]
 transform = Transform3D(0.483173, 0, 0, 0, 0.285552, 0, 0, 0, 0.483173, 4.26607, 1.53429, 0.0233577)
 
-[node name="scourtin5" parent="." instance=ExtResource("8_ass2v")]
+[node name="scourtin5" parent="assets" instance=ExtResource("8_ass2v")]
 transform = Transform3D(0.483173, 0, 0, 0, 0.35011, 0, 0, 0, 0.483173, 4.59513, 1.06721, -1.51226)
 
-[node name="scourtin6" parent="." instance=ExtResource("8_ass2v")]
+[node name="scourtin6" parent="assets" instance=ExtResource("8_ass2v")]
 transform = Transform3D(0.483173, 0, 0, 0, 0.35011, 0, 0, 0, 0.483173, 4.59513, 1.06721, -1.10524)
 
-[node name="scourtin7" parent="." instance=ExtResource("8_ass2v")]
+[node name="scourtin7" parent="assets" instance=ExtResource("8_ass2v")]
 transform = Transform3D(0.483173, 0, 0, 0, 0.35011, 0, 0, 0, 0.483173, 4.1704, 1.06721, -1.31362)
 
-[node name="scourtin8" parent="." instance=ExtResource("8_ass2v")]
+[node name="scourtin8" parent="assets" instance=ExtResource("8_ass2v")]
 transform = Transform3D(0.483173, 0.000115239, -0.000495344, -0.00015953, 0.35011, -0.000493019, 0.000495186, 0.000357359, 0.483173, 4.39768, 1.13261, -1.3985)
 
-[node name="Bouteille3" parent="." instance=ExtResource("9_xajqk")]
+[node name="Bouteille3" parent="assets" instance=ExtResource("9_xajqk")]
 transform = Transform3D(-0.0783324, 0, -0.0100137, 0, 0.0789698, 0, 0.0100137, 0, -0.0783324, 1.50897, 2.43704, -2.40356)
 
-[node name="Bouteille4" parent="." instance=ExtResource("9_xajqk")]
+[node name="Bouteille4" parent="assets" instance=ExtResource("9_xajqk")]
 transform = Transform3D(-0.0786201, 0, -0.00742346, 0, 0.0789698, 0, 0.00742346, 0, -0.0786201, 1.35002, 2.43704, -2.41961)
 
-[node name="Bouteille5" parent="." instance=ExtResource("9_xajqk")]
+[node name="Bouteille5" parent="assets" instance=ExtResource("9_xajqk")]
 transform = Transform3D(-0.0786201, 0, -0.00742346, 0, 0.0789698, 0, 0.00742346, 0, -0.0786201, 1.35002, 2.43704, -2.21276)
 
-[node name="Bouteille6" parent="." instance=ExtResource("9_xajqk")]
+[node name="Bouteille6" parent="assets" instance=ExtResource("9_xajqk")]
 transform = Transform3D(-0.0786201, 0, -0.00742346, 0, 0.0789698, 0, 0.00742346, 0, -0.0786201, 1.50783, 2.43704, -2.21276)
 
-[node name="pylon" parent="." instance=ExtResource("10_omn36")]
+[node name="pylon" parent="assets" instance=ExtResource("10_omn36")]
 transform = Transform3D(0.173369, 0, 0, 0, -0.0520927, -0.165358, 0, 0.165358, -0.0520927, -0.184906, 1, 2.25701)
 
-[node name="Unguentarium1" parent="." instance=ExtResource("11_fn4b3")]
+[node name="Unguentarium1" parent="assets" instance=ExtResource("11_fn4b3")]
 transform = Transform3D(0.0380514, 0, 0, 0, 0.0380514, 0, 0, 0, 0.0380514, -2.62094, 2.0612, -0.847618)
 
-[node name="Flacons_metal" parent="." instance=ExtResource("12_qa5eh")]
+[node name="Flacons_metal" parent="assets" instance=ExtResource("12_qa5eh")]
 transform = Transform3D(0.0701844, 0, 0.0756147, 0, 0.103167, 0, -0.0756147, 0, 0.0701844, 1.34666, 2.01734, -2.33115)
 
-[node name="flacon_parfum_1" parent="." instance=ExtResource("13_gkarb")]
+[node name="flacon_parfum_1" parent="assets" instance=ExtResource("13_gkarb")]
 transform = Transform3D(0.0671261, 0, -0.0578783, 0, 0.088633, 0, 0.0578783, 0, 0.0671261, 1.71358, 2.42147, -2.32951)
 
-[node name="flacon_parfum_2" parent="." instance=ExtResource("13_gkarb")]
+[node name="flacon_parfum_2" parent="assets" instance=ExtResource("13_gkarb")]
 transform = Transform3D(-0.00361728, 0, -0.0885591, 0, 0.088633, 0, 0.0885591, 0, -0.00361728, 1.61515, 2.42147, -2.25413)
 
-[node name="flacon_parfum_3" parent="." instance=ExtResource("13_gkarb")]
+[node name="flacon_parfum_3" parent="assets" instance=ExtResource("13_gkarb")]
 transform = Transform3D(-0.00361728, 0, -0.0885591, 0, 0.088633, 0, 0.0885591, 0, -0.00361728, 1.75376, 2.42147, -2.15756)
 
-[node name="flacon_parfum_4" parent="." instance=ExtResource("13_gkarb")]
+[node name="flacon_parfum_4" parent="assets" instance=ExtResource("13_gkarb")]
 transform = Transform3D(-0.00361728, 0, -0.0885591, 0, 0.088633, 0, 0.0885591, 0, -0.00361728, 1.63362, 2.42147, -2.10503)
 
-[node name="Unguentarium2" parent="." instance=ExtResource("14_vt54k")]
+[node name="Unguentarium2" parent="assets" instance=ExtResource("14_vt54k")]
 transform = Transform3D(0.0385774, 0, 0, 0, 0.0385774, 0, 0, 0, 0.0385774, -2.7046, 2.0612, -0.947568)
 
-[node name="Unguentarium3" parent="." instance=ExtResource("15_b70io")]
+[node name="Unguentarium3" parent="assets" instance=ExtResource("15_b70io")]
 transform = Transform3D(0.038386, 0, 0, 0, 0.038386, 0, 0, 0, 0.038386, -2.85825, 2.06379, -0.921328)
 
-[node name="grille" parent="." instance=ExtResource("16_unyks")]
+[node name="grille" parent="assets" instance=ExtResource("16_unyks")]
 transform = Transform3D(0.199892, 0, 0, 0, 0.199892, 0, 0, 0, 0.199892, 1.83499, 1.88335, 2.21798)
 
-[node name="grille2" parent="." instance=ExtResource("16_unyks")]
+[node name="grille2" parent="assets" instance=ExtResource("16_unyks")]
 transform = Transform3D(0.199892, 0, 0, 0, 0.199892, 0, 0, 0, 0.199892, 1.01955, 1.88335, 2.21798)
 
-[node name="Marmite" parent="." instance=ExtResource("17_bk68g")]
+[node name="Marmite" parent="assets" instance=ExtResource("17_bk68g")]
 transform = Transform3D(0.156971, 0, 0, 0, 0.156971, 0, 0, 0, 0.156971, 1.83895, 2.09562, 2.20949)
 
-[node name="Flacons_metal2" parent="." instance=ExtResource("12_qa5eh")]
+[node name="Flacons_metal2" parent="assets" instance=ExtResource("12_qa5eh")]
 transform = Transform3D(0.0813504, 0, -0.070834, 0, 0.107867, 0, 0.070834, 0, 0.0813504, 0.633306, 1.875, 2.57716)
 
-[node name="Flacons_metal3" parent="." instance=ExtResource("12_qa5eh")]
+[node name="Flacons_metal3" parent="assets" instance=ExtResource("12_qa5eh")]
 transform = Transform3D(0.107438, 0, -0.00961503, 0, 0.107867, 0, 0.00961503, 0, 0.107438, 0.672666, 1.875, 2.40612)
 
-[node name="XROrigin" parent="." instance=ExtResource("20_gwaq3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.145661, 2.23052, 0.97032)
+[node name="dummy" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.648044, 0, 0, 0, 0.648044, 0, 0, 0, 0.648044, 3.17694, 2.18634, 4.39832)
+mesh = SubResource("CapsuleMesh_qk255")
+skeleton = NodePath("../XROrigin")
+
+[node name="XROrigin" parent="." instance=ExtResource("21_j3ru4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.145661, 2.02379, 0.845175)
+
+[node name="playerpath" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.511, 0)
+script = ExtResource("21_la4lb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="playerpath"]
+transform = Transform3D(0.219709, 0, 0, 0, 0.219709, 0, 0, 0, 0.219709, 3.3508, 0.142167, 2.49287)
+mesh = SubResource("SphereMesh_qorbs")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="playerpath"]
+transform = Transform3D(0.219709, 0, 0, 0, 0.219709, 0, 0, 0, 0.219709, 2.96312, 0.361379, -0.787614)
+mesh = SubResource("SphereMesh_qorbs")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="playerpath"]
+transform = Transform3D(0.219709, 0, 0, 0, 0.219709, 0, 0, 0, 0.219709, -0.352322, 0.360642, -0.787018)
+mesh = SubResource("SphereMesh_qorbs")

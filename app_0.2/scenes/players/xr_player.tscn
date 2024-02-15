@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cylsy0cyrtguj"]
+[gd_scene load_steps=14 format=3 uid="uid://cylsy0cyrtguj"]
 
 [ext_resource type="Script" path="res://scenes/players/xr_player.gd" id="1_w2afr"]
 [ext_resource type="PackedScene" uid="uid://bnx4hithcij6y" path="res://addons/godot-xr-tools/hands/model/Hand_Glove_low_L.gltf" id="2_qtfoe"]
@@ -7,12 +7,59 @@
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="5_ofi1t"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/player/player_body.gd" id="6_ddmd8"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ny3cq"]
+render_priority = 1
+transparency = 1
+no_depth_test = true
+albedo_color = Color(0.00392157, 0.00392157, 0.00392157, 0.737255)
+
+[sub_resource type="QuadMesh" id="QuadMesh_uttwr"]
+material = SubResource("StandardMaterial3D_ny3cq")
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oeuka"]
 radius = 0.2
 height = 1.4
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_j5q7b"]
 radius = 0.2
+
+[sub_resource type="Animation" id="Animation_yu55p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Les sous-titres sont-ils satisfaisants de cette manière ?"]
+}
+
+[sub_resource type="Animation" id="Animation_mempe"]
+resource_name = "sous-titres fr"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": ["Les sous-titres sont-ils satisfaisants de cette manière ?", "parce que sinon je les change", "mais en vrai je pense que ça passe
+"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p7em2"]
+_data = {
+"RESET": SubResource("Animation_yu55p"),
+"sous-titres fr": SubResource("Animation_mempe")
+}
 
 [node name="XROrigin" type="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.145661, 1.23052, -3.02968)
@@ -27,6 +74,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00309297, -4.76837e-07, -0.
 target_position = Vector3(0, 0, -50)
 collision_mask = 4
 debug_shape_custom_color = Color(0.945098, 0.72549, 0, 1)
+
+[node name="Label3D" type="Label3D" parent="XRCamera3D"]
+transform = Transform3D(1, 0, 0, 0, 0.97396, 0.226719, 0, -0.226719, 0.97396, 0, -0.260913, -2.09959)
+no_depth_test = true
+alpha_antialiasing_mode = 2
+render_priority = 3
+outline_render_priority = 2
+text = "Les sous-titres sont-ils satisfaisants de cette manière ?"
+font_size = 18
+outline_size = 10
+autowrap_mode = 3
+width = 350.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XRCamera3D/Label3D"]
+transform = Transform3D(2.07664, 0, 0, 0, 0.358007, -4.47035e-08, 0, 4.47035e-08, 0.994527, 0, -0.0244784, -0.0589514)
+visible = false
+mesh = SubResource("QuadMesh_uttwr")
+skeleton = NodePath("../..")
 
 [node name="LeftHand" type="XRController3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.51683, -0.636572, 0)
@@ -68,3 +133,9 @@ shape = SubResource("SphereShape3D_j5q7b")
 margin = 0.01
 max_results = 1
 collision_mask = 255
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../XRCamera3D/Label3D")
+libraries = {
+"": SubResource("AnimationLibrary_p7em2")
+}
