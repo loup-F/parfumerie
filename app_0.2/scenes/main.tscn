@@ -1,8 +1,7 @@
-[gd_scene load_steps=31 format=3 uid="uid://b2eh3l1tileed"]
+[gd_scene load_steps=30 format=3 uid="uid://b2eh3l1tileed"]
 
 [ext_resource type="Script" path="res://scenes/init_VR.gd" id="1_amf5j"]
 [ext_resource type="PackedScene" uid="uid://byek35q5qua82" path="res://assets/models/jarre/jard_1.tscn" id="2_5b3yq"]
-[ext_resource type="PackedScene" uid="uid://cylsy0cyrtguj" path="res://scenes/players/xr_player.tscn" id="2_cscr4"]
 [ext_resource type="Environment" uid="uid://c1p41k4sb4jm" path="res://assets/ressources/vaporwenv.tres" id="2_n2g0o"]
 [ext_resource type="Texture2D" uid="uid://cgmc0ykuixgd3" path="res://assets/textures/default.png" id="2_ud7st"]
 [ext_resource type="PackedScene" uid="uid://wtedo34v0xc6" path="res://assets/models/rendu_first_scene.blend" id="4_f1xtl"]
@@ -100,8 +99,6 @@ material = SubResource("ShaderMaterial_4o1l6")
 
 [node name="root" type="Node3D"]
 script = ExtResource("1_amf5j")
-
-[node name="XROrigin" parent="." instance=ExtResource("2_cscr4")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.816138, 0.577858, 0, -0.577858, 0.816138, 29.4, 4.18459, -40.5858)

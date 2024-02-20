@@ -1,55 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://wpk68xln3ml1"]
+[gd_scene load_steps=5 format=3 uid="uid://wpk68xln3ml1"]
 
 [ext_resource type="Script" path="res://scenes/players/fps_controller.gd" id="1_occ2d"]
 
-[sub_resource type="Animation" id="Animation_5bc2x"]
-resource_name = "test"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:text")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.9),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": ["svddsvsdq", "kl,klsc, klxwc,xw"]
-}
-
-[sub_resource type="Animation" id="Animation_hys05"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:text")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["svddsvsdq"]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_dybey"]
-_data = {
-"RESET": SubResource("Animation_hys05"),
-"test": SubResource("Animation_5bc2x")
-}
-
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5tsws"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4n62c"]
+shading_mode = 0
+
+[sub_resource type="SphereMesh" id="SphereMesh_efu2e"]
+material = SubResource("StandardMaterial3D_4n62c")
 
 [node name="Fps_player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.82503, 0)
 collision_layer = 2
 script = ExtResource("1_occ2d")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../Camera3D/Label3D")
-libraries = {
-"": SubResource("AnimationLibrary_dybey")
-}
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
@@ -62,6 +26,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.911408, 0)
 target_position = Vector3(0, 0, -100)
 collision_mask = 4
 
-[node name="Label3D" type="Label3D" parent="Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.175486, -1.77098)
-text = "svddsvsdq"
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Camera3D"]
+transform = Transform3D(0.130611, 0, 0, 0, 0.130611, 0, 0, 0, 0.130611, 0, 0, -4.46539)
+mesh = SubResource("SphereMesh_efu2e")
+
+[node name="FpsDebugLabel" type="Label3D" parent="Camera3D"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.427554, -2.20017)

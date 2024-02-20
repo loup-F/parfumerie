@@ -1,6 +1,5 @@
-[gd_scene load_steps=232 format=3 uid="uid://j0o1f5qcwh7g"]
+[gd_scene load_steps=230 format=3 uid="uid://j0o1f5qcwh7g"]
 
-[ext_resource type="Script" path="res://scenes/init_VR.gd" id="1_hmnhg"]
 [ext_resource type="Environment" uid="uid://c1p41k4sb4jm" path="res://assets/ressources/vaporwenv.tres" id="2_n1tjo"]
 [ext_resource type="Script" path="res://addons/cyclops_level_builder/nodes/cyclops_blocks.gd" id="3_tn1n0"]
 [ext_resource type="Script" path="res://addons/cyclops_level_builder/nodes/cyclops_convex_block.gd" id="4_sd8ig"]
@@ -8,7 +7,6 @@
 [ext_resource type="Script" path="res://scenes/player_pathing.gd" id="6_0y0ly"]
 [ext_resource type="Script" path="res://scripts/random_quidams.gd" id="6_cqn0f"]
 [ext_resource type="PackedScene" uid="uid://bokal8a62rfol" path="res://assets/models/blender3/maiedepresse.blend" id="7_6kpln"]
-[ext_resource type="PackedScene" uid="uid://wpk68xln3ml1" path="res://scenes/players/fps_player.tscn" id="7_gtgs0"]
 [ext_resource type="PackedScene" uid="uid://cmdyvnrvwfg8h" path="res://assets/models/blender3/scourtin.blend" id="8_bkr4g"]
 [ext_resource type="PackedScene" uid="uid://byek35q5qua82" path="res://assets/models/jarre/jard_1.tscn" id="10_iq4qc"]
 [ext_resource type="PackedScene" uid="uid://ddmdpsxevv5am" path="res://scenes/rendu_first_scene.tscn" id="11_0yunk"]
@@ -4323,7 +4321,6 @@ face_ids = PackedInt32Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
 albedo_color = Color(1, 0.00392157, 1, 1)
 
 [node name="Propositions LD" type="Node3D"]
-script = ExtResource("1_hmnhg")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
@@ -5209,9 +5206,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12.2461)
 
 [node name="2" type="Node3D" parent="Random_quidams/SpawnPoints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.85323)
-
-[node name="Fps_player" parent="." instance=ExtResource("7_gtgs0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.5998, 1.99325, 0)
 
 [node name="dummy" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.592791, -1.45519e-11, 0, -1.45519e-11, 0.592791, -4.54747e-13, 0, 0, 0.592791, 55.1008, 1.70715, -0.672592)

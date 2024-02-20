@@ -1,8 +1,8 @@
 extends CharacterBody3D
 
 @onready var raycast = $Camera3D/RayCast3D
-var last_target
-@onready var animation_player = $AnimationPlayer
+var previous # previous raycast target
+
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
@@ -34,7 +34,6 @@ func _ready():
 		self.queue_free()
 	else:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	animation_player.play("test")
 	
 
 func _physics_process(delta):
@@ -62,9 +61,10 @@ func _physics_process(delta):
 	# RAYCAST (partie commune avec le controller VR)
 	# =================================================
 	var target = raycast.get_collider()
-	if target and target.is_in_group("UI_target"):
-		target.set_looked_at(true)
-		last_target = target
-	else:
-		if last_target !=null:
-			last_target.set_looked_at(false)
+
+	if target and previous == null:
+		target.looked_at = true
+		previous = target
+	elif previous !=null and target == null:
+		previous.looked_at = false
+		previous = target

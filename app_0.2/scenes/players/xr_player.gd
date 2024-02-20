@@ -1,7 +1,7 @@
 extends XROrigin3D
 
 @onready var raycast = $XRCamera3D/RayCast3D
-var last_target
+var previous
 @onready var animation_player = $AnimationPlayer
 @onready var label = $XRCamera3D/Label3D
 
@@ -11,7 +11,7 @@ func _enter_tree():
 	self.add_to_group("player")
 	
 func _ready():
-	subtitles_trigger()
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -20,12 +20,12 @@ func _process(delta):
 	# RAYCAST (partie commune avec le controller VR)
 	# =================================================
 	var target = raycast.get_collider()
-	if target and target.is_in_group("UI_target"):
-		target.set_looked_at(true)
-		last_target = target
-	else:
-		if last_target !=null:
-			last_target.set_looked_at(false)
+	if target and previous == null:
+		target.looked_at = true
+		previous = target
+	elif previous !=null and target == null:
+		previous.looked_at = false
+		previous = target
 
 func subtitles_trigger():
 	animation_player.play("sous-titres fr")

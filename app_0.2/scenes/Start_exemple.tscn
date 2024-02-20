@@ -1,0 +1,48 @@
+[gd_scene load_steps=9 format=3 uid="uid://xdq5mgtv7vt3"]
+
+[ext_resource type="Script" path="res://addons/godot-xr-tools/staging/staging.gd" id="1_yfw21"]
+[ext_resource type="Shader" path="res://addons/godot-xr-tools/staging/fade.gdshader" id="2_ul5i1"]
+[ext_resource type="PackedScene" uid="uid://cylsy0cyrtguj" path="res://scenes/players/xr_player.tscn" id="3_o3q1i"]
+[ext_resource type="PackedScene" uid="uid://bqumugyvkct4r" path="res://addons/godot-xr-tools/staging/loading_screen.tscn" id="4_8bwpp"]
+[ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="5_d542n"]
+
+[sub_resource type="QuadMesh" id="4"]
+custom_aabb = AABB(-5000, -5000, -5000, 10000, 10000, 10000)
+size = Vector2(2, 2)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_snlak"]
+render_priority = 0
+shader = ExtResource("2_ul5i1")
+shader_parameter/alpha = 0.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lxbdb"]
+size = Vector3(100, 1, 100)
+
+[node name="Start" type="Node3D"]
+script = ExtResource("1_yfw21")
+main_scene = "res://scenes/ld_assets.tscn"
+prompt_for_continue = false
+
+[node name="Fade" type="MeshInstance3D" parent="."]
+mesh = SubResource("4")
+surface_material_override/0 = SubResource("ShaderMaterial_snlak")
+
+[node name="XROrigin" parent="." instance=ExtResource("3_o3q1i")]
+
+[node name="LoadingScreen" parent="." instance=ExtResource("4_8bwpp")]
+progress = 0.0
+
+[node name="Scene" type="Node3D" parent="."]
+
+[node name="StartXR" parent="." instance=ExtResource("5_d542n")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.96438, 0)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.815715, 0)
+shape = SubResource("BoxShape3D_lxbdb")
+
+[connection signal="xr_ended" from="StartXR" to="." method="_on_StartXR_xr_ended"]
+[connection signal="xr_started" from="StartXR" to="." method="_on_StartXR_xr_started"]

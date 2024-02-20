@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgl7qwxdrcy2y"]
+
+[ext_resource type="Script" path="res://scripts/ProgressBar.gd" id="1_8kkab"]
+[ext_resource type="Texture2D" uid="uid://diagaexi26liv" path="res://assets/textures/UI/progress_bg.png" id="2_3aqer"]
+[ext_resource type="Texture2D" uid="uid://by0q50b42ea5v" path="res://assets/textures/UI/progress_fill.png" id="3_6tcpj"]
+
+[node name="Target" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_8kkab")
+
+[node name="ProgressBar" type="TextureProgressBar" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -212.0
+offset_top = -229.0
+offset_right = 38.0
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+fill_mode = 4
+texture_under = ExtResource("2_3aqer")
+texture_progress = ExtResource("3_6tcpj")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+offset_left = -92.0
+offset_top = -99.0
+offset_right = 65.0
+offset_bottom = -43.0
+scale = Vector2(1.50843, 3.37007)
+size_flags_vertical = 3
+horizontal_alignment = 1
+vertical_alignment = 1

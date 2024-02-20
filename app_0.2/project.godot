@@ -11,17 +11,17 @@ config_version=5
 [application]
 
 config/name="Parfumerie 0.2"
-run/main_scene="res://scenes/LD finale.tscn"
+run/main_scene="res://scenes/start.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
 
 [autoload]
 
 XRToolsUserSettings="*res://addons/godot-xr-tools/user_settings/user_settings.gd"
 CyclopsAutoload="*res://addons/cyclops_level_builder/cyclops_global_scene.tscn"
+Session="*res://session_parameters.gd"
 
 [display]
 
-window/size/always_on_top=true
 window/size/transparent=true
 window/per_pixel_transparency/allowed=true
 

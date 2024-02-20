@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dgb0slsva4qn6"]
 
-[ext_resource type="Script" path="res://scripts/menu.gd" id="1_q6laq"]
+[ext_resource type="Script" path="res://scripts/ProgressBar.gd" id="1_q6laq"]
 [ext_resource type="Texture2D" uid="uid://diagaexi26liv" path="res://assets/textures/UI/progress_bg.png" id="2_1mmlx"]
 [ext_resource type="Texture2D" uid="uid://by0q50b42ea5v" path="res://assets/textures/UI/progress_fill.png" id="3_gtuxg"]
 

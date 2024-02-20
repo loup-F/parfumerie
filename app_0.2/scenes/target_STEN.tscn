@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://conusqvj0ho0d"]
+
+[ext_resource type="PackedScene" uid="uid://cgl7qwxdrcy2y" path="res://scenes/UI_target.tscn" id="1_wg6o0"]
+
+[node name="Target_STEN" instance=ExtResource("1_wg6o0")]
+
+[node name="Label" parent="." index="1"]
+text = "ST_EN"
