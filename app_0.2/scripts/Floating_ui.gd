@@ -1,7 +1,6 @@
 extends StaticBody3D
 
 @export var control = Control
-var manager 
 
 signal picked
 signal picked_2
@@ -9,8 +8,6 @@ signal picked_2
 var looked_at : bool = false : 
 	set(looked):
 		looked_at = looked
-
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

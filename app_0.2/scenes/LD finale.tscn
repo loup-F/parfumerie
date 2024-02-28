@@ -1,9 +1,10 @@
 [gd_scene load_steps=67 format=3 uid="uid://crb1eileeof2t"]
 
-[ext_resource type="Script" path="res://scenes/init_VR.gd" id="1_cnysa"]
 [ext_resource type="Script" path="res://addons/cyclops_level_builder/nodes/cyclops_blocks.gd" id="1_i7wco"]
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_wyckn"]
 [ext_resource type="Script" path="res://addons/cyclops_level_builder/nodes/cyclops_convex_block.gd" id="2_8rc5t"]
 [ext_resource type="Environment" uid="uid://c1p41k4sb4jm" path="res://assets/ressources/vaporwenv.tres" id="2_53hxs"]
+[ext_resource type="PackedScene" uid="uid://wpk68xln3ml1" path="res://scenes/players/fps_player.tscn" id="2_hf0hc"]
 [ext_resource type="Script" path="res://addons/cyclops_level_builder/resources/convex_block_data.gd" id="3_tk6jp"]
 [ext_resource type="PackedScene" uid="uid://bokal8a62rfol" path="res://assets/models/blender3/maiedepresse.blend" id="4_g3lu4"]
 [ext_resource type="PackedScene" uid="uid://cawivx00md71i" path="res://assets/models/blender3/Armoire.blend" id="5_lhb50"]
@@ -19,7 +20,6 @@
 [ext_resource type="PackedScene" uid="uid://b88gog38fxm2c" path="res://assets/models/blender3/Unguentarium3.blend" id="15_b70io"]
 [ext_resource type="PackedScene" uid="uid://cfkqxbq4c4eff" path="res://assets/models/blender3/grille.blend" id="16_unyks"]
 [ext_resource type="PackedScene" uid="uid://c1ywctakrwicr" path="res://assets/models/blender3/Marmite.blend" id="17_bk68g"]
-[ext_resource type="PackedScene" uid="uid://cylsy0cyrtguj" path="res://scenes/players/xr_player.tscn" id="21_j3ru4"]
 [ext_resource type="Script" path="res://scenes/player_pathing.gd" id="21_la4lb"]
 
 [sub_resource type="Resource" id="Resource_fxb7w"]
@@ -871,7 +871,9 @@ albedo_color = Color(1, 0, 1, 1)
 material = SubResource("StandardMaterial3D_pa46b")
 
 [node name="LD finale" type="Node3D"]
-script = ExtResource("1_cnysa")
+script = ExtResource("1_wyckn")
+
+[node name="Fps_player" parent="." instance=ExtResource("2_hf0hc")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("2_53hxs")
@@ -1147,12 +1149,9 @@ transform = Transform3D(0.0813504, 0, -0.070834, 0, 0.107867, 0, 0.070834, 0, 0.
 transform = Transform3D(0.107438, 0, -0.00961503, 0, 0.107867, 0, 0.00961503, 0, 0.107438, 0.672666, 1.875, 2.40612)
 
 [node name="dummy" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.648044, 0, 0, 0, 0.648044, 0, 0, 0, 0.648044, 3.17694, 2.18634, 4.39832)
+transform = Transform3D(0.648044, 0, 0, 0, 0.648044, 0, 0, 0, 0.648044, 3.17694, 3.12017, 4.39832)
 mesh = SubResource("CapsuleMesh_qk255")
 skeleton = NodePath("../XROrigin")
-
-[node name="XROrigin" parent="." instance=ExtResource("21_j3ru4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.145661, 2.02379, 0.845175)
 
 [node name="playerpath" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.511, 0)

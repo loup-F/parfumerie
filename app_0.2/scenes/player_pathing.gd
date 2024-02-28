@@ -11,7 +11,9 @@ func _ready():
 	for child in get_children():
 		points.append(child)
 		child.visible = false
+		child.position.y = target.position.y
 	animate_player()
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -20,8 +22,9 @@ func _process(delta):
 
 func animate_player():
 	var tween = get_tree().create_tween()
-	var y = target.position.y
-	tween.tween_property(target, "position", points[1].global_position, 2).set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_IN_OUT)
 	tween.tween_interval(1)
-	tween.tween_property(target, "position", points[2].global_position*Vector3(1,y,1), 2).set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(target, "position", points[1].global_position*Vector3(1,0,1)+target.position*Vector3(0,1,0), 2).set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_interval(1)
+	tween.tween_property(target, "position", points[2].global_position*Vector3(1,0,1)+target.position*Vector3(0,1,0), 2).set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_IN_OUT)
 	tween.play()
+

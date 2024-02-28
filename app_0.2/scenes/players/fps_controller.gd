@@ -13,6 +13,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _enter_tree():
 	self.add_to_group("player")
+	print(get_tree().get_nodes_in_group("player")[0])
 
 func _input(event):
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
@@ -60,11 +61,15 @@ func _physics_process(delta):
 	# =================================================
 	# RAYCAST (partie commune avec le controller VR)
 	# =================================================
+	
+	# récupère les infos de collision du raycast 
 	var target = raycast.get_collider()
 
+	#target = current collision, previous commence null
 	if target and previous == null:
-		target.looked_at = true
+		target.looked_at = true # trigger une seule foi
 		previous = target
+	# si on ne détecte rien mais qu'on détectait une target avant :
 	elif previous !=null and target == null:
-		previous.looked_at = false
+		previous.looked_at = false #trigger une seule foi
 		previous = target

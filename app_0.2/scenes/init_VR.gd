@@ -3,12 +3,17 @@ extends Node3D
 signal focus_lost
 signal focus_gained
 signal pose_recentered
-var subtitles = AnimationPlayer
 
 @export var maximum_refresh_rate : int = 90
+#@export var first_scene_to_load : path
 
 var xr_interface : OpenXRInterface
 var xr_is_focussed = false
+
+var level_instance : Node3D
+var start = preload("res://scenes/start_menu.tscn")
+var main = preload("res://scenes/main.tscn")
+
 
 func _ready():
 	xr_interface = XRServer.find_interface("OpenXR")
@@ -18,21 +23,21 @@ func _ready():
 
 		# Enable XR on our viewport
 		vp.use_xr = true
-		subtitles = $XROrigin.animation_player
 		# Make sure v-sync is off, v-sync is handled by OpenXR
 		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
 
 		# Connect the OpenXR events
 		xr_interface.connect("session_begun", _on_openxr_session_begun)
 		xr_interface.connect("session_visible", _on_openxr_visible_state)
-		xr_interface.connect("session_focussed", _on_openxr_focused_state)
-		xr_interface.connect("session_stopping", _on_openxr_stopping)
-		xr_interface.connect("pose_recentered", _on_openxr_pose_recentered)
+
 	else:
 		# We couldn't start OpenXR.
 		print("OpenXR not instantiated!")
 #		get_tree().quit()
 		vp.use_xr = false
+		
+	load_start_menu()
+#	load_main()
 
 func _on_openxr_session_begun() -> void:
 	# Get the reported refresh rate
@@ -89,13 +94,30 @@ func _on_openxr_focused_state() -> void:
 
 	emit_signal("focus_gained")
 
-# Handle OpenXR stopping state
-func _on_openxr_stopping() -> void:
-	# Our session is being stopped.
-	print("OpenXR is stopping")
+func unload_level():
+	print(level_instance)
+	if (is_instance_valid(level_instance)):
+		print("is valid ", level_instance)
+		level_instance.free() #if theres a bug its probably here
+		level_instance = null
+		print("post free ", level_instance)
 
-# Handle OpenXR pose recentered signal
-func _on_openxr_pose_recentered() -> void:
-	# User recentered view, we have to react to this by recentering the view.
-	# This is game implementation dependent.
-	emit_signal("pose_recentered")
+func load_level(level_name : String):
+	unload_level()
+	var level_path := "res://scenes/%s.tscn" % level_name
+	var level_resource = load(level_path)
+	if level_resource :
+		level_instance = level_resource.instantiate()
+		add_child(level_instance)
+
+func load_main():
+	unload_level()
+	if main :
+		level_instance = main.instantiate()
+		add_child(level_instance)
+
+func load_start_menu():
+	unload_level()
+	if start :
+		level_instance = start.instantiate()
+		add_child(level_instance)
