@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://c0nk22147iu7v" path="res://assets/models/models/m_mortier.blend" id="14_4rcuj"]
 [ext_resource type="PackedScene" uid="uid://yhg10d7gq2de" path="res://assets/models/models/m_bac_olive.blend" id="15_btoar"]
 [ext_resource type="PackedScene" uid="uid://bep0343b0sxv5" path="res://assets/models/models/m_cuisine.blend" id="16_a0t7s"]
-[ext_resource type="PackedScene" uid="uid://c2lgbjucnlhfb" path="res://assets/models/models/m_presse.blend" id="16_alxv1"]
 [ext_resource type="PackedScene" uid="uid://b2dr7uij0bra7" path="res://assets/models/models/m_braise.blend" id="17_p0rcj"]
 [ext_resource type="PackedScene" uid="uid://bporu3sao05oo" path="res://assets/models/models/m_grille.blend" id="18_4o3ow"]
 [ext_resource type="PackedScene" uid="uid://bgdmqsmyncgr6" path="res://assets/models/models/m_etagere.blend" id="19_bqktn"]
@@ -22,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://ccu3i5ykhpd52" path="res://assets/models/models/m_cuillere.blend" id="26_xabha"]
 [ext_resource type="PackedScene" uid="uid://blvkbthvwy7sx" path="res://assets/models/models/m_flacon_metal.blend" id="27_hwfod"]
 [ext_resource type="PackedScene" uid="uid://b7450j7ok847m" path="res://assets/models/models/m_bol_1.fbx" id="28_plfyg"]
+[ext_resource type="PackedScene" uid="uid://dhbhbfi6sisvh" path="res://assets/models/models/m_presse2.blend" id="28_uyu2h"]
 [ext_resource type="PackedScene" uid="uid://c2784ie2yqhg8" path="res://assets/models/models/m_amphore_2.blend" id="29_sc2bl"]
 [ext_resource type="PackedScene" uid="uid://b67cw4n18k3vy" path="res://assets/models/models/m_petale_1.blend" id="30_b3w2i"]
 [ext_resource type="PackedScene" uid="uid://h72rpvv4uhm1" path="res://assets/models/models/m_flacon_parfum.blend" id="31_cvwg7"]
@@ -1271,9 +1271,6 @@ block_data = SubResource("Resource_k53rv")
 
 [node name="assets" type="Node3D" parent="."]
 
-[node name="m_presse" parent="assets" instance=ExtResource("16_alxv1")]
-transform = Transform3D(0.602719, 0, 0, 0, 0.602719, 0, 0, 0, 0.602719, 4.40519, 1, 0.349514)
-
 [node name="m_mortier3" parent="assets" instance=ExtResource("14_4rcuj")]
 transform = Transform3D(0.125041, 0, 0, 0, 0.125041, 0, 0, 0, 0.125041, 1.72161, 1.29447, 2.21421)
 
@@ -1410,3 +1407,6 @@ mesh = SubResource("SphereMesh_qorbs")
 
 [node name="m_armoire2" parent="." instance=ExtResource("33_877su")]
 transform = Transform3D(-0.00262549, 0, -0.925975, 0, 0.919294, 0, 0.895424, 0, -0.00271507, 0.54748, 1.01111, -1.52221)
+
+[node name="m_presse2" parent="." instance=ExtResource("28_uyu2h")]
+transform = Transform3D(0.627, 0, 0, 0, 0.627, 0, 0, 0, 0.581, 4.41166, 0.998018, 0.365918)
