@@ -1,11 +1,8 @@
-[gd_scene load_steps=28 format=3 uid="uid://b2eh3l1tileed"]
+[gd_scene load_steps=25 format=3 uid="uid://b2eh3l1tileed"]
 
-[ext_resource type="PackedScene" uid="uid://byek35q5qua82" path="res://assets/models/jarre/jard_1.tscn" id="2_5b3yq"]
 [ext_resource type="Environment" uid="uid://c1p41k4sb4jm" path="res://assets/ressources/vaporwenv.tres" id="2_n2g0o"]
 [ext_resource type="Texture2D" uid="uid://cgmc0ykuixgd3" path="res://assets/textures/default.png" id="2_ud7st"]
 [ext_resource type="PackedScene" uid="uid://wtedo34v0xc6" path="res://assets/models/rendu_first_scene.blend" id="4_f1xtl"]
-[ext_resource type="PackedScene" uid="uid://dvkrtbqgth3ww" path="res://assets/models/placeholder_stl.blend" id="6_n2gnc"]
-[ext_resource type="PackedScene" uid="uid://c7hs8rvradogk" path="res://assets/models/placeholder_stl_1.blend" id="7_iql1m"]
 [ext_resource type="Script" path="res://scripts/label3D.gd" id="7_urr66"]
 [ext_resource type="PackedScene" uid="uid://pl1b8cmvnwdm" path="res://scenes/target_EN.tscn" id="12_i8ffo"]
 [ext_resource type="Material" uid="uid://b1dvbk8anjha0" path="res://assets/ressources/huile_material.tres" id="13_lu072"]
@@ -106,15 +103,6 @@ environment = ExtResource("2_n2g0o")
 [node name="rendu_first_scene" parent="Node3D" instance=ExtResource("4_f1xtl")]
 transform = Transform3D(-0.999966, 0, -0.0082727, 0, 1, 0, 0.0082727, 0, -0.999966, 5.86179, 0.0237264, 1.76264)
 
-[node name="jard1" parent="Node3D" instance=ExtResource("2_5b3yq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
-
-[node name="placeholder_stl" parent="Node3D" instance=ExtResource("6_n2gnc")]
-transform = Transform3D(0.886591, 0, -0.462553, 0, 1, 0, 0.462553, 0, 0.886591, -4.72501, -0.0168493, -2.86566)
-
-[node name="placeholder_stl_1" parent="Node3D" instance=ExtResource("7_iql1m")]
-transform = Transform3D(0.822164, 0, 0.569251, 0, 1, 0, -0.569251, 0, 0.822164, -2.90229, 0.142331, 8.76404)
-
 [node name="ground" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.4)
 
@@ -147,6 +135,7 @@ transform = Transform3D(0.045142, -0.0089593, 1.84369e-15, -5.26725e-09, -1.4671
 mesh = SubResource("PlaneMesh_1b4qt")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00587285, -1.19209e-07, 5.05447e-05)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.706359, -0.6501)
