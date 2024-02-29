@@ -1,6 +1,5 @@
-[gd_scene load_steps=29 format=3 uid="uid://b2eh3l1tileed"]
+[gd_scene load_steps=28 format=3 uid="uid://b2eh3l1tileed"]
 
-[ext_resource type="PackedScene" uid="uid://cylsy0cyrtguj" path="res://scenes/players/xr_player_old.tscn" id="1_ob55y"]
 [ext_resource type="PackedScene" uid="uid://byek35q5qua82" path="res://assets/models/jarre/jard_1.tscn" id="2_5b3yq"]
 [ext_resource type="Environment" uid="uid://c1p41k4sb4jm" path="res://assets/ressources/vaporwenv.tres" id="2_n2g0o"]
 [ext_resource type="Texture2D" uid="uid://cgmc0ykuixgd3" path="res://assets/textures/default.png" id="2_ud7st"]
@@ -94,9 +93,6 @@ albedo_texture = SubResource("ViewportTexture_ns8se")
 [sub_resource type="QuadMesh" id="QuadMesh_ghl7r"]
 
 [node name="root" type="Node3D"]
-
-[node name="XROrigin" parent="." instance=ExtResource("1_ob55y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.85434, 1.23052, 4.97032)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.816138, 0.577858, 0, -0.577858, 0.816138, 29.4, 4.18459, -40.5858)

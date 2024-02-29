@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhbld6n1ik88w"]
+
+[ext_resource type="PackedScene" uid="uid://crb1eileeof2t" path="res://scenes/LD_finale.tscn" id="1_64cgs"]
+[ext_resource type="PackedScene" uid="uid://cylsy0cyrtguj" path="res://scenes/players/xr_player.tscn" id="2_10xly"]
+
+[node name="LD finale" instance=ExtResource("1_64cgs")]
+
+[node name="XROrigin" parent="." index="0" instance=ExtResource("2_10xly")]
+
+[node name="MeshInstance3D" parent="playerpath" index="0"]
+transform = Transform3D(0.219709, 0, 0, 0, 0.219709, 0, 0, 0, 0.219709, 2.729, 0.75, 4.399)
+
+[node name="MeshInstance3D2" parent="playerpath" index="1"]
+transform = Transform3D(0.124928, 0, 0.180735, 0, 0.219709, 0, -0.180735, 0, 0.124928, 3.77411, 0.75, 2.19239)
+
+[node name="MeshInstance3D3" parent="playerpath" index="2"]
+transform = Transform3D(0.219709, 0, 0, 0, 0.219709, 0, 0, 0, 0.219709, 3.306, 0.75, 1.251)
+
+[node name="MeshInstance3D4" parent="playerpath" index="3"]
+transform = Transform3D(0.219709, 0, 0, 0, 0.219709, 0, 0, 0, 0.219709, 1.744, 0.75, 0.32)
+
+[node name="MeshInstance3D5" parent="playerpath" index="4"]
+transform = Transform3D(0.219709, 0, 0, 0, 0.219709, 0, 0, 0, 0.219709, 0.231, 0.75, -0.318)
+
+[node name="MeshInstance3D6" parent="playerpath" index="5"]
+transform = Transform3D(0.219709, 0, 0, 0, 0.219709, 0, 0, 0, 0.219709, -0.933, 0.75, -1.235)
+
+[node name="MeshInstance3D7" parent="playerpath" index="6"]
+transform = Transform3D(0.219709, 0, 0, 0, 0.219709, 0, 0, 0, 0.219709, -3.449, 0.75, -1.48)

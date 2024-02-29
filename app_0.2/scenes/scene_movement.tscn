@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkiqdhe74b11o"]
+
+[ext_resource type="PackedScene" uid="uid://crb1eileeof2t" path="res://scenes/LD_finale.tscn" id="1_pmgvp"]
+[ext_resource type="PackedScene" uid="uid://cylsy0cyrtguj" path="res://scenes/players/xr_player.tscn" id="2_4xdf5"]
+
+[node name="LD finale" instance=ExtResource("1_pmgvp")]
+
+[node name="XROrigin" parent="." index="0" instance=ExtResource("2_4xdf5")]
+
+[node name="MeshInstance3D2" parent="playerpath" index="1"]
+transform = Transform3D(0.219709, 0, 0, 0, 0.219709, 0, 0, 0, 0.219709, 3.76781, 0.118402, 2.71368)
+
+[node name="MeshInstance3D3" parent="playerpath" index="2"]
+transform = Transform3D(0.219709, 0, 0, 0, 0.219709, 0, 0, 0, 0.219709, 3.30605, 0.784208, 1.25067)
+
+[node name="MeshInstance3D5" parent="playerpath" index="4"]
+transform = Transform3D(0.219709, 0, 0, 0, 0.219709, 0, 0, 0, 0.219709, 0.231003, 0.00360298, -0.317779)
+
+[node name="MeshInstance3D6" parent="playerpath" index="5"]
+transform = Transform3D(0.219709, 0, 0, 0, 0.219709, 0, 0, 0, 0.219709, -0.933392, -0.314873, -1.23457)

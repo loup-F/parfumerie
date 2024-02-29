@@ -1,7 +1,6 @@
-[gd_scene load_steps=22 format=3 uid="uid://ce723g1vagol0"]
+[gd_scene load_steps=21 format=3 uid="uid://ce723g1vagol0"]
 
 [ext_resource type="Script" path="res://scenes/choice_manager.gd" id="1_brkxy"]
-[ext_resource type="PackedScene" uid="uid://cylsy0cyrtguj" path="res://scenes/players/xr_player_old.tscn" id="1_qxqq1"]
 [ext_resource type="Script" path="res://scripts/floating_ui.gd" id="2_y1xrl"]
 [ext_resource type="PackedScene" uid="uid://cwxikevd2febl" path="res://scenes/target_FR.tscn" id="3_0lc0q"]
 [ext_resource type="PackedScene" uid="uid://pl1b8cmvnwdm" path="res://scenes/target_EN.tscn" id="4_2igle"]
@@ -69,8 +68,6 @@ size = Vector3(100, 1, 100)
 
 [node name="StartMenu" type="Node3D"]
 
-[node name="XROrigin" parent="." instance=ExtResource("1_qxqq1")]
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_g88pw")
 
@@ -81,6 +78,10 @@ shadow_enabled = true
 [node name="ChoicePanels" type="Node3D" parent="."]
 unique_name_in_owner = true
 script = ExtResource("1_brkxy")
+
+[node name="Label3D" type="Label3D" parent="ChoicePanels"]
+transform = Transform3D(1.77679, 0, 0, 0, 1.77679, 0, 0, 0, 1.77679, 0.058, 4.219, -5.389)
+text = "Choisissez une version :"
 
 [node name="Choix1" type="Node3D" parent="ChoicePanels"]
 

@@ -5,13 +5,12 @@ var points = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print(target)
 	if !target:
 		target = $"../dummy"
 	for child in get_children():
 		points.append(child)
 		child.visible = false
-		child.position.y = target.position.y
+	target.position = points[0].position
 	animate_player()
 	
 
@@ -22,9 +21,17 @@ func _process(delta):
 
 func animate_player():
 	var tween = get_tree().create_tween()
+	tween.tween_interval(0.5)
+#	for point in points:
+#		tween.tween_interval(0.5)
+#		tween.tween_property(target, "position", point.position, 2).set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_IN_OUT)
+#		tween.play()
+#	tween.set_parallel(true)
+	tween.tween_property(target, "rotation", points[1].rotation, 2).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_interval(0.5)
+	tween.tween_property(target, "position", points[1].position, 2).set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_IN_OUT)
+#	tween.set_parallel(false)
 	tween.tween_interval(1)
-	tween.tween_property(target, "position", points[1].global_position*Vector3(1,0,1)+target.position*Vector3(0,1,0), 2).set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_IN_OUT)
-	tween.tween_interval(1)
-	tween.tween_property(target, "position", points[2].global_position*Vector3(1,0,1)+target.position*Vector3(0,1,0), 2).set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(target, "position", points[2].position, 2).set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_IN_OUT)
 	tween.play()
 

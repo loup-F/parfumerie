@@ -18,7 +18,6 @@ func _ready():
 
 		# Enable XR on our viewport
 		vp.use_xr = true
-		subtitles = $XROrigin.animation_player
 		# Make sure v-sync is off, v-sync is handled by OpenXR
 		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
 
