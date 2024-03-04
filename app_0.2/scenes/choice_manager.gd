@@ -5,13 +5,14 @@ extends Node3D
 @onready var mat3 = $Choix2/FloatingOpt3/MeshInstance3D.get_active_material(0)
 @onready var mat4 = $Choix2/FloatingOpt4/MeshInstance3D.get_active_material(0)
 
-#signal load_level
+#signal choice_done
 var level_manager = null
 
 func _ready():
 	var manager = get_parent().get_parent()
 	if manager.name == "LevelManager":
 		level_manager = manager
+#		choice_done.connect(manager.full_load)
 
 func on_picked():
 	var tween = get_tree().create_tween().set_parallel(true)

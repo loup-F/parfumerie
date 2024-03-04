@@ -1,9 +1,9 @@
 [gd_scene load_steps=22 format=3 uid="uid://ce723g1vagol0"]
 
 [ext_resource type="Script" path="res://scenes/choice_manager.gd" id="1_brkxy"]
-[ext_resource type="PackedScene" uid="uid://cylsy0cyrtguj" path="res://scenes/players/xr_player.tscn" id="1_rnpqy"]
-[ext_resource type="Script" path="res://scripts/floating_ui.gd" id="2_y1xrl"]
+[ext_resource type="PackedScene" uid="uid://6bvwc7dldlb1" path="res://assets/player_start_pos.tscn" id="1_g3cyp"]
 [ext_resource type="PackedScene" uid="uid://cwxikevd2febl" path="res://scenes/target_FR.tscn" id="3_0lc0q"]
+[ext_resource type="Script" path="res://scripts/Floating_ui.gd" id="3_xmwka"]
 [ext_resource type="PackedScene" uid="uid://pl1b8cmvnwdm" path="res://scenes/target_EN.tscn" id="4_2igle"]
 [ext_resource type="PackedScene" uid="uid://73qen22upk0x" path="res://scenes/target_STFR.tscn" id="5_ary71"]
 [ext_resource type="PackedScene" uid="uid://conusqvj0ho0d" path="res://scenes/target_STEN.tscn" id="6_votu7"]
@@ -69,8 +69,7 @@ size = Vector3(100, 1, 100)
 
 [node name="StartMenu" type="Node3D"]
 
-[node name="XROrigin" parent="." instance=ExtResource("1_rnpqy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.145661, 1.31127, 0.652889)
+[node name="playerStartPos" parent="." instance=ExtResource("1_g3cyp")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_g88pw")
@@ -93,7 +92,7 @@ text = "Choisissez une version :"
 transform = Transform3D(1.51714, 0, 0.707455, 0, 1.67398, 0, -0.707455, 0, 1.51714, -2, 2.8, -5)
 collision_layer = 4
 collision_mask = 0
-script = ExtResource("2_y1xrl")
+script = ExtResource("3_xmwka")
 control = NodePath("../opt1/Target_FR")
 metadata/_edit_group_ = true
 
@@ -108,7 +107,7 @@ mesh = SubResource("QuadMesh_t0675")
 transform = Transform3D(1.61032, 0, -0.750904, 0, 1.77679, 0, 0.750904, 0, 1.61032, 2, 2.8, -5)
 collision_layer = 4
 collision_mask = 0
-script = ExtResource("2_y1xrl")
+script = ExtResource("3_xmwka")
 control = NodePath("../opt2/Target_EN")
 metadata/_edit_group_ = true
 
@@ -138,7 +137,7 @@ render_target_update_mode = 4
 transform = Transform3D(1.51714, 0, 0.707455, 0, 1.67398, 0, -0.707455, 0, 1.51714, -2, 2.8, -5)
 collision_layer = 0
 collision_mask = 0
-script = ExtResource("2_y1xrl")
+script = ExtResource("3_xmwka")
 control = NodePath("../opt3/Target_STFR")
 metadata/_edit_group_ = true
 
@@ -154,7 +153,7 @@ skeleton = NodePath("")
 transform = Transform3D(1.61032, 0, -0.750904, 0, 1.77679, 0, 0.750904, 0, 1.61032, 2, 2.8, -5)
 collision_layer = 0
 collision_mask = 0
-script = ExtResource("2_y1xrl")
+script = ExtResource("3_xmwka")
 control = NodePath("../opt4/Target_STEN")
 metadata/_edit_group_ = true
 

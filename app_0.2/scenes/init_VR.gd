@@ -12,6 +12,7 @@ var xr_is_focussed = false
 @export var destination: PackedScene
 var level_instance : Node3D
 var start = preload("res://scenes/start_menu.tscn")
+@onready var player = get_child(0)
 
 func _ready():
 	xr_interface = XRServer.find_interface("OpenXR")
@@ -92,13 +93,13 @@ func _on_openxr_focused_state() -> void:
 	emit_signal("focus_gained")
 
 func unload_level():
-#	var player = get_tree().get_first_node_in_group("player")
-#	player.fade_out()
-#	await player.faded_out
+	
 	print(" init_vr, level instance: ",level_instance)
 	if (is_instance_valid(level_instance)):
 		print("is valid ", level_instance)
-		level_instance.queue_free() #if theres a bug its probably here
+		player.fade_to_black()
+		await player.fade_done
+		level_instance.free() #if theres a bug its probably here
 		level_instance = null
 		print("post free ", level_instance)
 
@@ -110,11 +111,14 @@ func load_level(level_name : String):
 		level_instance = level_resource.instantiate()
 		add_child(level_instance)
 
+
 func load_dest():
 	unload_level()
 	if destination :
 		level_instance = destination.instantiate()
 		add_child(level_instance)
+		player.fade_in()
+		await player.fade_done
 
 func load_start_menu():
 	unload_level()

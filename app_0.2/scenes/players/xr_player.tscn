@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://csgsp0wuw8ucy" path="res://addons/godot-xr-tools/hands/model/Hand_Glove_low_R.gltf" id="4_nu7cn"]
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="5_jxeb3"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/player/player_body.gd" id="6_cmikl"]
-[ext_resource type="Shader" path="res://addons/godot-xr-tools/staging/fade.gdshader" id="7_n6yyg"]
+[ext_resource type="Shader" path="res://addons/godot-xr-tools/staging/fade.gdshader" id="7_xsrl8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4a5d7"]
 no_depth_test = true
@@ -86,13 +86,13 @@ _data = {
 "sous-titres fr": SubResource("Animation_mempe")
 }
 
-[sub_resource type="QuadMesh" id="QuadMesh_bquq2"]
+[sub_resource type="QuadMesh" id="QuadMesh_eo68x"]
 size = Vector2(3, 3)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ntvu7"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nvwak"]
 resource_local_to_scene = true
 render_priority = 0
-shader = ExtResource("7_n6yyg")
+shader = ExtResource("7_xsrl8")
 shader_parameter/alpha = 0.0
 
 [node name="XROrigin" type="XROrigin3D"]
@@ -177,6 +177,8 @@ libraries = {
 }
 
 [node name="Fade" type="MeshInstance3D" parent="."]
+unique_name_in_owner = true
 transform = Transform3D(5.61624, 0, 0, 0, 5.61624, 0, 0, 0, 5.61624, 0, 0, 0)
-mesh = SubResource("QuadMesh_bquq2")
-surface_material_override/0 = SubResource("ShaderMaterial_ntvu7")
+visible = false
+mesh = SubResource("QuadMesh_eo68x")
+surface_material_override/0 = SubResource("ShaderMaterial_nvwak")

@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://wpk68xln3ml1"]
+[gd_scene load_steps=8 format=3 uid="uid://wpk68xln3ml1"]
 
 [ext_resource type="Script" path="res://scenes/players/fps_controller.gd" id="1_occ2d"]
+[ext_resource type="Shader" path="res://addons/godot-xr-tools/staging/fade.gdshader" id="2_o2hr8"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5tsws"]
 
@@ -10,6 +11,15 @@ disable_receive_shadows = true
 
 [sub_resource type="SphereMesh" id="SphereMesh_efu2e"]
 material = SubResource("StandardMaterial3D_4n62c")
+
+[sub_resource type="QuadMesh" id="QuadMesh_6w5gs"]
+size = Vector2(3, 3)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_infvf"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("2_o2hr8")
+shader_parameter/alpha = 0.0
 
 [node name="Fps_player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.82503, 0)
@@ -35,3 +45,10 @@ mesh = SubResource("SphereMesh_efu2e")
 [node name="FpsDebugLabel" type="Label3D" parent="Camera3D"]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.427554, -2.20017)
+
+[node name="Fade" type="MeshInstance3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(5.61624, 0, 0, 0, 5.61624, 0, 0, 0, 5.61624, 0, 0, 0)
+visible = false
+mesh = SubResource("QuadMesh_6w5gs")
+surface_material_override/0 = SubResource("ShaderMaterial_infvf")

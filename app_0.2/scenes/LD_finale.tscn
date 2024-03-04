@@ -1,7 +1,8 @@
-[gd_scene load_steps=77 format=3 uid="uid://crb1eileeof2t"]
+[gd_scene load_steps=74 format=3 uid="uid://crb1eileeof2t"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_6v3i7"]
 [ext_resource type="Script" path="res://addons/cyclops_level_builder/nodes/cyclops_blocks.gd" id="1_i7wco"]
+[ext_resource type="PackedScene" uid="uid://6bvwc7dldlb1" path="res://assets/player_start_pos.tscn" id="2_1snup"]
 [ext_resource type="Script" path="res://addons/cyclops_level_builder/nodes/cyclops_convex_block.gd" id="2_8rc5t"]
 [ext_resource type="Environment" uid="uid://c1p41k4sb4jm" path="res://assets/ressources/vaporwenv.tres" id="2_53hxs"]
 [ext_resource type="Script" path="res://addons/cyclops_level_builder/resources/convex_block_data.gd" id="3_tk6jp"]
@@ -13,7 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://bgdmqsmyncgr6" path="res://assets/models/models/m_etagere.blend" id="19_bqktn"]
 [ext_resource type="PackedScene" uid="uid://dvbgbcoxgexgp" path="res://assets/models/models/m_pilon.blend" id="20_25kq6"]
 [ext_resource type="PackedScene" uid="uid://cnemxwvl1g43r" path="res://assets/models/models/m_porte.blend" id="21_6rgq0"]
-[ext_resource type="Script" path="res://scenes/player_pathing.gd" id="21_la4lb"]
 [ext_resource type="PackedScene" uid="uid://bpqasvi5w3yg7" path="res://assets/models/models/m_pot_céramique.blend" id="22_f8mbx"]
 [ext_resource type="PackedScene" uid="uid://p14j12kov3rt" path="res://assets/models/models/m_petite_marmite.blend" id="23_osxi4"]
 [ext_resource type="PackedScene" uid="uid://q6j6neo8osf0" path="res://assets/models/models/m_grosse_marmite.blend" id="24_8jkjp"]
@@ -929,16 +929,10 @@ face_selected = PackedByteArray(0, 0, 0, 0, 0, 0)
 active_face = -1
 face_ids = PackedInt32Array(0, 1, 2, 3, 4, 5)
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_qk255"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pa46b"]
-albedo_color = Color(1, 0, 1, 1)
-
-[sub_resource type="SphereMesh" id="SphereMesh_qorbs"]
-material = SubResource("StandardMaterial3D_pa46b")
-
 [node name="LD finale" type="Node3D"]
 script = ExtResource("1_6v3i7")
+
+[node name="playerStartPos" parent="." instance=ExtResource("2_1snup")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("2_53hxs")
@@ -1366,44 +1360,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.14573, 2.59389, 1.30236)
 
 [node name="m_bouteille_2" parent="assets" instance=ExtResource("33_hbfmk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.33697, 2.0625, 0.363411)
-
-[node name="dummy" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.648044, 0, 0, 0, 0.648044, 0, 0, 0, 0.648044, 3.17694, 2.18634, 4.39832)
-visible = false
-mesh = SubResource("CapsuleMesh_qk255")
-skeleton = NodePath("../XROrigin")
-
-[node name="playerpath" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.511, 0)
-script = ExtResource("21_la4lb")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="playerpath"]
-transform = Transform3D(0.219709, 0, 0, 0, 0.219709, 0, 0, 0, 0.219709, 2.72918, 0.142167, 4.3989)
-mesh = SubResource("SphereMesh_qorbs")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="playerpath"]
-transform = Transform3D(0.219709, 0, 0, 0, 0.219709, 0, 0, 0, 0.219709, 3.76781, 0.361379, 2.71368)
-mesh = SubResource("SphereMesh_qorbs")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="playerpath"]
-transform = Transform3D(0.219709, 0, 0, 0, 0.219709, 0, 0, 0, 0.219709, 3.30605, 0.360642, 1.25067)
-mesh = SubResource("SphereMesh_qorbs")
-
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="playerpath"]
-transform = Transform3D(0.219709, 0, 0, 0, 0.219709, 0, 0, 0, 0.219709, 1.74369, 0.360642, 0.319925)
-mesh = SubResource("SphereMesh_qorbs")
-
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="playerpath"]
-transform = Transform3D(0.219709, 0, 0, 0, 0.219709, 0, 0, 0, 0.219709, 0.231003, 0.360642, -0.317779)
-mesh = SubResource("SphereMesh_qorbs")
-
-[node name="MeshInstance3D6" type="MeshInstance3D" parent="playerpath"]
-transform = Transform3D(0.219709, 0, 0, 0, 0.219709, 0, 0, 0, 0.219709, -0.933392, 0.360642, -1.23457)
-mesh = SubResource("SphereMesh_qorbs")
-
-[node name="MeshInstance3D7" type="MeshInstance3D" parent="playerpath"]
-transform = Transform3D(0.219709, 0, 0, 0, 0.219709, 0, 0, 0, 0.219709, -3.4486, 0.360642, -1.47994)
-mesh = SubResource("SphereMesh_qorbs")
 
 [node name="m_armoire2" parent="." instance=ExtResource("33_877su")]
 transform = Transform3D(-0.00262549, 0, -0.925975, 0, 0.919294, 0, 0.895424, 0, -0.00271507, 0.54748, 1.01111, -1.52221)

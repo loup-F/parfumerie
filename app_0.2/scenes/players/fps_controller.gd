@@ -10,6 +10,7 @@ var mouse_sensitivity = 0.002
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+signal fade_done
 
 func _enter_tree():
 	self.add_to_group("player")
@@ -33,6 +34,7 @@ func _ready():
 		self.queue_free()
 	else:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		fade_in()
 	
 
 func _physics_process(delta):
@@ -71,3 +73,25 @@ func _physics_process(delta):
 	elif previous !=null and target == null:
 		previous.looked_at = false #trigger une seule foi
 		previous = target
+
+func fade_in():
+	var tween = get_tree().create_tween()
+	tween.tween_method(set_fade, 1.0, 0.0, 1.0)
+	await tween.finished
+	emit_signal("fade_done")
+#
+func fade_to_black():
+	var tween = get_tree().create_tween()
+	tween.tween_method(set_fade, 0.0, 1.0, 1.0)
+	await tween.finished
+	emit_signal("fade_done")
+#
+func set_fade(p_value : float):
+	if p_value == 0.0:
+		%Fade.visible = false
+	else:
+		var material : ShaderMaterial = %Fade.get_surface_override_material(0)
+		if material:
+			material.set_shader_parameter("alpha", p_value)
+			print(p_value)
+		%Fade.visible = true

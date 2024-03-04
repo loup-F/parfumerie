@@ -11,7 +11,7 @@ var looked_at : bool = false :
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print(" floating ui ", self, " choicePanel node : ", %ChoicePanels)
+#	print(" floating ui ", self, " choicePanel node : ", %ChoicePanels)
 	control.filled_up.connect(on_filled)
 	picked.connect(%ChoicePanels.on_picked)
 	picked_2.connect(%ChoicePanels.on_picked_2)

@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3it7kn4fv82q"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pa46b"]
+albedo_color = Color(1, 0, 1, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_qorbs"]
+material = SubResource("StandardMaterial3D_pa46b")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2xlqs"]
+albedo_color = Color(1, 0, 1, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_wy4qd"]
+material = SubResource("StandardMaterial3D_2xlqs")
+
+[node name="pathnode" type="MeshInstance3D"]
+transform = Transform3D(0.219709, 0, 0, 0, 0.219709, 0, 0, 0, 0.219709, 0, 0, 0)
+mesh = SubResource("SphereMesh_qorbs")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.572364, 0, 0, 0, -4.18427e-08, 0.328835, 0, -0.95725, -1.43739e-08, 0, 0, -0.663)
+mesh = SubResource("PrismMesh_wy4qd")
