@@ -1,13 +1,15 @@
-[gd_scene load_steps=14 format=3 uid="uid://cylsy0cyrtguj"]
+[gd_scene load_steps=17 format=3 uid="uid://cylsy0cyrtguj"]
 
-[ext_resource type="Script" path="res://scenes/players/xr_player.gd" id="1_w2afr"]
-[ext_resource type="PackedScene" uid="uid://bnx4hithcij6y" path="res://addons/godot-xr-tools/hands/model/Hand_Glove_low_L.gltf" id="2_qtfoe"]
-[ext_resource type="PackedScene" uid="uid://fiul51tsyoop" path="res://addons/godot-xr-tools/functions/function_teleport.tscn" id="3_awelg"]
-[ext_resource type="PackedScene" uid="uid://csgsp0wuw8ucy" path="res://addons/godot-xr-tools/hands/model/Hand_Glove_low_R.gltf" id="4_dumpn"]
-[ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="5_ofi1t"]
-[ext_resource type="Script" path="res://addons/godot-xr-tools/player/player_body.gd" id="6_ddmd8"]
+[ext_resource type="Script" path="res://scenes/players/xr_player.gd" id="1_yyqei"]
+[ext_resource type="PackedScene" uid="uid://bnx4hithcij6y" path="res://addons/godot-xr-tools/hands/model/Hand_Glove_low_L.gltf" id="2_xs4bm"]
+[ext_resource type="PackedScene" uid="uid://fiul51tsyoop" path="res://addons/godot-xr-tools/functions/function_teleport.tscn" id="3_xhjf1"]
+[ext_resource type="PackedScene" uid="uid://csgsp0wuw8ucy" path="res://addons/godot-xr-tools/hands/model/Hand_Glove_low_R.gltf" id="4_nu7cn"]
+[ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="5_jxeb3"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/player/player_body.gd" id="6_cmikl"]
+[ext_resource type="Shader" path="res://addons/godot-xr-tools/staging/fade.gdshader" id="7_n6yyg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4a5d7"]
+no_depth_test = true
 shading_mode = 0
 
 [sub_resource type="SphereMesh" id="SphereMesh_7bapu"]
@@ -84,10 +86,19 @@ _data = {
 "sous-titres fr": SubResource("Animation_mempe")
 }
 
+[sub_resource type="QuadMesh" id="QuadMesh_bquq2"]
+size = Vector2(3, 3)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ntvu7"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("7_n6yyg")
+shader_parameter/alpha = 0.0
+
 [node name="XROrigin" type="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.145661, 1.23052, -3.02968)
 current = true
-script = ExtResource("1_w2afr")
+script = ExtResource("1_yyqei")
 
 [node name="XRCamera3D" type="XRCamera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0681503, 0)
@@ -98,7 +109,7 @@ target_position = Vector3(0, 0, -50)
 collision_mask = 4
 debug_shape_custom_color = Color(0.945098, 0.72549, 0, 1)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="XRCamera3D"]
+[node name="reticule" type="MeshInstance3D" parent="XRCamera3D"]
 transform = Transform3D(0.229069, 0, 0, 0, 0.223104, 0.0519344, 0, -0.0519344, 0.223104, 0, 0.00858545, -2.15146)
 cast_shadow = 0
 mesh = SubResource("SphereMesh_7bapu")
@@ -120,9 +131,9 @@ width = 350.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.51683, -0.636572, 0)
 tracker = &"left_hand"
 
-[node name="Hand_Glove_low_L" parent="LeftHand" instance=ExtResource("2_qtfoe")]
+[node name="Hand_Glove_low_L" parent="LeftHand" instance=ExtResource("2_xs4bm")]
 
-[node name="FunctionTeleport" parent="LeftHand" instance=ExtResource("3_awelg")]
+[node name="FunctionTeleport" parent="LeftHand" instance=ExtResource("3_xhjf1")]
 player_height = 0.5
 player_radius = 0.3
 player_material = null
@@ -131,10 +142,10 @@ player_material = null
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.524064, -0.555925, 0)
 tracker = &"right_hand"
 
-[node name="Hand_Glove_low_R" parent="RightHand" instance=ExtResource("4_dumpn")]
+[node name="Hand_Glove_low_R" parent="RightHand" instance=ExtResource("4_nu7cn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0624049, 0)
 
-[node name="MovementTurn" parent="RightHand" instance=ExtResource("5_ofi1t")]
+[node name="MovementTurn" parent="RightHand" instance=ExtResource("5_jxeb3")]
 step_turn_angle = 45.0
 
 [node name="XRToolsPlayerBody" type="CharacterBody3D" parent="."]
@@ -144,7 +155,7 @@ collision_layer = 524289
 collision_mask = 255
 axis_lock_linear_y = true
 motion_mode = 1
-script = ExtResource("6_ddmd8")
+script = ExtResource("6_cmikl")
 player_calibrate_height = false
 player_height_rate = 2.0
 
@@ -164,3 +175,8 @@ root_node = NodePath("../XRCamera3D/XR_Label")
 libraries = {
 "": SubResource("AnimationLibrary_p7em2")
 }
+
+[node name="Fade" type="MeshInstance3D" parent="."]
+transform = Transform3D(5.61624, 0, 0, 0, 5.61624, 0, 0, 0, 5.61624, 0, 0, 0)
+mesh = SubResource("QuadMesh_bquq2")
+surface_material_override/0 = SubResource("ShaderMaterial_ntvu7")

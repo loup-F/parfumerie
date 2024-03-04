@@ -3,8 +3,6 @@ var fill = false
 var filled = false
 signal filled_up
 
-func _ready():
-	pass
 
 # gère le remplissage de la barre en et emet un signal si elle est pleine
 func _process(_delta):

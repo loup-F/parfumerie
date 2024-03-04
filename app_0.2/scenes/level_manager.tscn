@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://cxtpvg3a3b6ny"]
+[gd_scene load_steps=3 format=3 uid="uid://cxtpvg3a3b6ny"]
 
 [ext_resource type="Script" path="res://scenes/init_VR.gd" id="1_4vwh5"]
+[ext_resource type="PackedScene" uid="uid://dhbld6n1ik88w" path="res://scenes/scene_auto.tscn" id="2_3t46a"]
 
 [node name="LevelManager" type="Node3D"]
 script = ExtResource("1_4vwh5")
+destination = ExtResource("2_3t46a")

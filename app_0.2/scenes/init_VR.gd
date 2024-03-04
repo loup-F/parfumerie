@@ -5,15 +5,13 @@ signal focus_gained
 signal pose_recentered
 
 @export var maximum_refresh_rate : int = 90
-#@export var first_scene_to_load : path
 
 var xr_interface : OpenXRInterface
 var xr_is_focussed = false
 
+@export var destination: PackedScene
 var level_instance : Node3D
 var start = preload("res://scenes/start_menu.tscn")
-var main = preload("res://scenes/main.tscn")
-
 
 func _ready():
 	xr_interface = XRServer.find_interface("OpenXR")
@@ -35,9 +33,8 @@ func _ready():
 		print("OpenXR not instantiated!")
 #		get_tree().quit()
 		vp.use_xr = false
-		
 	load_start_menu()
-#	load_main()
+#	load_dest()
 
 func _on_openxr_session_begun() -> void:
 	# Get the reported refresh rate
@@ -95,10 +92,13 @@ func _on_openxr_focused_state() -> void:
 	emit_signal("focus_gained")
 
 func unload_level():
-	print(level_instance)
+#	var player = get_tree().get_first_node_in_group("player")
+#	player.fade_out()
+#	await player.faded_out
+	print(" init_vr, level instance: ",level_instance)
 	if (is_instance_valid(level_instance)):
 		print("is valid ", level_instance)
-		level_instance.free() #if theres a bug its probably here
+		level_instance.queue_free() #if theres a bug its probably here
 		level_instance = null
 		print("post free ", level_instance)
 
@@ -110,10 +110,10 @@ func load_level(level_name : String):
 		level_instance = level_resource.instantiate()
 		add_child(level_instance)
 
-func load_main():
+func load_dest():
 	unload_level()
-	if main :
-		level_instance = main.instantiate()
+	if destination :
+		level_instance = destination.instantiate()
 		add_child(level_instance)
 
 func load_start_menu():

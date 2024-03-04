@@ -13,7 +13,6 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _enter_tree():
 	self.add_to_group("player")
-	print(get_tree().get_nodes_in_group("player")[0])
 
 func _input(event):
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
@@ -31,7 +30,6 @@ func _input(event):
 func _ready():
 	if has_node("/root/main/Xr_player"):
 		self.remove_from_group("player")
-		print(get_tree().get_node_from_group("player"))
 		self.queue_free()
 	else:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

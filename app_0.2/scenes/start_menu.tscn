@@ -1,6 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://ce723g1vagol0"]
+[gd_scene load_steps=22 format=3 uid="uid://ce723g1vagol0"]
 
 [ext_resource type="Script" path="res://scenes/choice_manager.gd" id="1_brkxy"]
+[ext_resource type="PackedScene" uid="uid://cylsy0cyrtguj" path="res://scenes/players/xr_player.tscn" id="1_rnpqy"]
 [ext_resource type="Script" path="res://scripts/floating_ui.gd" id="2_y1xrl"]
 [ext_resource type="PackedScene" uid="uid://cwxikevd2febl" path="res://scenes/target_FR.tscn" id="3_0lc0q"]
 [ext_resource type="PackedScene" uid="uid://pl1b8cmvnwdm" path="res://scenes/target_EN.tscn" id="4_2igle"]
@@ -68,6 +69,9 @@ size = Vector3(100, 1, 100)
 
 [node name="StartMenu" type="Node3D"]
 
+[node name="XROrigin" parent="." instance=ExtResource("1_rnpqy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.145661, 1.31127, 0.652889)
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_g88pw")
 
@@ -100,11 +104,12 @@ shape = SubResource("BoxShape3D_0go3u")
 material_override = SubResource("StandardMaterial3D_34abf")
 mesh = SubResource("QuadMesh_t0675")
 
-[node name="FloatingOpt2" type="StaticBody3D" parent="ChoicePanels/Choix1" groups=["UI_target"]]
+[node name="FloatingOpt2" type="StaticBody3D" parent="ChoicePanels/Choix1" node_paths=PackedStringArray("control") groups=["UI_target"]]
 transform = Transform3D(1.61032, 0, -0.750904, 0, 1.77679, 0, 0.750904, 0, 1.61032, 2, 2.8, -5)
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("2_y1xrl")
+control = NodePath("../opt2/Target_EN")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ChoicePanels/Choix1/FloatingOpt2"]

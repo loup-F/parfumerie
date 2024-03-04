@@ -5,12 +5,13 @@ extends Node3D
 @onready var mat3 = $Choix2/FloatingOpt3/MeshInstance3D.get_active_material(0)
 @onready var mat4 = $Choix2/FloatingOpt4/MeshInstance3D.get_active_material(0)
 
-signal load_main
+#signal load_level
+var level_manager = null
 
 func _ready():
-	var level_manager = get_parent().get_parent()
-	if level_manager.name == "LevelManager":
-		load_main.connect(level_manager.load_main)
+	var manager = get_parent().get_parent()
+	if manager.name == "LevelManager":
+		level_manager = manager
 
 func on_picked():
 	var tween = get_tree().create_tween().set_parallel(true)
@@ -29,9 +30,7 @@ func second_choice():
 
 func on_picked_2(): 
 	var tween = get_tree().create_tween().set_parallel(true)
-	tween.finished.connect(load_level)
+	tween.finished.connect(level_manager.load_dest)
 	tween.tween_property(mat3, "albedo_color:a", 0, 1).set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(mat4, "albedo_color:a", 0, 1).set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_IN_OUT)
 
-func load_level():
-	emit_signal("load_main")
