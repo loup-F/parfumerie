@@ -13,6 +13,7 @@ var xr_is_focussed = false
 var level_instance : Node3D
 var start = preload("res://scenes/start_menu.tscn")
 @onready var player = get_child(0)
+@export var quickstart = false
 
 func _ready():
 	xr_interface = XRServer.find_interface("OpenXR")
@@ -34,8 +35,10 @@ func _ready():
 		print("OpenXR not instantiated!")
 #		get_tree().quit()
 		vp.use_xr = false
-	load_start_menu()
-#	load_dest()
+	if quickstart:
+		load_dest()
+	else: load_start_menu()
+
 
 func _on_openxr_session_begun() -> void:
 	# Get the reported refresh rate
@@ -93,12 +96,9 @@ func _on_openxr_focused_state() -> void:
 	emit_signal("focus_gained")
 
 func unload_level():
-	
 	print(" init_vr, level instance: ",level_instance)
 	if (is_instance_valid(level_instance)):
 		print("is valid ", level_instance)
-		player.fade_to_black()
-		await player.fade_done
 		level_instance.free() #if theres a bug its probably here
 		level_instance = null
 		print("post free ", level_instance)
@@ -113,6 +113,9 @@ func load_level(level_name : String):
 
 
 func load_dest():
+	player.fade_to_black()
+	player.in_menu = false
+	await player.fade_done
 	unload_level()
 	if destination :
 		level_instance = destination.instantiate()

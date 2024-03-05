@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hra7hrdrivgr"
-path.s3tc="res://.godot/imported/pillier.jpg-bc596e294d32ea2051b33129d5db09d9.s3tc.ctex"
-path.etc2="res://.godot/imported/pillier.jpg-bc596e294d32ea2051b33129d5db09d9.etc2.ctex"
+uid="uid://byf8v1nwo27s6"
+path.s3tc="res://.godot/imported/oak-623442a7bc7fb-1200.jpg-5fa6e214626a2acf96570c6640e9d8b8.s3tc.ctex"
+path.etc2="res://.godot/imported/oak-623442a7bc7fb-1200.jpg-5fa6e214626a2acf96570c6640e9d8b8.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/models/textures/pillier.jpg"
-dest_files=["res://.godot/imported/pillier.jpg-bc596e294d32ea2051b33129d5db09d9.s3tc.ctex", "res://.godot/imported/pillier.jpg-bc596e294d32ea2051b33129d5db09d9.etc2.ctex"]
+source_file="res://assets/models/oldtextures/oak-623442a7bc7fb-1200.jpg"
+dest_files=["res://.godot/imported/oak-623442a7bc7fb-1200.jpg-5fa6e214626a2acf96570c6640e9d8b8.s3tc.ctex", "res://.godot/imported/oak-623442a7bc7fb-1200.jpg-5fa6e214626a2acf96570c6640e9d8b8.etc2.ctex"]
 
 [params]
 

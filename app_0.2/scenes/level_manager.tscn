@@ -1,11 +1,11 @@
 [gd_scene load_steps=4 format=3 uid="uid://cxtpvg3a3b6ny"]
 
 [ext_resource type="Script" path="res://scenes/init_VR.gd" id="1_4vwh5"]
-[ext_resource type="PackedScene" uid="uid://crb1eileeof2t" path="res://scenes/LD_finale.tscn" id="2_4yfxt"]
-[ext_resource type="PackedScene" uid="uid://wpk68xln3ml1" path="res://scenes/players/fps_player.tscn" id="3_5f276"]
+[ext_resource type="PackedScene" uid="uid://bkiqdhe74b11o" path="res://scenes/scene_movement.tscn" id="2_ke3x4"]
+[ext_resource type="PackedScene" uid="uid://wpk68xln3ml1" path="res://scenes/players/fps_player.tscn" id="3_yi2x8"]
 
 [node name="LevelManager" type="Node3D"]
 script = ExtResource("1_4vwh5")
-destination = ExtResource("2_4yfxt")
+destination = ExtResource("2_ke3x4")
 
-[node name="Fps_player" parent="." instance=ExtResource("3_5f276")]
+[node name="Fps_player" parent="." instance=ExtResource("3_yi2x8")]

@@ -100,7 +100,7 @@ var player : Node3D
 @onready var ws : float = XRServer.world_scale
 
 ## Capsule shown when not using a custom player mesh
-@onready var capsule : MeshInstance3D = $Target/Player_figure/Capsule
+@onready var capsule : MeshInstance3D = null #$Target/Player_figure/Capsule
 
 ## [XRToolsPlayerBody] node.
 @onready var player_body := XRToolsPlayerBody.find_instance(self)

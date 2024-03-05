@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwv6vt7rymgfa"
-path.s3tc="res://.godot/imported/Jard_2.png-b1c6b78e1ef3d7aa44ade3349231e017.s3tc.ctex"
-path.etc2="res://.godot/imported/Jard_2.png-b1c6b78e1ef3d7aa44ade3349231e017.etc2.ctex"
+uid="uid://52wiosv43moa"
+path.s3tc="res://.godot/imported/hanse.jpg-fb48da48f84536ef2f5cbe9ec109917a.s3tc.ctex"
+path.etc2="res://.godot/imported/hanse.jpg-fb48da48f84536ef2f5cbe9ec109917a.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/models/textures/Jard_2.png"
-dest_files=["res://.godot/imported/Jard_2.png-b1c6b78e1ef3d7aa44ade3349231e017.s3tc.ctex", "res://.godot/imported/Jard_2.png-b1c6b78e1ef3d7aa44ade3349231e017.etc2.ctex"]
+source_file="res://assets/models/oldtextures/hanse.jpg"
+dest_files=["res://.godot/imported/hanse.jpg-fb48da48f84536ef2f5cbe9ec109917a.s3tc.ctex", "res://.godot/imported/hanse.jpg-fb48da48f84536ef2f5cbe9ec109917a.etc2.ctex"]
 
 [params]
 

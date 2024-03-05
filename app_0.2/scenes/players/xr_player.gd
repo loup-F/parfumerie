@@ -38,17 +38,16 @@ func subtitles_trigger():
 
 func fade_in():
 	var tween = get_tree().create_tween()
-	tween.tween_method(set_fade, 1.0, 0.0, 1.0)
+	tween.tween_method(set_fade, 1.0, 0.0, 1.0).set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_IN)
 	await tween.finished
 	emit_signal("fade_done")
 	
 func fade_to_black():
 	var tween = get_tree().create_tween()
-	tween.tween_method(set_fade, 0.0, 1.0, 1.0)
+	tween.tween_method(set_fade, 0.0, 1.0, 1.0).set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
 	await tween.finished
 	emit_signal("fade_done")
 
-#
 func set_fade(p_value : float):
 	if p_value == 0.0:
 		%Fade.visible = false
@@ -56,5 +55,4 @@ func set_fade(p_value : float):
 		var material : ShaderMaterial = %Fade.get_surface_override_material(0)
 		if material:
 			material.set_shader_parameter("alpha", p_value)
-			print(p_value)
 		%Fade.visible = true

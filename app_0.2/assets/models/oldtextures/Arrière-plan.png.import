@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfbbnk5gknent"
-path.s3tc="res://.godot/imported/_orm.png-0fb67257c23553119bef5ef7bae16241.s3tc.ctex"
-path.etc2="res://.godot/imported/_orm.png-0fb67257c23553119bef5ef7bae16241.etc2.ctex"
+uid="uid://bl6q3rqqyvcs5"
+path.s3tc="res://.godot/imported/Arrière-plan.png-929fa3b8b2063c7c8b77ee184cb0ec95.s3tc.ctex"
+path.etc2="res://.godot/imported/Arrière-plan.png-929fa3b8b2063c7c8b77ee184cb0ec95.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://textures/_orm.png"
-dest_files=["res://.godot/imported/_orm.png-0fb67257c23553119bef5ef7bae16241.s3tc.ctex", "res://.godot/imported/_orm.png-0fb67257c23553119bef5ef7bae16241.etc2.ctex"]
+source_file="res://assets/models/oldtextures/Arrière-plan.png"
+dest_files=["res://.godot/imported/Arrière-plan.png-929fa3b8b2063c7c8b77ee184cb0ec95.s3tc.ctex", "res://.godot/imported/Arrière-plan.png-929fa3b8b2063c7c8b77ee184cb0ec95.etc2.ctex"]
 
 [params]
 

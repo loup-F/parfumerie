@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfnbuhjratbry"
-path.s3tc="res://.godot/imported/mur_b.png-d2289b221e6fe2cc3a740467ba3a38e9.s3tc.ctex"
-path.etc2="res://.godot/imported/mur_b.png-d2289b221e6fe2cc3a740467ba3a38e9.etc2.ctex"
+uid="uid://eaoj4e88cxbl"
+path.s3tc="res://.godot/imported/dark_wood_b.png-2df8a1e2ea43192a4bc4d011cfbe958f.s3tc.ctex"
+path.etc2="res://.godot/imported/dark_wood_b.png-2df8a1e2ea43192a4bc4d011cfbe958f.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/models/textures/mur_b.png"
-dest_files=["res://.godot/imported/mur_b.png-d2289b221e6fe2cc3a740467ba3a38e9.s3tc.ctex", "res://.godot/imported/mur_b.png-d2289b221e6fe2cc3a740467ba3a38e9.etc2.ctex"]
+source_file="res://assets/models/oldtextures/dark_wood_b.png"
+dest_files=["res://.godot/imported/dark_wood_b.png-2df8a1e2ea43192a4bc4d011cfbe958f.s3tc.ctex", "res://.godot/imported/dark_wood_b.png-2df8a1e2ea43192a4bc4d011cfbe958f.etc2.ctex"]
 
 [params]
 
@@ -26,7 +26,7 @@ compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=1
-roughness/src_normal="res://assets/models/textures/mur_b.png"
+roughness/src_normal="res://assets/models/textures/dark_wood_b.png"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

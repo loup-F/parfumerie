@@ -3,3 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://crb1eileeof2t" path="res://scenes/LD_finale.tscn" id="1_pmgvp"]
 
 [node name="LD finale" instance=ExtResource("1_pmgvp")]
+
+[node name="playerStartPos" parent="." index="0"]
+transform = Transform3D(0.285104, 0, 0, 0, 0.285104, 0, 0, 0, 0.285104, 1.06634, 1.55287, 0.47187)

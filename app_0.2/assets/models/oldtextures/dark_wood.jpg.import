@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cy1gla8kxiilv"
-path.s3tc="res://.godot/imported/chaudron.jpg-d66a684455bd12036e4f6cb8bb47fe56.s3tc.ctex"
-path.etc2="res://.godot/imported/chaudron.jpg-d66a684455bd12036e4f6cb8bb47fe56.etc2.ctex"
+uid="uid://grp8x81lara1"
+path.s3tc="res://.godot/imported/dark_wood.jpg-567b27544362f246c21be600a73a0414.s3tc.ctex"
+path.etc2="res://.godot/imported/dark_wood.jpg-567b27544362f246c21be600a73a0414.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/models/textures/chaudron.jpg"
-dest_files=["res://.godot/imported/chaudron.jpg-d66a684455bd12036e4f6cb8bb47fe56.s3tc.ctex", "res://.godot/imported/chaudron.jpg-d66a684455bd12036e4f6cb8bb47fe56.etc2.ctex"]
+source_file="res://assets/models/oldtextures/dark_wood.jpg"
+dest_files=["res://.godot/imported/dark_wood.jpg-567b27544362f246c21be600a73a0414.s3tc.ctex", "res://.godot/imported/dark_wood.jpg-567b27544362f246c21be600a73a0414.etc2.ctex"]
 
 [params]
 

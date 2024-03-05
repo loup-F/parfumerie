@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddcnwai0ex0ls"
-path="res://.godot/imported/Image_0.png-baf9110c827c5fdcea531811a59e3d73.ctex"
+uid="uid://cd5bvuagxv152"
+path="res://.godot/imported/progress_bg_white.png-8fe8293eb6eec822449545583042bdec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/models/blender3/textures/Image_0.png"
-dest_files=["res://.godot/imported/Image_0.png-baf9110c827c5fdcea531811a59e3d73.ctex"]
+source_file="res://assets/textures/UI/progress_bg_white.png"
+dest_files=["res://.godot/imported/progress_bg_white.png-8fe8293eb6eec822449545583042bdec.ctex"]
 
 [params]
 

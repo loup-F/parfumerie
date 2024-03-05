@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bf5baf1hgphia"
-path.s3tc="res://.godot/imported/terre.png-2e9fee0fa88c4a0e8350429930ce0eba.s3tc.ctex"
-path.etc2="res://.godot/imported/terre.png-2e9fee0fa88c4a0e8350429930ce0eba.etc2.ctex"
+uid="uid://hra7hrdrivgr"
+path.s3tc="res://.godot/imported/pillier.jpg-7ff7961f9b3e300466669acbd871f717.s3tc.ctex"
+path.etc2="res://.godot/imported/pillier.jpg-7ff7961f9b3e300466669acbd871f717.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/models/textures/terre.png"
-dest_files=["res://.godot/imported/terre.png-2e9fee0fa88c4a0e8350429930ce0eba.s3tc.ctex", "res://.godot/imported/terre.png-2e9fee0fa88c4a0e8350429930ce0eba.etc2.ctex"]
+source_file="res://assets/models/oldtextures/pillier.jpg"
+dest_files=["res://.godot/imported/pillier.jpg-7ff7961f9b3e300466669acbd871f717.s3tc.ctex", "res://.godot/imported/pillier.jpg-7ff7961f9b3e300466669acbd871f717.etc2.ctex"]
 
 [params]
 

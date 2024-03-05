@@ -12,6 +12,8 @@ var mouse_sensitivity = 0.002
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 signal fade_done
 
+var in_menu = true
+
 func _enter_tree():
 	self.add_to_group("player")
 
@@ -64,28 +66,25 @@ func _physics_process(delta):
 	
 	# récupère les infos de collision du raycast 
 	var target = raycast.get_collider()
-
-	#target = current collision, previous commence null
 	if target and previous == null:
-		target.looked_at = true # trigger une seule foi
+		target.looked_at = true
 		previous = target
-	# si on ne détecte rien mais qu'on détectait une target avant :
 	elif previous !=null and target == null:
-		previous.looked_at = false #trigger une seule foi
+		previous.looked_at = false
 		previous = target
 
 func fade_in():
 	var tween = get_tree().create_tween()
-	tween.tween_method(set_fade, 1.0, 0.0, 1.0)
+	tween.tween_method(set_fade, 1.0, 0.0, 1.0).set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_IN)
 	await tween.finished
 	emit_signal("fade_done")
 #
 func fade_to_black():
 	var tween = get_tree().create_tween()
-	tween.tween_method(set_fade, 0.0, 1.0, 1.0)
+	tween.tween_method(set_fade, 0.0, 1.0, 1.0).set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
 	await tween.finished
 	emit_signal("fade_done")
-#
+
 func set_fade(p_value : float):
 	if p_value == 0.0:
 		%Fade.visible = false
@@ -93,5 +92,4 @@ func set_fade(p_value : float):
 		var material : ShaderMaterial = %Fade.get_surface_override_material(0)
 		if material:
 			material.set_shader_parameter("alpha", p_value)
-			print(p_value)
 		%Fade.visible = true

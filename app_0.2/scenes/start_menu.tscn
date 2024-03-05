@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://ce723g1vagol0"]
+[gd_scene load_steps=19 format=3 uid="uid://ce723g1vagol0"]
 
 [ext_resource type="Script" path="res://scenes/choice_manager.gd" id="1_brkxy"]
 [ext_resource type="PackedScene" uid="uid://6bvwc7dldlb1" path="res://assets/player_start_pos.tscn" id="1_g3cyp"]
@@ -7,19 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://pl1b8cmvnwdm" path="res://scenes/target_EN.tscn" id="4_2igle"]
 [ext_resource type="PackedScene" uid="uid://73qen22upk0x" path="res://scenes/target_STFR.tscn" id="5_ary71"]
 [ext_resource type="PackedScene" uid="uid://conusqvj0ho0d" path="res://scenes/target_STEN.tscn" id="6_votu7"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vkyqv"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-
-[sub_resource type="Sky" id="Sky_fqu8f"]
-sky_material = SubResource("ProceduralSkyMaterial_vkyqv")
-
-[sub_resource type="Environment" id="Environment_g88pw"]
-background_mode = 2
-sky = SubResource("Sky_fqu8f")
-tonemap_mode = 2
-glow_enabled = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0go3u"]
 size = Vector3(1, 1, 0.00664818)
@@ -70,13 +57,7 @@ size = Vector3(100, 1, 100)
 [node name="StartMenu" type="Node3D"]
 
 [node name="playerStartPos" parent="." instance=ExtResource("1_g3cyp")]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_g88pw")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
-shadow_enabled = true
+transform = Transform3D(0.285104, 0, 0, 0, 0.285104, 0, 0, 0, 0.285104, -0.695346, 1.68749, 2.30809)
 
 [node name="ChoicePanels" type="Node3D" parent="."]
 unique_name_in_owner = true

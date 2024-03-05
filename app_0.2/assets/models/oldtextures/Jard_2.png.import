@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://grp8x81lara1"
-path.s3tc="res://.godot/imported/dark_wood.jpg-3fa9a81416fe5a9b788dfc59d526ac7b.s3tc.ctex"
-path.etc2="res://.godot/imported/dark_wood.jpg-3fa9a81416fe5a9b788dfc59d526ac7b.etc2.ctex"
+uid="uid://dwv6vt7rymgfa"
+path.s3tc="res://.godot/imported/Jard_2.png-e65078239440b7f5d4b26d68821aa5b9.s3tc.ctex"
+path.etc2="res://.godot/imported/Jard_2.png-e65078239440b7f5d4b26d68821aa5b9.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/models/textures/dark_wood.jpg"
-dest_files=["res://.godot/imported/dark_wood.jpg-3fa9a81416fe5a9b788dfc59d526ac7b.s3tc.ctex", "res://.godot/imported/dark_wood.jpg-3fa9a81416fe5a9b788dfc59d526ac7b.etc2.ctex"]
+source_file="res://assets/models/oldtextures/Jard_2.png"
+dest_files=["res://.godot/imported/Jard_2.png-e65078239440b7f5d4b26d68821aa5b9.s3tc.ctex", "res://.godot/imported/Jard_2.png-e65078239440b7f5d4b26d68821aa5b9.etc2.ctex"]
 
 [params]
 

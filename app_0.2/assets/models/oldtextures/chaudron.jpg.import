@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byf8v1nwo27s6"
-path.s3tc="res://.godot/imported/oak-623442a7bc7fb-1200.jpg-d68afe33f304ce392226ea99c5ab1d92.s3tc.ctex"
-path.etc2="res://.godot/imported/oak-623442a7bc7fb-1200.jpg-d68afe33f304ce392226ea99c5ab1d92.etc2.ctex"
+uid="uid://cy1gla8kxiilv"
+path.s3tc="res://.godot/imported/chaudron.jpg-2201a5c5ea45a61ebf54b2cd2a6aa9e0.s3tc.ctex"
+path.etc2="res://.godot/imported/chaudron.jpg-2201a5c5ea45a61ebf54b2cd2a6aa9e0.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/models/textures/oak-623442a7bc7fb-1200.jpg"
-dest_files=["res://.godot/imported/oak-623442a7bc7fb-1200.jpg-d68afe33f304ce392226ea99c5ab1d92.s3tc.ctex", "res://.godot/imported/oak-623442a7bc7fb-1200.jpg-d68afe33f304ce392226ea99c5ab1d92.etc2.ctex"]
+source_file="res://assets/models/oldtextures/chaudron.jpg"
+dest_files=["res://.godot/imported/chaudron.jpg-2201a5c5ea45a61ebf54b2cd2a6aa9e0.s3tc.ctex", "res://.godot/imported/chaudron.jpg-2201a5c5ea45a61ebf54b2cd2a6aa9e0.etc2.ctex"]
 
 [params]
 

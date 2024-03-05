@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bgqidx23hwdyq"
-path.s3tc="res://.godot/imported/mur.png-dd20751773dd8b12ad410c105d5b6a04.s3tc.ctex"
-path.etc2="res://.godot/imported/mur.png-dd20751773dd8b12ad410c105d5b6a04.etc2.ctex"
+path.s3tc="res://.godot/imported/mur.png-b551981a0e893582f22d0b551b12289a.s3tc.ctex"
+path.etc2="res://.godot/imported/mur.png-b551981a0e893582f22d0b551b12289a.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/models/textures/mur.png"
-dest_files=["res://.godot/imported/mur.png-dd20751773dd8b12ad410c105d5b6a04.s3tc.ctex", "res://.godot/imported/mur.png-dd20751773dd8b12ad410c105d5b6a04.etc2.ctex"]
+source_file="res://assets/models/oldtextures/mur.png"
+dest_files=["res://.godot/imported/mur.png-b551981a0e893582f22d0b551b12289a.s3tc.ctex", "res://.godot/imported/mur.png-b551981a0e893582f22d0b551b12289a.etc2.ctex"]
 
 [params]
 

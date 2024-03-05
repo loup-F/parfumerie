@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bl6q3rqqyvcs5"
-path.s3tc="res://.godot/imported/Arrière-plan.png-21ee15369c510a6233e845ec86e64928.s3tc.ctex"
-path.etc2="res://.godot/imported/Arrière-plan.png-21ee15369c510a6233e845ec86e64928.etc2.ctex"
+uid="uid://bf5baf1hgphia"
+path.s3tc="res://.godot/imported/terre.png-742f9808a23bbe1430665ed9151837ce.s3tc.ctex"
+path.etc2="res://.godot/imported/terre.png-742f9808a23bbe1430665ed9151837ce.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/models/textures/Arrière-plan.png"
-dest_files=["res://.godot/imported/Arrière-plan.png-21ee15369c510a6233e845ec86e64928.s3tc.ctex", "res://.godot/imported/Arrière-plan.png-21ee15369c510a6233e845ec86e64928.etc2.ctex"]
+source_file="res://assets/models/oldtextures/terre.png"
+dest_files=["res://.godot/imported/terre.png-742f9808a23bbe1430665ed9151837ce.s3tc.ctex", "res://.godot/imported/terre.png-742f9808a23bbe1430665ed9151837ce.etc2.ctex"]
 
 [params]
 
