@@ -105,11 +105,12 @@ offsets = PackedFloat32Array(0, 0.460581, 1)
 colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1)
 
 [node name="eauquibout" type="MeshInstance3D"]
-transform = Transform3D(0.780522, 0, 0, 0, 0.00825646, 0, 0, 0, 0.855637, 6.98994, 0.890304, 2.82055)
+transform = Transform3D(0.780522, 0, 0, 0, 0.00825646, 0, 0, 0, 0.855637, 0, 0, 0)
 material_override = SubResource("ShaderMaterial_qoqke")
 cast_shadow = 0
 lod_bias = 0.001
 mesh = SubResource("CylinderMesh_o0gfw")
+metadata/_edit_group_ = true
 
 [node name="bubbles" type="CPUParticles3D" parent="."]
 transform = Transform3D(2.92293, 0, 0, 0, 35.6478, 0, 0, 0, 1.93942, 0, -50.3694, 0)

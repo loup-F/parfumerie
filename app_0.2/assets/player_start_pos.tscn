@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://6bvwc7dldlb1"]
+[gd_scene load_steps=6 format=3 uid="uid://6bvwc7dldlb1"]
 
-[ext_resource type="Script" path="res://scenes/scene_mvmt_start.gd" id="1_8dpl2"]
+[ext_resource type="Script" path="res://scripts/scene_mvmt_start.gd" id="1_bxbk3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c3abn"]
 albedo_color = Color(0.14902, 1, 0.364706, 1)
@@ -8,8 +8,18 @@ albedo_color = Color(0.14902, 1, 0.364706, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_athxd"]
 material = SubResource("StandardMaterial3D_c3abn")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fwu53"]
+albedo_color = Color(0, 0.796078, 0.298039, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_jkvld"]
+material = SubResource("StandardMaterial3D_fwu53")
+
 [node name="playerStartPos" type="MeshInstance3D"]
-transform = Transform3D(0.285104, 0, 0, 0, 0.285104, 0, 0, 0, 0.285104, 1.06634, 1.68749, 0.47187)
+transform = Transform3D(0.285104, 0, 0, 0, 0.285104, 0, 0, 0, 0.285104, 0, 1.7, 0)
 mesh = SubResource("BoxMesh_athxd")
 skeleton = NodePath("../XROrigin")
-script = ExtResource("1_8dpl2")
+script = ExtResource("1_bxbk3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.5, -8.75213e-08, 3.70199e-15, 0, -4.37606e-08, -0.968759, 1.31134e-07, -1.00113, 4.23458e-08, 0, 0.0124803, -0.684911)
+mesh = SubResource("PrismMesh_jkvld")

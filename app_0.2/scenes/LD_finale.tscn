@@ -1,7 +1,7 @@
 [gd_scene load_steps=74 format=3 uid="uid://crb1eileeof2t"]
 
-[ext_resource type="Script" path="res://scenes/main.gd" id="1_6v3i7"]
 [ext_resource type="Script" path="res://addons/cyclops_level_builder/nodes/cyclops_blocks.gd" id="1_i7wco"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_jkthk"]
 [ext_resource type="PackedScene" uid="uid://6bvwc7dldlb1" path="res://assets/player_start_pos.tscn" id="2_1snup"]
 [ext_resource type="Script" path="res://addons/cyclops_level_builder/nodes/cyclops_convex_block.gd" id="2_8rc5t"]
 [ext_resource type="Environment" uid="uid://c1p41k4sb4jm" path="res://assets/ressources/vaporwenv.tres" id="2_53hxs"]
@@ -930,9 +930,10 @@ active_face = -1
 face_ids = PackedInt32Array(0, 1, 2, 3, 4, 5)
 
 [node name="LD finale" type="Node3D"]
-script = ExtResource("1_6v3i7")
+script = ExtResource("1_jkthk")
 
 [node name="playerStartPos" parent="." instance=ExtResource("2_1snup")]
+transform = Transform3D(0.285104, 0, 0, 0, 0.285104, 0, 0, 0, 0.285104, 0, 1.6106, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("2_53hxs")
@@ -1275,19 +1276,31 @@ transform = Transform3D(0.142798, 0, 0, 0, 0.142798, 0, 0, 0, 0.142798, 3.52299,
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.333044, 1, 2.17956)
 
 [node name="m_braise" parent="assets" instance=ExtResource("17_p0rcj")]
-transform = Transform3D(0.122939, 0, 0, 0, 0.122939, 0, 0, 0, 0.122939, 1.44409, 1.92182, 2.18608)
+transform = Transform3D(0.0583113, 0, -0.0120767, 0, 0.0595487, 0, 0.0120767, 0, 0.0583113, 1.42806, 1.92182, 2.11023)
 
 [node name="m_braise2" parent="assets" instance=ExtResource("17_p0rcj")]
-transform = Transform3D(0.117472, 0, 0.0362558, 0, 0.122939, 0, -0.0362558, 0, 0.117472, 0.816559, 1.92182, 2.18608)
+transform = Transform3D(0.0569007, 0, 0.0175615, 0, 0.0595487, 0, -0.0175615, 0, 0.0569007, 1.16356, 1.92182, 2.11234)
 
 [node name="m_braise3" parent="assets" instance=ExtResource("17_p0rcj")]
-transform = Transform3D(0.0388057, 0, -0.116654, 0, 0.122939, 0, 0.116654, 0, 0.0388057, 0.211307, 1.92182, 2.24599)
-
-[node name="m_braise4" parent="assets" instance=ExtResource("17_p0rcj")]
-transform = Transform3D(0.053787, 0, 0.110549, 0, 0.122939, 0, -0.110549, 0, 0.053787, -0.425985, 1.92182, 2.12997)
+transform = Transform3D(-0.00774696, 0, -0.059043, 0, 0.0595487, 0, 0.059043, 0, -0.00774696, 1.21447, 1.92182, 2.24803)
 
 [node name="m_braise5" parent="assets" instance=ExtResource("17_p0rcj")]
-transform = Transform3D(0.122613, 0, 0.00895463, 0, 0.122939, 0, -0.00895463, 0, 0.122613, -0.76101, 1.92182, 2.12997)
+transform = Transform3D(0.0168999, 0, 0.0571006, 0, 0.0595488, 0, -0.0571006, 0, 0.0168999, 0.308773, 1.92182, 2.28937)
+
+[node name="m_braise7" parent="assets" instance=ExtResource("17_p0rcj")]
+transform = Transform3D(0.0168999, 0, 0.0571006, 0, 0.0595488, 0, -0.0571006, 0, 0.0168999, 0.42964, 1.92182, 2.10388)
+
+[node name="m_braise6" parent="assets" instance=ExtResource("17_p0rcj")]
+transform = Transform3D(0.0240269, 0, 0.0544866, 0, 0.0595487, 0, -0.0544866, 0, 0.0240269, 0.177122, 1.92182, 2.08982)
+
+[node name="m_braise11" parent="assets" instance=ExtResource("17_p0rcj")]
+transform = Transform3D(0.0593908, 0, 0.00433741, 0, 0.0595487, 0, -0.00433741, 0, 0.0593908, -0.429541, 1.92182, 2.09163)
+
+[node name="m_braise12" parent="assets" instance=ExtResource("17_p0rcj")]
+transform = Transform3D(0.0240269, 0, 0.0544866, 0, 0.0595487, 0, -0.0544866, 0, 0.0240269, -0.695519, 1.92182, 2.12531)
+
+[node name="m_braise13" parent="assets" instance=ExtResource("17_p0rcj")]
+transform = Transform3D(0.059313, 0, 0.00529666, 0, 0.0595487, 0, -0.00529666, 0, 0.059313, -0.587465, 1.92182, 2.28595)
 
 [node name="m_grille" parent="assets" instance=ExtResource("18_4o3ow")]
 transform = Transform3D(0.193853, 0, 0.00310282, 0, 0.193878, 0, -0.00310282, 0, 0.193853, 1.27798, 1.91081, 2.11264)
@@ -1308,7 +1321,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.141
 transform = Transform3D(0.143897, 0, 0, 0, 0.128077, -0.065594, 0, 0.065594, 0.128077, 2.3521, 1.13584, 2.34876)
 
 [node name="m_porte" parent="assets" instance=ExtResource("21_6rgq0")]
-transform = Transform3D(-2.75519e-08, 0, 0.630314, 0, 0.630314, 0, -0.630314, 0, -2.75519e-08, 4.12489, 1, 2.99905)
+transform = Transform3D(-0.0668138, 0, 0.997765, 0, 1, 0, -0.997765, 0, -0.0668138, 3.99759, 1.03914, 2.84087)
 
 [node name="m_pot_céramique" parent="assets" instance=ExtResource("22_f8mbx")]
 transform = Transform3D(0.0824498, 0, 0, 0, 0.0824498, 0, 0, 0, 0.0824498, -2.10935, 2.61388, 1.10417)
@@ -1360,6 +1373,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.14573, 2.59389, 1.30236)
 
 [node name="m_bouteille_2" parent="assets" instance=ExtResource("33_hbfmk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.33697, 2.0625, 0.363411)
+
+[node name="charbons" type="Node3D" parent="assets"]
 
 [node name="m_armoire2" parent="." instance=ExtResource("33_877su")]
 transform = Transform3D(-0.00262549, 0, -0.925975, 0, 0.919294, 0, 0.895424, 0, -0.00271507, 0.54748, 1.01111, -1.52221)

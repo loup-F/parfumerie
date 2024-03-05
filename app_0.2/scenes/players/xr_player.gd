@@ -5,7 +5,7 @@ var previous
 @onready var animation_player = $AnimationPlayer
 @onready var label = $XRCamera3D/XR_Label
 @onready var reticule = $XRCamera3D/reticule
-@export var in_menu = true 
+var in_menu = true 
 signal fade_done
 
 # Called when the node enters the scene tree for the first time.
@@ -17,14 +17,14 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-#	if in_menu:
-#		cast()
-	if reticule.visible and in_menu == false:
-		reticule.visible = false
+	if in_menu:
+		cast()
+	elif %reticule.visible == true:
+		%reticule.visible = false
 	# =================================================
 	# RAYCAST (partie commune avec le controller VR)
 	# =================================================
-#func cast():
+func cast():
 	var target = raycast.get_collider()
 	if target and previous == null:
 		target.looked_at = true

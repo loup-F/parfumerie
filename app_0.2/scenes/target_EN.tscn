@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://pl1b8cmvnwdm"]
-
-[ext_resource type="PackedScene" uid="uid://cgl7qwxdrcy2y" path="res://scenes/UI_target.tscn" id="1_3pt8f"]
-
-[node name="Target_EN" instance=ExtResource("1_3pt8f")]
-
-[node name="Label" parent="." index="1"]
-text = "EN"

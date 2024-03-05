@@ -59,12 +59,16 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 	move_and_slide()
+	if in_menu:
+		cast()
+	elif %reticule.visible == true:
+		%reticule.visible = false
 	
 	# =================================================
 	# RAYCAST (partie commune avec le controller VR)
 	# =================================================
 	
-	# récupère les infos de collision du raycast 
+func cast():	# récupère les infos de collision du raycast 
 	var target = raycast.get_collider()
 	if target and previous == null:
 		target.looked_at = true

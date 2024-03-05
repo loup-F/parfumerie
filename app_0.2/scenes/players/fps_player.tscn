@@ -24,6 +24,7 @@ shader_parameter/alpha = 0.0
 [node name="Fps_player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.82503, 0)
 collision_layer = 2
+axis_lock_linear_y = true
 script = ExtResource("1_occ2d")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -37,7 +38,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.911408, 0)
 target_position = Vector3(0, 0, -100)
 collision_mask = 4
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Camera3D"]
+[node name="reticule" type="MeshInstance3D" parent="Camera3D"]
+unique_name_in_owner = true
 transform = Transform3D(0.130611, 0, 0, 0, 0.130611, 0, 0, 0, 0.130611, 0, 0, -4.46539)
 cast_shadow = 0
 mesh = SubResource("SphereMesh_efu2e")

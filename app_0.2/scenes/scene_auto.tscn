@@ -1,33 +1,43 @@
-[gd_scene load_steps=5 format=3 uid="uid://dhbld6n1ik88w"]
+[gd_scene load_steps=4 format=3 uid="uid://dhbld6n1ik88w"]
 
 [ext_resource type="PackedScene" uid="uid://crb1eileeof2t" path="res://scenes/LD_finale.tscn" id="1_64cgs"]
-[ext_resource type="PackedScene" uid="uid://cylsy0cyrtguj" path="res://scenes/players/xr_player.tscn" id="2_10xly"]
-[ext_resource type="Script" path="res://scenes/player_pathing.gd" id="3_x1t81"]
+[ext_resource type="Script" path="res://scripts/player_pathing.gd" id="3_sm70c"]
 [ext_resource type="PackedScene" uid="uid://d3it7kn4fv82q" path="res://assets/pathnode.tscn" id="4_hqjbd"]
 
 [node name="LD finale" instance=ExtResource("1_64cgs")]
 
-[node name="XROrigin" parent="." index="0" instance=ExtResource("2_10xly")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.145661, 2.79521, 0.872301)
+[node name="playerStartPos" parent="." index="0"]
+transform = Transform3D(0.198797, 0, -0.204363, 0, 0.285104, 0, 0.204363, 0, 0.198797, 2.075, 1.55, 4.482)
 
-[node name="playerpath" type="Node3D" parent="." index="8"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.511, 0)
-script = ExtResource("3_x1t81")
+[node name="m_grosse_marmite" parent="assets" index="21"]
+transform = Transform3D(0.131572, 0, 0, 0, 0.131572, 0, 0, 0, 0.131572, 0.3116, 2.06897, 2.10898)
 
-[node name="startposition" parent="playerpath" index="0" instance=ExtResource("4_hqjbd")]
-transform = Transform3D(0.166361, 0, -0.143513, 0, 0.219709, 0, 0.143513, 0, 0.166361, 2.41228, 0.250013, 4.359)
+[node name="m_marmite_m" parent="assets" index="22"]
+transform = Transform3D(1.26621, 0, 0, 0, 1.26621, 0, 0, 0, 1.26621, 1.27684, 2.17177, 2.1001)
+
+[node name="m_flacon_parfum" parent="assets" index="32"]
+transform = Transform3D(0.132417, 0, -0.0563276, 0, 0.143899, 0, 0.0563276, 0, 0.132417, -2.24721, 2.04416, -0.806768)
+
+[node name="m_fontaine" parent="assets" index="33"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.51633, 1.39095, 2.0965)
+
+[node name="playerpath" type="Node3D" parent="." index="7"]
+script = ExtResource("3_sm70c")
+
+[node name="pathnode0" parent="playerpath" index="0" instance=ExtResource("4_hqjbd")]
+transform = Transform3D(0.166361, 0, -0.143513, 0, 0.219709, 0, 0.143513, 0, 0.166361, 2.412, -0.362646, 4.359)
 
 [node name="pathnode1" parent="playerpath" index="1" instance=ExtResource("4_hqjbd")]
-transform = Transform3D(0.192545, 0, 0.105822, 0, 0.219709, 0, -0.105822, 0, 0.192545, 3.28681, 0.370974, 1.29609)
+transform = Transform3D(0.192545, 0, 0.105822, 0, 0.219709, 0, -0.105822, 0, 0.192545, 3.28681, 1.55, 1.29609)
 
 [node name="pathnode2" parent="playerpath" index="2" instance=ExtResource("4_hqjbd")]
-transform = Transform3D(-0.0208864, 0, 0.218714, 0, 0.219709, 0, -0.218714, 0, -0.0208864, 1.73433, 0.369, 0.316821)
+transform = Transform3D(-0.0208864, 0, 0.218714, 0, 0.219709, 0, -0.218714, 0, -0.0208864, 1.73433, 1.55, 0.316821)
 
 [node name="pathnode3" parent="playerpath" index="3" instance=ExtResource("4_hqjbd")]
-transform = Transform3D(0.03959, 0, 0.216113, 0, 0.219709, 0, -0.216113, 0, 0.03959, 0.221479, 0.366572, -0.314603)
+transform = Transform3D(0.03959, 0, 0.216113, 0, 0.219709, 0, -0.216113, 0, 0.03959, 0.221479, 1.55, -0.314603)
 
 [node name="pathnode4" parent="playerpath" index="4" instance=ExtResource("4_hqjbd")]
-transform = Transform3D(0.00564781, 0, 0.219636, 0, 0.219709, 0, -0.219636, 0, 0.00564781, -0.952371, 0.366572, -1.21192)
+transform = Transform3D(0.00564781, 0, 0.219636, 0, 0.219709, 0, -0.219636, 0, 0.00564781, -0.952371, 1.55, -1.21192)
 
 [node name="pathnode5" parent="playerpath" index="5" instance=ExtResource("4_hqjbd")]
-transform = Transform3D(0.00564781, 0, 0.219636, 0, 0.219709, 0, -0.219636, 0, 0.00564781, -3.4572, 0.366572, -1.47165)
+transform = Transform3D(0.00564781, 0, 0.219636, 0, 0.219709, 0, -0.219636, 0, 0.00564781, -3.4572, 1.55, -1.47165)
