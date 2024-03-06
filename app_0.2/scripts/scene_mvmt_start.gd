@@ -9,3 +9,4 @@ func _enter_tree():
 		self.position.y = 0.9
 	player.position = self.position
 	player.rotation = self.rotation
+	print("player : ", player, " player rotation : ", player.rotation, " self : ", self.rotation)

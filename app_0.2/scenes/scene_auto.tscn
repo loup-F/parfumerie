@@ -15,12 +15,6 @@ transform = Transform3D(0.131572, 0, 0, 0, 0.131572, 0, 0, 0, 0.131572, 0.3116, 
 [node name="m_marmite_m" parent="assets" index="22"]
 transform = Transform3D(1.26621, 0, 0, 0, 1.26621, 0, 0, 0, 1.26621, 1.27684, 2.17177, 2.1001)
 
-[node name="m_flacon_parfum" parent="assets" index="32"]
-transform = Transform3D(0.132417, 0, -0.0563276, 0, 0.143899, 0, 0.0563276, 0, 0.132417, -2.24721, 2.04416, -0.806768)
-
-[node name="m_fontaine" parent="assets" index="33"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.51633, 1.39095, 2.0965)
-
 [node name="playerpath" type="Node3D" parent="." index="7"]
 script = ExtResource("3_sm70c")
 
@@ -28,16 +22,16 @@ script = ExtResource("3_sm70c")
 transform = Transform3D(0.166361, 0, -0.143513, 0, 0.219709, 0, 0.143513, 0, 0.166361, 2.412, -0.362646, 4.359)
 
 [node name="pathnode1" parent="playerpath" index="1" instance=ExtResource("4_hqjbd")]
-transform = Transform3D(0.192545, 0, 0.105822, 0, 0.219709, 0, -0.105822, 0, 0.192545, 3.28681, 1.55, 1.29609)
+transform = Transform3D(0.219707, 0, -0.000866517, 0, 0.219709, 0, 0.000866517, 0, 0.219707, 3.34281, 1.55, 3.23465)
 
 [node name="pathnode2" parent="playerpath" index="2" instance=ExtResource("4_hqjbd")]
-transform = Transform3D(-0.0208864, 0, 0.218714, 0, 0.219709, 0, -0.218714, 0, -0.0208864, 1.73433, 1.55, 0.316821)
+transform = Transform3D(0.189597, 0, 0.111018, 0, 0.219709, 0, -0.111018, 0, 0.189597, 3.04219, 1.55, 1.3979)
 
 [node name="pathnode3" parent="playerpath" index="3" instance=ExtResource("4_hqjbd")]
-transform = Transform3D(0.03959, 0, 0.216113, 0, 0.219709, 0, -0.216113, 0, 0.03959, 0.221479, 1.55, -0.314603)
+transform = Transform3D(0.116239, 0, 0.186442, 0, 0.219709, 0, -0.186442, 0, 0.116239, 1.2587, 1.55, 0.308535)
 
 [node name="pathnode4" parent="playerpath" index="4" instance=ExtResource("4_hqjbd")]
-transform = Transform3D(0.00564781, 0, 0.219636, 0, 0.219709, 0, -0.219636, 0, 0.00564781, -0.952371, 1.55, -1.21192)
+transform = Transform3D(-0.0254165, 0, 0.218233, 0, 0.219709, 0, -0.218233, 0, -0.0254165, -0.952371, 1.55, -0.475997)
 
 [node name="pathnode5" parent="playerpath" index="5" instance=ExtResource("4_hqjbd")]
-transform = Transform3D(0.00564781, 0, 0.219636, 0, 0.219709, 0, -0.219636, 0, 0.00564781, -3.4572, 1.55, -1.47165)
+transform = Transform3D(-0.0536991, 0, 0.213045, 0, 0.219709, 0, -0.213045, 0, -0.0536991, -3.4572, 1.55, -1.6863)

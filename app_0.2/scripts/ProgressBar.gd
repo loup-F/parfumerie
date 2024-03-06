@@ -10,7 +10,7 @@ func _process(_delta):
 		filled = true
 		emit_signal("filled_up")
 	elif fill == true :
-		%ProgressBar.value += 1
+		%ProgressBar.value += 0.7
 	else :
 		%ProgressBar.value -=3
 		filled = false

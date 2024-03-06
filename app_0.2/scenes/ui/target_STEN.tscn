@@ -5,4 +5,8 @@
 [node name="Target_STEN" instance=ExtResource("1_wg6o0")]
 
 [node name="Label" parent="." index="1"]
-text = "ST_EN"
+offset_left = -119.0
+offset_top = -95.0
+offset_right = 56.0
+offset_bottom = -40.0
+text = "NON"
