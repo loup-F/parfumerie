@@ -1,8 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://cwxikevd2febl"]
+[gd_scene load_steps=3 format=3 uid="uid://cwxikevd2febl"]
 
 [ext_resource type="PackedScene" uid="uid://cgl7qwxdrcy2y" path="res://scenes/ui/UI_target.tscn" id="1_qxg81"]
+[ext_resource type="Texture2D" uid="uid://bwkd51uttled5" path="res://assets/textures/UI/fr-circle-01.png" id="2_l2i31"]
 
 [node name="Target_FR" instance=ExtResource("1_qxg81")]
 
 [node name="Label" parent="." index="1"]
 text = "FR"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." index="2"]
+layout_mode = 0
+offset_left = -139.0
+offset_top = -157.0
+offset_right = 178.0
+offset_bottom = 160.0
+texture = ExtResource("2_l2i31")

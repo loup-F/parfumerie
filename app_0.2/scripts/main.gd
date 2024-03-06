@@ -84,7 +84,7 @@ func _on_openxr_focused_state() -> void:
 
 	# unpause our game
 	process_mode = Node.PROCESS_MODE_INHERIT
-	get_tree ().reload_current_scene ()
+	get_tree().reload_current_scene()
 
 	emit_signal("focus_gained")
 

@@ -85,6 +85,7 @@ func _on_openxr_visible_state() -> void:
 		xr_is_focussed = false
 
 		# pause our game
+		get_tree().reload_current_scene()
 		process_mode = Node.PROCESS_MODE_DISABLED
 
 		emit_signal("focus_lost")
@@ -96,7 +97,7 @@ func _on_openxr_focused_state() -> void:
 
 	# unpause our game
 	process_mode = Node.PROCESS_MODE_INHERIT
-	get_tree().reload_current_scene ()
+#	get_tree().reload_current_scene()
 
 	emit_signal("focus_gained")
 
@@ -124,7 +125,7 @@ func load_dest():
 	unload_level()
 	if destination :
 		level_instance = destination.instantiate()
-		add_child(level_instance)
+		add_child(level_instance)  
 		player.fade_in()
 		await player.fade_done
 
