@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=3 uid="uid://crb1eileeof2t"]
+[gd_scene load_steps=79 format=3 uid="uid://crb1eileeof2t"]
 
 [ext_resource type="Script" path="res://addons/cyclops_level_builder/nodes/cyclops_blocks.gd" id="1_i7wco"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_jkthk"]
@@ -32,6 +32,7 @@
 [ext_resource type="PackedScene" uid="uid://cyvlu3orb3yhm" path="res://assets/models/models/m_toitures 3.blend" id="32_kemsr"]
 [ext_resource type="PackedScene" uid="uid://cdmru61m60vid" path="res://assets/models/models/model_herite/m_armoire_bis.tscn" id="33_877su"]
 [ext_resource type="PackedScene" uid="uid://vey6bhl87ucn" path="res://assets/models/models/m_bouteille_1.fbx" id="33_hbfmk"]
+[ext_resource type="PackedScene" uid="uid://swji3vk7m2xp" path="res://assets/models/models/m_toitures_4.blend" id="33_sukp3"]
 
 [sub_resource type="Resource" id="Resource_n266i"]
 script = ExtResource("3_tk6jp")
@@ -1359,9 +1360,6 @@ transform = Transform3D(-0.126182, 0, -0.992007, 0.167382, 0.985662, -0.0212906,
 [node name="m_amphore_5" parent="assets" instance=ExtResource("29_sc2bl")]
 transform = Transform3D(-0.126182, 0, -0.992007, 0.167382, 0.985662, -0.0212906, 0.977784, -0.16873, -0.124372, 2.22979, 0.988056, -1.826)
 
-[node name="m_amphore_4" parent="assets" instance=ExtResource("29_sc2bl")]
-transform = Transform3D(-0.126182, 0, -0.992007, 0.167382, 0.985662, -0.0212906, 0.977784, -0.16873, -0.124372, 1.60474, 0.988056, -1.49559)
-
 [node name="m_amphore_6" parent="assets" instance=ExtResource("29_sc2bl")]
 transform = Transform3D(-0.126182, 0, -0.992007, 0.167382, 0.985662, -0.0212906, 0.977784, -0.16873, -0.124372, 2.04576, 0.988056, -1.54356)
 
@@ -1399,3 +1397,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.383, 0.998, -0.189)
 
 [node name="m_toitures 3" parent="." instance=ExtResource("32_kemsr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.383, 0.998, -0.189)
+
+[node name="m_toitures_4" parent="." instance=ExtResource("33_sukp3")]
+transform = Transform3D(0.998, 0, 0, 0, 0.998, 0, 0, 0, 0.998, 0.383, 0.988, -0.189)
