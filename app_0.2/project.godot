@@ -17,8 +17,8 @@ config/features=PackedStringArray("4.1", "Mobile")
 [autoload]
 
 XRToolsUserSettings="*res://addons/godot-xr-tools/user_settings/user_settings.gd"
-Session="*res://session_parameters.gd"
 CyclopsAutoload="*res://addons/cyclops_level_builder/cyclops_global_scene.tscn"
+Session="*res://session_parameters.gd"
 
 [display]
 

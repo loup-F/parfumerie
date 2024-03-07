@@ -19,20 +19,19 @@ func _ready():
 
 
 func animate_player():
-#	wait(1)
-#	rotate_and_move_to(points[1])
-#	wait(1.5)
-#	rotate_and_move_to(points[2])
-#	wait(1.5)
-#	rotate_and_move_to(points[3])
-#	wait(1.5)
-#	rotate_and_move_to(points[4])
-#	wait(1.5)
-#	rotate_and_move_to(points[5])
-	for point in points:
-		if point != points[0]:
-			wait(1.5)
-			rotate_and_move_to(point)
+	wait(1)
+	rotate_and_move_to(points[1])
+	wait(1.5)
+	rotate_and_move_to(points[2])
+	wait(1.5)
+	rotate_and_move_to(points[3])
+	wait(1.5)
+	rotate_and_move_to(points[4])
+	wait(1.5)
+	rotate_and_move_to(points[5])
+#	for point in points:
+#		wait_for(0.5)
+#		move_to(point)
 
 func rotate_and_move_to(target):
 	tween.set_parallel(true)

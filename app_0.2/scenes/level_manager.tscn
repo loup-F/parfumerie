@@ -2,11 +2,10 @@
 
 [ext_resource type="Script" path="res://scripts/init_VR.gd" id="1_rrcs8"]
 [ext_resource type="PackedScene" uid="uid://dhbld6n1ik88w" path="res://scenes/scene_auto.tscn" id="2_u1lkx"]
-[ext_resource type="PackedScene" uid="uid://cylsy0cyrtguj" path="res://scenes/players/xr_player.tscn" id="3_rdafo"]
+[ext_resource type="PackedScene" uid="uid://wpk68xln3ml1" path="res://scenes/players/fps_player.tscn" id="3_ih8ru"]
 
 [node name="LevelManager" type="Node3D"]
 script = ExtResource("1_rrcs8")
 destination = ExtResource("2_u1lkx")
-quickstart = true
 
-[node name="XROrigin" parent="." instance=ExtResource("3_rdafo")]
+[node name="Fps_player" parent="." instance=ExtResource("3_ih8ru")]
