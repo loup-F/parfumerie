@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://crb1eileeof2t"]
+[gd_scene load_steps=79 format=3 uid="uid://crb1eileeof2t"]
 
 [ext_resource type="Script" path="res://addons/cyclops_level_builder/nodes/cyclops_blocks.gd" id="1_i7wco"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_jkthk"]
@@ -25,8 +25,11 @@
 [ext_resource type="PackedScene" uid="uid://dwhbvx2bs3r12" path="res://assets/models/models/m_murs.blend" id="29_dcw8l"]
 [ext_resource type="PackedScene" uid="uid://c2784ie2yqhg8" path="res://assets/models/models/m_amphore_2.blend" id="29_sc2bl"]
 [ext_resource type="PackedScene" uid="uid://b67cw4n18k3vy" path="res://assets/models/models/m_petale_1.blend" id="30_b3w2i"]
+[ext_resource type="PackedScene" uid="uid://dsfbaic5nyoei" path="res://assets/models/models/m_toitures_1.blend" id="30_vgclv"]
 [ext_resource type="PackedScene" uid="uid://h72rpvv4uhm1" path="res://assets/models/models/m_flacon_parfum.blend" id="31_cvwg7"]
+[ext_resource type="PackedScene" uid="uid://drgb3rw8aursf" path="res://assets/models/models/m_toitures_3.blend" id="31_xoycn"]
 [ext_resource type="PackedScene" uid="uid://bfy07dskah5k2" path="res://assets/models/models/m_fontaine.blend" id="32_1bijh"]
+[ext_resource type="PackedScene" uid="uid://cc40rfma5atoj" path="res://assets/models/models/m_toitures_2.blend" id="32_8grb4"]
 [ext_resource type="PackedScene" uid="uid://cdmru61m60vid" path="res://assets/models/models/model_herite/m_armoire_bis.tscn" id="33_877su"]
 [ext_resource type="PackedScene" uid="uid://vey6bhl87ucn" path="res://assets/models/models/m_bouteille_1.fbx" id="33_hbfmk"]
 [ext_resource type="PackedScene" uid="uid://swji3vk7m2xp" path="res://assets/models/models/m_toitures_4.blend" id="33_sukp3"]
@@ -1384,6 +1387,15 @@ transform = Transform3D(-0.00262549, 0, -0.925975, 0, 0.919294, 0, 0.895424, 0, 
 transform = Transform3D(0.627, 0, 0, 0, 0.627, 0, 0, 0, 0.581, 4.83864, 0.998018, 0.198976)
 
 [node name="m_murs" parent="." instance=ExtResource("29_dcw8l")]
+transform = Transform3D(0.998, 0, 0, 0, 0.998, 0, 0, 0, 0.998, 0.383, 0.998, -0.189)
+
+[node name="m_toitures_1" parent="." instance=ExtResource("30_vgclv")]
+transform = Transform3D(0.998, 0, 0, 0, 0.998, 0, 0, 0, 0.998, 0.383, 0.998, -0.189)
+
+[node name="m_toitures_3" parent="." instance=ExtResource("31_xoycn")]
+transform = Transform3D(0.998, 0, 0, 0, 0.998, 0, 0, 0, 0.998, 0.383, 0.998, -0.189)
+
+[node name="m_toitures_2" parent="." instance=ExtResource("32_8grb4")]
 transform = Transform3D(0.998, 0, 0, 0, 0.998, 0, 0, 0, 0.998, 0.383, 0.998, -0.189)
 
 [node name="m_toitures_4" parent="." instance=ExtResource("33_sukp3")]
