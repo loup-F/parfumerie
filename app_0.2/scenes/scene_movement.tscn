@@ -7,8 +7,8 @@
 [node name="playerStartPos" parent="." index="0"]
 transform = Transform3D(0.285104, 0, 0, 0, 0.285104, 0, 0, 0, 0.285104, 1.06634, 1.55287, 0.47187)
 
-[node name="m_flacon_parfum" parent="assets" index="32"]
-transform = Transform3D(0.238643, 0, 0, 0, 0.238643, 0, 0, 0, 0.238643, -2.30538, 2.04605, -0.308827)
+[node name="m_flacon_parfum" parent="assets" index="34"]
+transform = Transform3D(0.0925429, 0, -0.0393659, 0, 0.100567, 0, 0.0393659, 0, 0.0925429, 0.32459, 1.6109, -1.76569)
 
-[node name="m_fontaine" parent="assets" index="33"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.51633, 1.39095, 2.0965)
+[node name="m_fontaine" parent="assets" index="43"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.86498, 1.11418, 1.57926)

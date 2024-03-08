@@ -40,9 +40,9 @@ func _ready():
 		push_warning(" !! quickstart activé : menu skippé !!")
 	else: load_start_menu()
 
-func _process(_delta):
-	if Input.is_action_pressed("escape"):
-		get_tree().quit()
+#func _process(_delta):
+#	if Input.is_action_pressed("escape"):
+#		get_tree().quit()
 
 
 func _on_openxr_session_begun() -> void:

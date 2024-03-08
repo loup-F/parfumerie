@@ -4,5 +4,8 @@
 
 [node name="m_armoire" instance=ExtResource("1_e2n6o")]
 
+[node name="a_porte_g" parent="." index="4"]
+transform = Transform3D(-0.0164609, 0, -0.160311, 0, 0.84235, 0, 0.0779238, 0, -0.0338647, 0.360953, 2.03786, 0.326989)
+
 [node name="a_porte_d" parent="." index="5"]
 transform = Transform3D(0.0414285, 0, 0.139937, 0, 0.84235, 0, -0.0680202, 0, 0.0852302, 0.361458, 2.03786, -0.3359)
