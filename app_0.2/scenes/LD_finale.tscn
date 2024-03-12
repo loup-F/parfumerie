@@ -1282,10 +1282,10 @@ block_data = SubResource("Resource_k53rv")
 [node name="assets" type="Node3D" parent="."]
 
 [node name="m_mortier3" parent="assets" instance=ExtResource("14_4rcuj")]
-transform = Transform3D(0.125041, 0, 0, 0, 0.125041, 0, 0, 0, 0.125041, 2.32384, 1.29447, 2.01721)
+transform = Transform3D(-0.11287, 0, 0.0538099, 0, 0.125041, 0, -0.0538099, 0, -0.11287, 4.32434, 1.25039, -1.38921)
 
 [node name="m_bac_olive" parent="assets" instance=ExtResource("15_btoar")]
-transform = Transform3D(0.142798, 0, 0, 0, 0.142798, 0, 0, 0, 0.142798, 3.52299, 1.2524, -1.69409)
+transform = Transform3D(0.142798, 0, 0, 0, 0.142798, 0, 0, 0, 0.142798, 3.0038, 1.2524, -1.69409)
 
 [node name="m_cuisine" parent="assets" instance=ExtResource("16_a0t7s")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.02037, 1, 1.98256)
@@ -1333,7 +1333,7 @@ transform = Transform3D(0.193853, 0, 0.00310282, 0, 0.193878, 0, -0.00310282, 0,
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.73666, 2.57996, 1.37265)
 
 [node name="m_pilon" parent="assets" instance=ExtResource("20_25kq6")]
-transform = Transform3D(0.143897, 0, 0, 0, 0.128077, -0.065594, 0, 0.065594, 0.128077, 2.95433, 1.13584, 2.15176)
+transform = Transform3D(-0.129891, 0.0282276, 0.0551164, 0, 0.128077, -0.065594, -0.0619243, -0.0592096, -0.115611, 3.81312, 1.09176, -1.78199)
 
 [node name="m_porte" parent="assets" instance=ExtResource("21_6rgq0")]
 transform = Transform3D(-0.000768, 0.00736522, 0.999972, 5.65664e-06, 0.999973, -0.00736522, -0.999999, 0, -0.000768021, 4.29917, 1.03914, 3.27516)
