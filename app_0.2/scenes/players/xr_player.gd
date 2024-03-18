@@ -5,7 +5,8 @@ var previous
 @onready var animation_player = $AnimationPlayer
 @onready var label = $XRCamera3D/XR_Label
 @onready var reticule = $XRCamera3D/reticule
-var in_menu = true 
+var in_menu = true
+@onready var object_to_fade = %FadeBlack 
 signal fade_done
 
 # Called when the node enters the scene tree for the first time.
@@ -43,6 +44,7 @@ func fade_in():
 	emit_signal("fade_done")
 	
 func fade_to_black():
+	set_fade_color_black()
 	var tween = get_tree().create_tween()
 	tween.tween_method(set_fade, 0.0, 1.0, 1.0).set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
 	await tween.finished
@@ -50,9 +52,17 @@ func fade_to_black():
 
 func set_fade(p_value : float):
 	if p_value == 0.0:
-		%Fade.visible = false
+		object_to_fade.visible = false
 	else:
-		var material : ShaderMaterial = %Fade.get_surface_override_material(0)
+		var material : ShaderMaterial = object_to_fade.get_surface_override_material(0)
 		if material:
 			material.set_shader_parameter("alpha", p_value)
-		%Fade.visible = true
+		object_to_fade.visible = true
+
+func set_fade_color_black():
+	if object_to_fade != %FadeBlack:
+		object_to_fade = %FadeBlack
+
+func set_fade_color_white():
+	if object_to_fade != %FadeWhite:
+		object_to_fade = %FadeWhite

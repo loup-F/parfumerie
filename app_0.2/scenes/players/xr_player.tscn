@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cylsy0cyrtguj"]
+[gd_scene load_steps=20 format=3 uid="uid://cylsy0cyrtguj"]
 
 [ext_resource type="Script" path="res://scenes/players/xr_player.gd" id="1_yyqei"]
 [ext_resource type="PackedScene" uid="uid://bnx4hithcij6y" path="res://addons/godot-xr-tools/hands/model/Hand_Glove_low_L.gltf" id="2_xs4bm"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="5_jxeb3"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/player/player_body.gd" id="6_cmikl"]
 [ext_resource type="Shader" path="res://addons/godot-xr-tools/staging/fade.gdshader" id="7_xsrl8"]
+[ext_resource type="Shader" path="res://assets/ressources/fadeWhite.gdshader" id="7_yjcjk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4a5d7"]
 no_depth_test = true
@@ -85,6 +86,15 @@ _data = {
 "RESET": SubResource("Animation_yu55p"),
 "sous-titres fr": SubResource("Animation_mempe")
 }
+
+[sub_resource type="QuadMesh" id="QuadMesh_qgcot"]
+size = Vector2(3, 3)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r7vpv"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("7_yjcjk")
+shader_parameter/alpha = 0.0
 
 [sub_resource type="QuadMesh" id="QuadMesh_eo68x"]
 size = Vector2(3, 3)
@@ -175,7 +185,15 @@ libraries = {
 "": SubResource("AnimationLibrary_p7em2")
 }
 
-[node name="Fade" type="MeshInstance3D" parent="."]
+[node name="FadeWhite" type="MeshInstance3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(31.5422, 0, 0, 0, 31.5422, 0, 0, 0, 31.5422, 0, 0, 0)
+visible = false
+mesh = SubResource("QuadMesh_qgcot")
+skeleton = NodePath("../FadeBlack")
+surface_material_override/0 = SubResource("ShaderMaterial_r7vpv")
+
+[node name="FadeBlack" type="MeshInstance3D" parent="."]
 unique_name_in_owner = true
 transform = Transform3D(5.61624, 0, 0, 0, 5.61624, 0, 0, 0, 5.61624, 0, 0, 0)
 visible = false

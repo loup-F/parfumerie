@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7e805c06b21i"]
+
+[ext_resource type="PackedScene" uid="uid://6bvwc7dldlb1" path="res://assets/player_start_pos.tscn" id="1_hefen"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0ku1l"]
+size = Vector3(100, 1, 100)
+
+[node name="End" type="Node3D"]
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(0.285104, 0, 0, 0, 0.285104, 0, 0, 0, 0.285104, 0, 1.9177, -1.83001)
+text = "Merci d'avoir participé !
+Ôtez le casque et appuyez sur le bouton d'extinction avant de le passer à la personne suivante"
+autowrap_mode = 3
+
+[node name="playerStartPos" parent="." instance=ExtResource("1_hefen")]
+
+[node name="floor" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.145661, 0.716851, -3.02968)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor"]
+shape = SubResource("BoxShape3D_0ku1l")

@@ -12,6 +12,7 @@ var xr_is_focussed = false
 @export var destination: PackedScene
 var level_instance : Node3D
 var start = preload("res://scenes/start_menu.tscn")
+var end = preload("res://scenes/end.tscn")
 @onready var player = get_child(0)
 @export var quickstart = false
 
@@ -40,9 +41,9 @@ func _ready():
 		push_warning(" !! quickstart activé : menu skippé !!")
 	else: load_start_menu()
 
-#func _process(_delta):
-#	if Input.is_action_pressed("escape"):
-#		get_tree().quit()
+func _process(_delta):
+	if Input.is_action_pressed("escape"):
+		get_tree().quit()
 
 
 func _on_openxr_session_begun() -> void:
@@ -117,7 +118,6 @@ func load_level(level_name : String):
 		level_instance = level_resource.instantiate()
 		add_child(level_instance)
 
-
 func load_dest():
 	player.fade_to_black()
 	await player.fade_done
@@ -134,3 +134,15 @@ func load_start_menu():
 	if start :
 		level_instance = start.instantiate()
 		add_child(level_instance)
+
+func load_ending():
+	player.fade_to_white()
+	await player.fade_done
+	player.fade_to_black()
+	await player.fade_done
+	unload_level()
+	if end :
+		level_instance = end.instantiate()
+		add_child(level_instance)  
+		player.fade_in()
+		await player.fade_done

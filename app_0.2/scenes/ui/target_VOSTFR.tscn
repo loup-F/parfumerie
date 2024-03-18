@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://conusqvj0ho0d"]
+
+[ext_resource type="PackedScene" uid="uid://cgl7qwxdrcy2y" path="res://scenes/ui/UI_target.tscn" id="1_khu7v"]
+[ext_resource type="Texture2D" uid="uid://e7n3pd5kc2gu" path="res://assets/textures/UI/latin.png" id="2_rilme"]
+
+[node name="Target_VOSTFR" instance=ExtResource("1_khu7v")]
+
+[node name="Label" parent="." index="1"]
+offset_left = -119.0
+offset_top = -95.0
+offset_right = 56.0
+offset_bottom = -40.0
+text = "NON"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." index="2"]
+layout_mode = 0
+offset_left = -139.0
+offset_top = -157.0
+offset_right = 178.0
+offset_bottom = 160.0
+texture = ExtResource("2_rilme")

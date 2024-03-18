@@ -1,0 +1,165 @@
+[gd_scene load_steps=19 format=3 uid="uid://ce723g1vagol0"]
+
+[ext_resource type="PackedScene" uid="uid://6bvwc7dldlb1" path="res://assets/player_start_pos.tscn" id="1_g3cyp"]
+[ext_resource type="Script" path="res://scripts/choice_manager.gd" id="2_j4s2l"]
+[ext_resource type="Script" path="res://scripts/Floating_ui.gd" id="3_xmwka"]
+[ext_resource type="PackedScene" uid="uid://cwxikevd2febl" path="res://scenes/ui/target_FR.tscn" id="4_86frh"]
+[ext_resource type="PackedScene" uid="uid://pl1b8cmvnwdm" path="res://scenes/ui/target_EN.tscn" id="5_5gba3"]
+[ext_resource type="PackedScene" uid="uid://73qen22upk0x" path="res://scenes/ui/target_STFR.tscn" id="6_kuuk5"]
+[ext_resource type="PackedScene" uid="uid://conusqvj0ho0d" path="res://scenes/ui/target_VOSTFR.tscn" id="7_mlwhy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0go3u"]
+size = Vector3(1, 1, 0.00664818)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_2y4di"]
+viewport_path = NodePath("ChoicePanels/Choix1/opt1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_34abf"]
+resource_local_to_scene = true
+transparency = 1
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_2y4di")
+
+[sub_resource type="QuadMesh" id="QuadMesh_t0675"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_aocl3"]
+viewport_path = NodePath("ChoicePanels/Choix1/opt2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pt3iw"]
+resource_local_to_scene = true
+transparency = 1
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_aocl3")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_cgnwx"]
+viewport_path = NodePath("ChoicePanels/Choix2/opt3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5c3h6"]
+resource_local_to_scene = true
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1, 1, 1, 0)
+albedo_texture = SubResource("ViewportTexture_cgnwx")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_wkg46"]
+viewport_path = NodePath("ChoicePanels/Choix2/opt4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4v7y0"]
+resource_local_to_scene = true
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1, 1, 1, 0)
+albedo_texture = SubResource("ViewportTexture_wkg46")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vptju"]
+size = Vector3(100, 1, 100)
+
+[node name="StartMenu" type="Node3D"]
+
+[node name="playerStartPos" parent="." instance=ExtResource("1_g3cyp")]
+transform = Transform3D(0.285104, 0, 0, 0, 0.285104, 0, 0, 0, 0.285104, -0.695346, 1.68749, 2.30809)
+
+[node name="ChoicePanels" type="Node3D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_j4s2l")
+
+[node name="Label3D" type="Label3D" parent="ChoicePanels"]
+transform = Transform3D(1.77679, 0, 0, 0, 1.77679, 0, 0, 0, 1.77679, 0.058, 4.219, -5.389)
+text = "Choisissez une version :"
+
+[node name="Choix1" type="Node3D" parent="ChoicePanels"]
+
+[node name="FloatingOpt1" type="StaticBody3D" parent="ChoicePanels/Choix1" node_paths=PackedStringArray("control") groups=["UI_target"]]
+transform = Transform3D(1.51714, 0, 0.707455, 0, 1.67398, 0, -0.707455, 0, 1.51714, -2, 2.8, -5)
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("3_xmwka")
+control = NodePath("../opt1/Target_FR")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ChoicePanels/Choix1/FloatingOpt1"]
+shape = SubResource("BoxShape3D_0go3u")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ChoicePanels/Choix1/FloatingOpt1"]
+material_override = SubResource("StandardMaterial3D_34abf")
+mesh = SubResource("QuadMesh_t0675")
+
+[node name="FloatingOpt2" type="StaticBody3D" parent="ChoicePanels/Choix1" node_paths=PackedStringArray("control") groups=["UI_target"]]
+transform = Transform3D(1.61032, 0, -0.750904, 0, 1.77679, 0, 0.750904, 0, 1.61032, 2, 2.8, -5)
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("3_xmwka")
+control = NodePath("../opt2/Target_EN")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ChoicePanels/Choix1/FloatingOpt2"]
+shape = SubResource("BoxShape3D_0go3u")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ChoicePanels/Choix1/FloatingOpt2"]
+material_override = SubResource("StandardMaterial3D_pt3iw")
+mesh = SubResource("QuadMesh_t0675")
+skeleton = NodePath("")
+
+[node name="opt1" type="SubViewport" parent="ChoicePanels/Choix1"]
+transparent_bg = true
+render_target_update_mode = 4
+
+[node name="Target_FR" parent="ChoicePanels/Choix1/opt1" instance=ExtResource("4_86frh")]
+
+[node name="opt2" type="SubViewport" parent="ChoicePanels/Choix1"]
+transparent_bg = true
+render_target_update_mode = 4
+
+[node name="Target_EN" parent="ChoicePanels/Choix1/opt2" instance=ExtResource("5_5gba3")]
+
+[node name="Choix2" type="Node3D" parent="ChoicePanels"]
+
+[node name="FloatingOpt3" type="StaticBody3D" parent="ChoicePanels/Choix2" node_paths=PackedStringArray("control") groups=["UI_target"]]
+transform = Transform3D(1.51714, 0, 0.707455, 0, 1.67398, 0, -0.707455, 0, 1.51714, -2, 2.8, -5)
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("3_xmwka")
+control = NodePath("../opt3/Target_STFR")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ChoicePanels/Choix2/FloatingOpt3"]
+shape = SubResource("BoxShape3D_0go3u")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ChoicePanels/Choix2/FloatingOpt3"]
+material_override = SubResource("StandardMaterial3D_5c3h6")
+mesh = SubResource("QuadMesh_t0675")
+skeleton = NodePath("")
+
+[node name="FloatingOpt4" type="StaticBody3D" parent="ChoicePanels/Choix2" node_paths=PackedStringArray("control") groups=["UI_target"]]
+transform = Transform3D(1.61032, 0, -0.750904, 0, 1.77679, 0, 0.750904, 0, 1.61032, 2, 2.8, -5)
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("3_xmwka")
+control = NodePath("../opt4/Target_STEN")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ChoicePanels/Choix2/FloatingOpt4"]
+shape = SubResource("BoxShape3D_0go3u")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ChoicePanels/Choix2/FloatingOpt4"]
+material_override = SubResource("StandardMaterial3D_4v7y0")
+mesh = SubResource("QuadMesh_t0675")
+skeleton = NodePath("")
+
+[node name="opt3" type="SubViewport" parent="ChoicePanels/Choix2"]
+transparent_bg = true
+render_target_update_mode = 4
+
+[node name="Target_STFR" parent="ChoicePanels/Choix2/opt3" instance=ExtResource("6_kuuk5")]
+
+[node name="opt4" type="SubViewport" parent="ChoicePanels/Choix2"]
+transparent_bg = true
+render_target_update_mode = 4
+
+[node name="Target_STEN" parent="ChoicePanels/Choix2/opt4" instance=ExtResource("7_mlwhy")]
+
+[node name="floor" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.145661, 0.716851, -3.02968)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor"]
+shape = SubResource("BoxShape3D_vptju")

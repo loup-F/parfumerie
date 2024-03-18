@@ -3,9 +3,12 @@ var points = []
 @export var player : Node
 @onready var tween = get_tree().create_tween()
 var tween_length = 2.5
+signal path_finished
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var manager = get_parent().get_parent()
+	path_finished.connect(manager.load_ending)
 	if !player:
 		player = get_tree().get_first_node_in_group("player")
 	if player.name == "XROrigin":
@@ -19,20 +22,22 @@ func _ready():
 
 
 func animate_player():
-#	wait(1)
-#	rotate_and_move_to(points[1])
-#	wait(1.5)
-#	rotate_and_move_to(points[2])
+	wait(1)
+	rotate_and_move_to(points[1])
+	wait(1.5)
+	rotate_and_move_to(points[2])
 #	wait(1.5)
 #	rotate_and_move_to(points[3])
 #	wait(1.5)
 #	rotate_and_move_to(points[4])
 #	wait(1.5)
 #	rotate_and_move_to(points[5])
-	for point in points:
-		if point != points[0]:
-			wait(1.5)
-			rotate_and_move_to(point)
+#	for point in points:
+#		if point != points[0]:
+#			wait(1.5)
+#			rotate_and_move_to(point)
+	await tween.finished
+	emit_signal("path_finished")
 
 func rotate_and_move_to(target):
 	tween.set_parallel(true)
