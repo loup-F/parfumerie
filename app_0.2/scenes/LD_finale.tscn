@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=3 uid="uid://crb1eileeof2t"]
+[gd_scene load_steps=88 format=3 uid="uid://crb1eileeof2t"]
 
 [ext_resource type="Script" path="res://addons/cyclops_level_builder/nodes/cyclops_blocks.gd" id="1_i7wco"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_jkthk"]
@@ -20,7 +20,6 @@
 [ext_resource type="PackedScene" uid="uid://2eshwfqqv5q0" path="res://assets/models/models/m_marmite_m.blend" id="25_hwpcv"]
 [ext_resource type="PackedScene" uid="uid://ccu3i5ykhpd52" path="res://assets/models/models/m_cuillere.blend" id="26_xabha"]
 [ext_resource type="PackedScene" uid="uid://blvkbthvwy7sx" path="res://assets/models/models/m_flacon_metal.blend" id="27_hwfod"]
-[ext_resource type="PackedScene" uid="uid://b7450j7ok847m" path="res://assets/models/models/m_bol_1.fbx" id="28_plfyg"]
 [ext_resource type="PackedScene" uid="uid://dhbhbfi6sisvh" path="res://assets/models/models/m_presse2.blend" id="28_uyu2h"]
 [ext_resource type="PackedScene" uid="uid://dwhbvx2bs3r12" path="res://assets/models/models/m_murs.blend" id="29_dcw8l"]
 [ext_resource type="PackedScene" uid="uid://c2784ie2yqhg8" path="res://assets/models/models/m_amphore_2.blend" id="29_sc2bl"]
@@ -31,7 +30,6 @@
 [ext_resource type="PackedScene" uid="uid://bfy07dskah5k2" path="res://assets/models/models/m_fontaine.blend" id="32_1bijh"]
 [ext_resource type="PackedScene" uid="uid://cc40rfma5atoj" path="res://assets/models/models/m_toitures_2.blend" id="32_8grb4"]
 [ext_resource type="PackedScene" uid="uid://cdmru61m60vid" path="res://assets/models/models/model_herite/m_armoire_bis.tscn" id="33_877su"]
-[ext_resource type="PackedScene" uid="uid://vey6bhl87ucn" path="res://assets/models/models/m_bouteille_1.fbx" id="33_hbfmk"]
 [ext_resource type="PackedScene" uid="uid://swji3vk7m2xp" path="res://assets/models/models/m_toitures_4.blend" id="33_sukp3"]
 [ext_resource type="PackedScene" uid="uid://cbl1p4gvivcr4" path="res://assets/models/models/m_fagot_b.blend" id="34_n42nd"]
 [ext_resource type="PackedScene" uid="uid://bvrr0wm7ja6vi" path="res://assets/models/models/m_fagot_a.blend" id="35_ubwkt"]
@@ -40,7 +38,10 @@
 [ext_resource type="PackedScene" uid="uid://dfj5nclm582v8" path="res://assets/models/models/m_urgentarium_1.blend" id="38_t4pub"]
 [ext_resource type="PackedScene" uid="uid://4hmjm6blgwx7" path="res://assets/models/models/m_urgentarium_3.blend" id="39_h0ibc"]
 [ext_resource type="PackedScene" uid="uid://b2y1dtleuxea3" path="res://assets/models/models/m_balsamere.blend" id="40_rj2pq"]
+[ext_resource type="PackedScene" uid="uid://dfwr73mrsq334" path="res://assets/models/models/m_bol.blend" id="41_rjfrr"]
 [ext_resource type="PackedScene" uid="uid://eeosqtwarbo4" path="res://assets/models/models/m_colonne.blend" id="41_tdk3j"]
+[ext_resource type="PackedScene" uid="uid://bhrsy1j7rhamo" path="res://assets/models/models/m_bouteille_1.blend" id="42_6r6fc"]
+[ext_resource type="PackedScene" uid="uid://dj4e81gewl7yy" path="res://assets/models/models/m_bol_2.blend" id="42_8thw8"]
 
 [sub_resource type="Resource" id="Resource_n266i"]
 script = ExtResource("3_tk6jp")
@@ -1380,9 +1381,6 @@ transform = Transform3D(0.0510104, -0.0494118, 0, 0.0494118, 0.0510104, 0, 0, 0,
 [node name="m_flacon_metal" parent="assets" instance=ExtResource("27_hwfod")]
 transform = Transform3D(0.0499323, 0, -0.0924828, 0, 0.105101, 0, 0.0924828, 0, 0.0499323, -1.74811, 2.61455, 1.62454)
 
-[node name="m_bol_1" parent="assets" instance=ExtResource("28_plfyg")]
-transform = Transform3D(0.40239, 0, 0, 0, 0.40239, 0, 0, 0, 0.40239, -1.72017, 2.63244, 1.48731)
-
 [node name="m_amphore_2" parent="assets" instance=ExtResource("29_sc2bl")]
 transform = Transform3D(-0.126182, 0, -0.992007, 0.167382, 0.985662, -0.0212906, 0.977784, -0.16873, -0.124372, 1.41678, 0.988056, -1.826)
 
@@ -1427,27 +1425,6 @@ transform = Transform3D(-0.10013, 0, -0.00936998, 0, 0.100567, 0, 0.00936998, 0,
 
 [node name="m_fontaine" parent="assets" instance=ExtResource("32_1bijh")]
 transform = Transform3D(-3.97331e-08, 0, 0.908988, 0, 0.908988, 0, -0.908988, 0, -3.97331e-08, -9.86498, 1.11418, 1.57926)
-
-[node name="m_bouteille_1" parent="assets" instance=ExtResource("33_hbfmk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.74122, 2.59389, 1.30236)
-
-[node name="m_bouteille_2" parent="assets" instance=ExtResource("33_hbfmk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.90373, 2.0625, 0.0238362)
-
-[node name="m_bouteille_3" parent="assets" instance=ExtResource("33_hbfmk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.90373, 2.0625, 0.18513)
-
-[node name="m_bouteille_4" parent="assets" instance=ExtResource("33_hbfmk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.671157, 2.445, -1.8495)
-
-[node name="m_bouteille_5" parent="assets" instance=ExtResource("33_hbfmk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.807248, 2.445, -1.8495)
-
-[node name="m_bouteille_6" parent="assets" instance=ExtResource("33_hbfmk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.807248, 2.445, -1.61634)
-
-[node name="m_bouteille_7" parent="assets" instance=ExtResource("33_hbfmk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.682728, 2.445, -1.73028)
 
 [node name="charbons" type="Node3D" parent="assets"]
 
@@ -1588,3 +1565,27 @@ transform = Transform3D(1.04, 0, 0, 0, 1.04, 0, 0, 0, 1.04, -3.2858, 1.00072, -4
 
 [node name="m_colonne3" parent="." instance=ExtResource("41_tdk3j")]
 transform = Transform3D(1.04, 0, 0, 0, 1.04, 0, 0, 0, 1.04, -3.2858, 1.00072, -11.035)
+
+[node name="m_bouteille_3" parent="." instance=ExtResource("42_6r6fc")]
+transform = Transform3D(0.362428, 0, 0, 0, 0.362428, 0, 0, 0, 0.362428, -1.89965, 2.0924, 0.0267397)
+
+[node name="m_bouteille_5" parent="." instance=ExtResource("42_6r6fc")]
+transform = Transform3D(0.39379, 0, 0, 0, 0.39379, 0, 0, 0, 0.39379, 0.653302, 2.44948, -1.76287)
+
+[node name="m_bouteille_4" parent="." instance=ExtResource("42_6r6fc")]
+transform = Transform3D(0.427867, 0, 0, 0, 0.427867, 0, 0, 0, 0.427867, 0.764288, 2.45622, -1.84003)
+
+[node name="m_bouteille_2" parent="." instance=ExtResource("42_6r6fc")]
+transform = Transform3D(0.362428, 0, 0, 0, 0.362428, 0, 0, 0, 0.362428, -1.89965, 2.0924, 0.173591)
+
+[node name="m_bouteille_6" parent="." instance=ExtResource("42_6r6fc")]
+transform = Transform3D(0.39379, 0, 0, 0, 0.39379, 0, 0, 0, 0.39379, 0.795627, 2.44948, -1.66449)
+
+[node name="m_bouteille_1" parent="." instance=ExtResource("42_6r6fc")]
+transform = Transform3D(0.367715, 0, 0, 0, 0.367715, 0, 0, 0, 0.367715, -1.74122, 2.59389, 1.30236)
+
+[node name="m_bol" parent="." instance=ExtResource("41_rjfrr")]
+transform = Transform3D(0.448852, 0, 0, 0, 0.448852, 0, 0, 0, 0.448852, -1.73659, 2.63478, 1.47509)
+
+[node name="m_bol_2" parent="." instance=ExtResource("42_8thw8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.302871, 1.92052, 1.58934)
