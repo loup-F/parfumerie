@@ -14,7 +14,7 @@ var level_instance : Node3D
 var start = preload("res://scenes/start_menu.tscn")
 var end = preload("res://scenes/end.tscn")
 @onready var player = get_child(0)
-@export var quickstart = false
+@export var skip_menu = false
 
 func _ready():
 	xr_interface = XRServer.find_interface("OpenXR")
@@ -36,9 +36,9 @@ func _ready():
 		print("OpenXR not instantiated!")
 #		get_tree().quit()
 		vp.use_xr = false
-	if quickstart:
+	if skip_menu:
 		load_dest()
-		push_warning(" !! quickstart activé : menu skippé !!")
+		push_warning(" !! menu skippé !!")
 	else: load_start_menu()
 
 func _process(_delta):

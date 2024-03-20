@@ -18,6 +18,10 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	
+	self.quaternion = $XRCamera3D.quaternion.inverse()
+	self.position = (self.quaternion * -$XRCamera3D.position)
+	
 	if in_menu:
 		cast()
 	elif %reticule.visible == true:

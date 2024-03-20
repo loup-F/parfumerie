@@ -1,16 +1,72 @@
-[gd_scene load_steps=3 format=3 uid="uid://b7e805c06b21i"]
+[gd_scene load_steps=6 format=3 uid="uid://b7e805c06b21i"]
 
 [ext_resource type="PackedScene" uid="uid://6bvwc7dldlb1" path="res://assets/player_start_pos.tscn" id="1_hefen"]
+
+[sub_resource type="Animation" id="Animation_h4wq8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_xaayp"]
+resource_name = "credits"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -4, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1t3fx"]
+_data = {
+"RESET": SubResource("Animation_h4wq8"),
+"credits": SubResource("Animation_xaayp")
+}
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0ku1l"]
 size = Vector3(100, 1, 100)
 
 [node name="End" type="Node3D"]
 
-[node name="Label3D" type="Label3D" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Crédits")
+autoplay = "credits"
+libraries = {
+"": SubResource("AnimationLibrary_1t3fx")
+}
+
+[node name="Crédits" type="Node3D" parent="."]
+
+[node name="Label3D" type="Label3D" parent="Crédits"]
 transform = Transform3D(0.285104, 0, 0, 0, 0.285104, 0, 0, 0, 0.285104, 0, 1.9177, -1.83001)
 text = "Merci d'avoir participé !
 Ôtez le casque et appuyez sur le bouton d'extinction avant de le passer à la personne suivante"
+autowrap_mode = 3
+
+[node name="Label3D2" type="Label3D" parent="Crédits"]
+transform = Transform3D(0.285104, 0, 0, 0, 0.285104, 0, 0, 0, 0.285104, 0, 2.95697, -1.83001)
+text = "wow ça marche comme des vrais crédits"
+autowrap_mode = 3
+
+[node name="Label3D3" type="Label3D" parent="Crédits"]
+transform = Transform3D(0.285104, 0, 0, 0, 0.285104, 0, 0, 0, 0.285104, 0, 3.94324, -1.83001)
+text = "c'est fou non"
 autowrap_mode = 3
 
 [node name="playerStartPos" parent="." instance=ExtResource("1_hefen")]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://bus4hh1gfxe1a"]
+[gd_scene load_steps=20 format=3 uid="uid://bus4hh1gfxe1a"]
 
 [ext_resource type="Shader" path="res://assets/ressources/eau.gdshader" id="1_mtrno"]
 [ext_resource type="Material" uid="uid://vmwqv28yq8qs" path="res://assets/ressources/bulle.tres" id="2_40wo6"]
 [ext_resource type="Texture2D" uid="uid://4awvbf5yp0e" path="res://assets/textures/Smoke30Frames.png" id="3_2ja4o"]
+[ext_resource type="AudioStream" uid="uid://blgolpohuknmv" path="res://assets/audio/sfx/water_boiling_loop.ogg" id="4_bgni2"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_ape0u"]
 noise_type = 3
@@ -72,18 +73,18 @@ is_hemisphere = true
 
 [sub_resource type="Curve" id="Curve_yula1"]
 max_value = 100.0
-_data = [Vector2(0, 76.8421), 0.0, -361.007, 0, 0, Vector2(0.503676, 2.10526), 0.0, 0.0, 0, 0, Vector2(0.742647, 0), 0.0, 0.0, 0, 0, Vector2(0.757363, 100), 0.0, 0.0, 0, 0, Vector2(1, 100), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 76.8421), 0.0, -361.007, 0, 0, Vector2(0.503676, 2.10526), 0.0, 0.0, 0, 0, Vector2(0.637755, 4.21053), 0.0, 0.0, 0, 0, Vector2(0.757363, 100), 0.0, 0.0, 0, 0, Vector2(1, 100), 0.0, 0.0, 0, 0]
 point_count = 5
 
 [sub_resource type="Curve" id="Curve_6dqhx"]
-_data = [Vector2(0, 0.526316), 0.0, 0.0, 0, 0, Vector2(0.738971, 0.484211), 0.0, 0.0, 0, 0, Vector2(0.996324, 1), 1.77243, 0.0, 0, 0]
+_data = [Vector2(0, 0.305263), 0.0, 0.0, 0, 0, Vector2(0.637755, 0.315789), 0.0, 0.0, 0, 0, Vector2(1, 0.6), 1.77243, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="Gradient" id="Gradient_0y3vg"]
 offsets = PackedFloat32Array(0.278008, 0.701245, 0.804979)
 colors = PackedColorArray(0.0718234, 0.432816, 0.67226, 1, 0.0715269, 0.696977, 0.937191, 1, 0.813378, 0.829028, 0.839379, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0i6br"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hxgwa"]
 render_priority = -1
 transparency = 1
 blend_mode = 1
@@ -97,15 +98,15 @@ particles_anim_v_frames = 5
 particles_anim_loop = true
 
 [sub_resource type="QuadMesh" id="QuadMesh_a7juv"]
-material = SubResource("StandardMaterial3D_0i6br")
+material = SubResource("StandardMaterial3D_hxgwa")
 size = Vector2(0.4, 0.4)
 
 [sub_resource type="Gradient" id="Gradient_8erx8"]
-offsets = PackedFloat32Array(0, 0.460581, 1)
+offsets = PackedFloat32Array(0, 0.509091, 1)
 colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1)
 
 [node name="eauquibout" type="MeshInstance3D"]
-transform = Transform3D(0.780522, 0, 0, 0, 0.00825646, 0, 0, 0, 0.855637, 0, 0, 0)
+transform = Transform3D(0.334, 0, 0, 0, 0.004, 0, 0, 0, 0.334, 0, 0, 0)
 material_override = SubResource("ShaderMaterial_qoqke")
 cast_shadow = 0
 lod_bias = 0.001
@@ -113,8 +114,8 @@ mesh = SubResource("CylinderMesh_o0gfw")
 metadata/_edit_group_ = true
 
 [node name="bubbles" type="CPUParticles3D" parent="."]
-transform = Transform3D(2.92293, 0, 0, 0, 35.6478, 0, 0, 0, 1.93942, 0, -50.3694, 0)
-amount = 30
+transform = Transform3D(2.923, 0, 0, 0, 35.648, 0, 0, 0, 2.923, 0, -50.3694, 0)
+amount = 25
 lifetime = 1.59
 explosiveness = 0.02
 mesh = SubResource("SphereMesh_y5ise")
@@ -122,7 +123,7 @@ emission_shape = 6
 emission_ring_axis = Vector3(0, 1, 0)
 emission_ring_height = 0.0
 emission_ring_radius = 0.16
-emission_ring_inner_radius = 0.0
+emission_ring_inner_radius = 0.12
 direction = Vector3(0, 0, 0)
 spread = 0.0
 gravity = Vector3(0, 4, 0)
@@ -131,11 +132,13 @@ damping_max = 0.7
 damping_curve = SubResource("Curve_yula1")
 scale_amount_curve = SubResource("Curve_6dqhx")
 color_ramp = SubResource("Gradient_0y3vg")
+metadata/_edit_group_ = true
 
 [node name="fumee" type="CPUParticles3D" parent="."]
 transform = Transform3D(1.28119, 0, 0, 0, 121.117, 0, 0, 0, 1.16872, 0, 0, 0)
 amount = 30
-lifetime = 1.58
+lifetime = 2.3
+explosiveness = 0.12
 mesh = SubResource("QuadMesh_a7juv")
 emission_shape = 6
 emission_ring_axis = Vector3(0, 1, 0)
@@ -144,13 +147,24 @@ emission_ring_radius = 0.25
 emission_ring_inner_radius = 0.0
 direction = Vector3(0, 1, 0)
 spread = 12.5
+flatness = 0.27
 gravity = Vector3(0, 0, 0)
-initial_velocity_min = 0.22
-initial_velocity_max = 0.28
-angular_velocity_min = -25.0
-angular_velocity_max = -15.0
-angle_min = -45.0
-angle_max = -15.0
-scale_amount_min = 0.5
-scale_amount_max = 1.5
+initial_velocity_min = 0.3
+initial_velocity_max = 0.38
+angular_velocity_min = 14.0
+angular_velocity_max = 17.0
+angle_min = -25.0
+angle_max = 25.0
+scale_amount_min = 0.6
+scale_amount_max = 0.8
 color_ramp = SubResource("Gradient_8erx8")
+metadata/_edit_group_ = true
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(2.99401, 0, 0, 0, 250, 0, 0, 0, 2.99401, 0, 0, 0)
+stream = ExtResource("4_bgni2")
+attenuation_model = 1
+volume_db = -55.0
+max_db = -15.0
+pitch_scale = 0.94
+autoplay = true

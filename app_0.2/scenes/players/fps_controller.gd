@@ -32,10 +32,6 @@ func _input(event):
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _ready():
-	if has_node("/root/main/Xr_player"):
-		self.remove_from_group("player")
-		self.queue_free()
-	else:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		fade_in()
 	
