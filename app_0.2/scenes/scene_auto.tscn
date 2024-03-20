@@ -36,3 +36,12 @@ transform = Transform3D(0.0002722, 0, 0.219708, 0, 0.219709, 0, -0.219708, 0, 0.
 
 [node name="pathnode7" parent="playerpath" index="7" instance=ExtResource("4_hqjbd")]
 transform = Transform3D(-0.0536991, 0, 0.213045, 0, 0.219709, 0, -0.213045, 0, -0.0536991, -3.4572, 1.55, -1.6863)
+
+[node name="m_bol" parent="." index="57"]
+transform = Transform3D(0.566521, -0.000484485, 0, 0.000484485, 0.566521, 0, 0, 0, 0.566522, -1.72181, 2.63801, 1.45293)
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="." index="59"]
+transform = Transform3D(0.857549, -0.232235, 0.458996, 0.104188, 0.952209, 0.287127, -0.503741, -0.198404, 0.840762, -0.527534, 3.09892, 2.04233)
+light_energy = 0.3
+light_volumetric_fog_energy = 0.0
+sky_mode = 1
