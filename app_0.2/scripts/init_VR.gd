@@ -122,7 +122,7 @@ func load_dest():
 	player.fade_to_black()
 	await player.fade_done
 	player.in_menu = false
-	unload_level()
+	unload_level()²
 	if destination :
 		level_instance = destination.instantiate()
 		add_child(level_instance)  
@@ -136,8 +136,8 @@ func load_start_menu():
 		add_child(level_instance)
 
 func load_ending():
-	player.fade_to_white()
-	await player.fade_done
+#	player.fade_to_white()
+#	await player.fade_done
 	player.fade_to_black()
 	await player.fade_done
 	unload_level()

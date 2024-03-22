@@ -19,8 +19,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	
-	self.quaternion = $XRCamera3D.quaternion.inverse()
-	self.position = (self.quaternion * -$XRCamera3D.position)
+#	self.quaternion = $XRCamera3D.quaternion.inverse()
+#	self.position = (self.quaternion * -$XRCamera3D.position)
 	
 	if in_menu:
 		cast()
@@ -46,9 +46,16 @@ func fade_in():
 	tween.tween_method(set_fade, 1.0, 0.0, 1.0).set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_IN)
 	await tween.finished
 	emit_signal("fade_done")
-	
+#
 func fade_to_black():
 	set_fade_color_black()
+	var tween = get_tree().create_tween()
+	tween.tween_method(set_fade, 0.0, 1.0, 1.0).set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
+	await tween.finished
+	emit_signal("fade_done")
+
+func fade_to_white():
+	set_fade_color_white()
 	var tween = get_tree().create_tween()
 	tween.tween_method(set_fade, 0.0, 1.0, 1.0).set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
 	await tween.finished
@@ -66,7 +73,11 @@ func set_fade(p_value : float):
 func set_fade_color_black():
 	if object_to_fade != %FadeBlack:
 		object_to_fade = %FadeBlack
+		await get_tree().create_timer(1.0).timeout
+		%FadeWhite.visible = false
 
 func set_fade_color_white():
 	if object_to_fade != %FadeWhite:
 		object_to_fade = %FadeWhite
+		await get_tree().create_timer(1.0).timeout
+		%FadeBlack.visible = false

@@ -23,9 +23,9 @@ func _ready():
 
 func animate_player():
 	wait(1)
-	rotate_and_move_to(points[1])
-	wait(1.5)
-	rotate_and_move_to(points[2])
+#	rotate_and_move_to(points[1])
+#	wait(1.5)
+#	rotate_and_move_to(points[2])
 #	wait(1.5)
 #	rotate_and_move_to(points[3])
 #	wait(1.5)
