@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=3 uid="uid://crb1eileeof2t"]
+[gd_scene load_steps=90 format=3 uid="uid://crb1eileeof2t"]
 
 [ext_resource type="Script" path="res://addons/cyclops_level_builder/nodes/cyclops_blocks.gd" id="1_i7wco"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_jkthk"]
@@ -43,6 +43,7 @@
 [ext_resource type="PackedScene" uid="uid://eeosqtwarbo4" path="res://assets/models/models/m_colonne.blend" id="41_tdk3j"]
 [ext_resource type="PackedScene" uid="uid://bhrsy1j7rhamo" path="res://assets/models/models/m_bouteille_1.blend" id="42_6r6fc"]
 [ext_resource type="PackedScene" uid="uid://dj4e81gewl7yy" path="res://assets/models/models/m_bol_2.blend" id="42_8thw8"]
+[ext_resource type="PackedScene" uid="uid://dvjx6gfaw1gge" path="res://assets/models/models/m_amphore_1.blend" id="44_8iodh"]
 
 [sub_resource type="Resource" id="Resource_n266i"]
 script = ExtResource("3_tk6jp")
@@ -1370,7 +1371,7 @@ transform = Transform3D(0.105773, 0, 0, 0, 0.105773, 0, 0, 0, 0.105773, 0.9921, 
 transform = Transform3D(0.131572, 0, 0, 0, 0.131572, 0, 0, 0, 0.131572, 0.998922, 2.08601, 1.91198)
 
 [node name="m_marmite_m" parent="assets" instance=ExtResource("25_hwpcv")]
-transform = Transform3D(1.26621, 0, 0, 0, 1.26621, 0, 0, 0, 1.26621, 1.96416, 2.20503, 1.9031)
+transform = Transform3D(1.26621, 0, 0, 0, 1.26621, 0, 0, 0, 1.26621, 1.96416, 2.20721, 1.9031)
 
 [node name="m_cuillere" parent="assets" instance=ExtResource("26_xabha")]
 transform = Transform3D(0.0510104, -0.0494118, 0, 0.0494118, 0.0510104, 0, 0, 0, 0.0710183, 1.00848, 2.27264, 1.92751)
@@ -1594,3 +1595,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.302871, 1.92052, 1.58934)
 transform = Transform3D(0.525176, 0.499618, -0.688892, -0.16232, 0.853464, 0.495229, 0.83537, -0.148261, 0.529317, -6.4295, 3.27208, 3.37258)
 light_color = Color(0.666667, 0.627451, 0.407843, 1)
 light_energy = 0.714
+
+[node name="m_amphore_1" parent="." instance=ExtResource("44_8iodh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.31117, 1, -1.16782)
