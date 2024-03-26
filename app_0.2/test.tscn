@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://q2tsvkrufqx2"]
+
+[ext_resource type="PackedScene" uid="uid://dfwr73mrsq334" path="res://assets/models/models/m_bol.blend" id="1_6qd0h"]
+
+[node name="m_bol" instance=ExtResource("1_6qd0h")]
